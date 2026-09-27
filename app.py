@@ -693,10 +693,13 @@ if HAS_FASTAPI:
 
         return JSONResponse(content=response_payload)
 
-    # Mount Gradio app onto FastAPI
+    # Mount Gradio app onto FastAPI with ssr_mode=False to prevent port 7861 SSR collisions
     demo = build_gradio_demo()
     if HAS_GRADIO and demo:
-        app = gr.mount_gradio_app(app, demo, path="/")
+        try:
+            app = gr.mount_gradio_app(app, demo, path="/", ssr_mode=False)
+        except TypeError:
+            app = gr.mount_gradio_app(app, demo, path="/")
 
 
 if __name__ == "__main__":
