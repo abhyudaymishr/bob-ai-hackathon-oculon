@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "oculon"
+version = "1.0.0"
+description = "Oculon: Delhi Hotspots ML Spatiotemporal Crime Forecasting & MCP Server"
+readme = "README.md"
+authors = [{ name = "Abhyuday Mishra" }]
+license = "MIT"
+requires-python = ">=3.9"
+dependencies = [
+    "gradio>=5.20.0",
+    "fastapi>=0.115.0",
+    "uvicorn>=0.30.0",
+    "pydantic>=2.0.0",
+    "pandas>=2.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/abhyudaymishr/bob-ai-hackathon-oculon"
+"Hugging Face Space" = "https://huggingface.co/spaces/AbhyudayMishr/Oculon"
+
+[project.scripts]
+oculon = "oculon.mcp_server:main"
+oculon-mcp = "oculon.mcp_server:main"
+oculon-app = "oculon.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+oculon = ["data/*", "maps/*"]

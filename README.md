@@ -54,7 +54,52 @@ An interactive, multi-dataset spatial-temporal hotspot forecasting service and *
 
 ---
 
-### Method 2: Run Locally (Gradio UI + FastAPI + Remote MCP)
+### Method 2: Install via `pip` (Recommended for Local Use)
+
+You can install `oculon` directly into any Python environment via `pip`:
+
+```bash
+pip install git+https://github.com/abhyudaymishr/bob-ai-hackathon-oculon.git
+```
+
+Or for editable development:
+```bash
+git clone https://github.com/abhyudaymishr/bob-ai-hackathon-oculon.git
+cd bob-ai-hackathon-oculon
+pip install -e .
+```
+
+#### CLI Commands Available Out of the Box:
+- **`oculon`** / **`oculon-mcp`**: Run the stdio Model Context Protocol (MCP) server directly (for Claude Desktop, Cursor, Antigravity, BoB, etc.):
+  ```bash
+  oculon
+  ```
+  *(or `python -m oculon`)*
+- **`oculon-app`**: Launch the local Gradio + FastAPI interactive web dashboard and map server:
+  ```bash
+  oculon-app
+  ```
+
+#### Programmatic Python Usage:
+```python
+import oculon
+
+# Query top hotspots for a dataset and month
+hotspots = oculon.query_hotspots("missing_persons", "2026-04", top_k=5)
+print(hotspots)
+
+# Retrieve interactive map info
+map_info = oculon.get_hotspot_map("all_datasets")
+print(map_info["url"])
+
+# Get evaluation metrics
+metrics = oculon.get_model_metrics("missing_persons")
+print(metrics)
+```
+
+---
+
+### Method 3: Run from Source
 
 1. **Clone the Repository**:
    ```bash
@@ -84,12 +129,12 @@ An interactive, multi-dataset spatial-temporal hotspot forecasting service and *
 
 ---
 
-### Method 3: Standalone Stdio MCP Bridge (Auto-Opens Local Browser)
+### Method 4: Standalone Stdio MCP Bridge (Auto-Opens Local Browser)
 
 To connect Claude Desktop or Cursor to a local instance that **actively launches your machine's default browser** when a map is queried:
 
 ```bash
-python3 -m src.delhi_hotspots.mcp_server
+python3 -m oculon.mcp_server
 ```
 
 ---

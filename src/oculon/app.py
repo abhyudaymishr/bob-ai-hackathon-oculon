@@ -48,8 +48,8 @@ except Exception:
 
 # Directories
 BASE_DIR = Path(__file__).resolve().parent
-MAPS_DIR = BASE_DIR / "maps" if (BASE_DIR / "maps").exists() else BASE_DIR / "src" / "oculon" / "maps"
-DATA_DIR = BASE_DIR / "data" if (BASE_DIR / "data").exists() else BASE_DIR / "src" / "oculon" / "data"
+MAPS_DIR = BASE_DIR / "maps" if (BASE_DIR / "maps").exists() else BASE_DIR.parent.parent / "maps"
+DATA_DIR = BASE_DIR / "data" if (BASE_DIR / "data").exists() else BASE_DIR.parent.parent / "data"
 
 FORECAST_CSV = DATA_DIR / "four_dataset_forecast_top_seven.csv"
 COMPARISON_JSON = DATA_DIR / "dataset_comparison.json"

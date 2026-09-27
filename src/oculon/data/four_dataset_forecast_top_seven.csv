@@ -1,0 +1,23 @@
+dataset,rank,forecast_month,method,location,district,longitude,latitude,relative_model_score,location_confidence
+Missing persons,1,2026-10,police_station_proxy,Wazirabad PS,NORTH,77.22436,28.70708,0.051442,approximate proxy
+Missing persons,2,2026-10,police_station_proxy,Narela PS,Outer North,77.08797,28.853313,0.031616,approximate proxy
+Missing persons,3,2026-10,police_station_proxy,KHAJURI KHAS,NORTH EAST,77.25642,28.71134,0.027147,approximate proxy
+Missing persons,4,2026-10,police_station_proxy,JAIT PUR,SOUTH-EAST,77.31889,28.53064,0.023602,approximate proxy
+Missing persons,5,2026-10,police_station_proxy,DABRI,DWARKA,77.08538,28.61303,0.023333,approximate proxy
+Missing persons,6,2026-10,police_station_proxy,BINDA PUR,DWARKA,77.06611,28.60906,0.021538,approximate proxy
+Missing persons,7,2026-10,police_station_proxy,Bhalswa Diary PS,Outer North,77.1655,28.742837,0.018666,approximate proxy
+Unidentified bodies,1,2026-10,police_station_proxy,KASHMERI GATE,NORTH,77.2311,28.66282,0.0644645,approximate proxy
+Unidentified bodies,2,2026-10,police_station_proxy,KOTWALI,NORTH,77.23117,28.65857,0.0490378,approximate proxy
+Unidentified bodies,3,2026-10,police_station_proxy,ANAND VIHAR RLY STN,RAILWAYS,77.31502,28.64839,0.0413238,approximate proxy
+Unidentified bodies,4,2026-10,police_station_proxy,MANGOL PURI,OUTER DISTRICT,77.09136,28.69639,0.0328472,approximate proxy
+Unidentified bodies,5,2026-10,police_station_proxy,LAHORI GATE,NORTH,77.21894,28.65556,0.0316251,approximate proxy
+Unidentified bodies,6,2026-10,police_station_proxy,Safdarjung Enclave PS,SOUTH WEST,77.19946,28.57431,0.0311393,approximate proxy
+Unidentified bodies,7,2026-10,police_station_proxy,DARYA GANJ,CENTRAL,77.24083,28.64198,0.0275093,approximate proxy
+Missing mobiles (theft/stolen reports),,,not estimable,,,,,,unlocated
+Stolen vehicles,1,2026-10,metro,Samaypur Badli,,77.1382701,28.7446411,0.07940952,approximate proxy
+Stolen vehicles,2,2026-10,metro,Govind Puri,,77.2642761,28.5445521,0.05993573,approximate proxy
+Stolen vehicles,3,2026-10,metro,Nawada,,77.0450787,28.6202758,0.05131594,approximate proxy
+Stolen vehicles,4,2026-10,metro,Paschim Vihar West,,77.1022154,28.6786018,0.05105188,approximate proxy
+Stolen vehicles,5,2026-10,metro,Tughlakabad,,77.299305,28.5024441,0.04311335,approximate proxy
+Stolen vehicles,6,2026-10,metro,Dashrath Puri,,77.0823751,28.60185,0.0388476,approximate proxy
+Stolen vehicles,7,2026-10,metro,Saket,,77.2022237,28.521168,0.03428372,approximate proxy

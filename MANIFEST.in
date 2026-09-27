@@ -1,0 +1,6 @@
+include README.md
+include requirements.txt
+include app.py
+recursive-include data *
+recursive-include maps *
+recursive-include src *

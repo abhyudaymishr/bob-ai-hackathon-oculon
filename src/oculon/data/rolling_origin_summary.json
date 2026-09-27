@@ -1,0 +1,57 @@
+{
+  "as_of_date": "2026-09-27",
+  "method": "expanding-window multigram, target month scored from earlier events only",
+  "partial_current_month_excluded": true,
+  "test_period_fraction": 0.2,
+  "hotspot_fraction": 0.1,
+  "results": [
+    {
+      "dataset_representation": "Missing persons",
+      "as_of": "2026-09-27",
+      "test_months": 27,
+      "test_window": "2024-06 to 2026-08",
+      "accuracy": 0.9209876543209876,
+      "f1": 0.5234042553191489,
+      "mean_monthly_average_precision": 0.5372356796347648,
+      "mean_multiclass_log_loss": 4.990675214566148,
+      "mean_multiclass_brier_sum": 0.0028572004039295828,
+      "mean_wasserstein_km": 1.2276833610168394
+    },
+    {
+      "dataset_representation": "Unidentified bodies",
+      "as_of": "2026-09-27",
+      "test_months": 11,
+      "test_window": "2025-10 to 2026-08",
+      "accuracy": 0.9627705627705627,
+      "f1": 0.5168539325842697,
+      "mean_monthly_average_precision": 0.5492941018938027,
+      "mean_multiclass_log_loss": 4.736759884914818,
+      "mean_multiclass_brier_sum": 0.021886275906584214,
+      "mean_wasserstein_km": 2.095102165962339
+    },
+    {
+      "dataset_representation": "Stolen vehicles \u00b7 PIN centroids",
+      "as_of": "2026-09-27",
+      "test_months": 17,
+      "test_window": "2025-04 to 2026-08",
+      "accuracy": 0.943577430972389,
+      "f1": 0.5727272727272728,
+      "mean_monthly_average_precision": 0.6353858194089058,
+      "mean_multiclass_log_loss": 4.02147154775123,
+      "mean_multiclass_brier_sum": 0.012015888101073131,
+      "mean_wasserstein_km": 2.003679696204429
+    },
+    {
+      "dataset_representation": "Stolen vehicles \u00b7 nearest metro",
+      "as_of": "2026-09-27",
+      "test_months": 17,
+      "test_window": "2025-04 to 2026-08",
+      "accuracy": 0.9777424483306836,
+      "f1": 0.5148514851485149,
+      "mean_monthly_average_precision": 0.643569543722309,
+      "mean_multiclass_log_loss": 3.90233576952753,
+      "mean_multiclass_brier_sum": 0.012826077162964567,
+      "mean_wasserstein_km": 1.6895079219459468
+    }
+  ]
+}
