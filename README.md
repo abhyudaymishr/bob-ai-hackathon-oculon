@@ -1,5 +1,5 @@
 ---
-title: workflow
+title: Oculon
 emoji: ⚡
 colorFrom: indigo
 colorTo: indigo
@@ -9,6 +9,7 @@ app_file: run.py
 pinned: false
 hf_oauth: true
 hf_oauth_scopes:
-  - inference-api
-  - write-repos
+- inference-api
+- write-repos
+license: mit
 ---
