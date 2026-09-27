@@ -1,0 +1,66 @@
+{
+  "project": "Delhi four-dataset spatial-temporal hotspot explorer",
+  "baseline_preservation": "The app/four_dataset_hotspot_explorer.html and reports/dataset_comparison.json are copied from the currently delivered explorer; do not overwrite them when running new evaluation.",
+  "datasets": {
+    "missing_persons": {
+      "color": "#2864b7",
+      "split": "random event-level 80/20",
+      "seed": 42,
+      "holdout_f1": 0.3950617284,
+      "location": "police station reporting proxy"
+    },
+    "unidentified_bodies": {
+      "color": "#8c4bb8",
+      "split": "random event-level 80/20",
+      "seed": 42,
+      "holdout_f1": 0.4459459459,
+      "location": "police station reporting proxy"
+    },
+    "missing_mobiles": {
+      "color": "#d58a13",
+      "split": "random row-level 80/20",
+      "seed": 43,
+      "holdout_f1": null,
+      "location": "none in source data; spatial prediction unavailable"
+    },
+    "stolen_vehicles": {
+      "color": "#c74440",
+      "split": "random event-level 80/20",
+      "seed": 42,
+      "location": "approximate postal centroid; nearest metro comparison"
+    }
+  },
+  "multigram": {
+    "ngram_orders": [
+      1,
+      2,
+      3
+    ],
+    "ngram_weights": {
+      "1": 0.2,
+      "2": 0.25,
+      "3": 0.3
+    },
+    "base_weight": 0.25,
+    "seasonal_base_weight": 0.6,
+    "recent_event_weight": 0.4,
+    "recent_event_window": 12000,
+    "lidstone_strength": 8.0,
+    "hotspot_fraction": 0.1
+  },
+  "logistic_comparison": {
+    "l2_lambda": 0.08,
+    "hotspot_fraction": 0.1,
+    "unit_month_features": [
+      "spatial unit indicator",
+      "sin/cos calendar month",
+      "capped linear trend",
+      "log previous-month count",
+      "log mean previous-three-month count"
+    ]
+  },
+  "rolling_origin_defaults": {
+    "test_month_fraction": 0.2,
+    "hotspot_fraction": 0.1
+  }
+}
