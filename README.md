@@ -15,6 +15,7 @@ short_description: Delhi hotspot forecasting via MCP & Gradio
 
 An interactive, multi-dataset spatial-temporal hotspot forecasting service and **Model Context Protocol (MCP)** server for Delhi crime and public safety data, hosted on Hugging Face Spaces at **`AbhyudayMishr/Oculon`**.
 
+[![PyPI version](https://img.shields.io/pypi/v/oculon.svg)](https://pypi.org/project/oculon/)
 [![Gradio](https://img.shields.io/badge/UI-Gradio%205-orange.svg)](https://gradio.app/)
 [![MCP Ready](https://img.shields.io/badge/MCP-Server%20Ready-blue.svg)](https://modelcontextprotocol.io/)
 [![FastAPI](https://img.shields.io/badge/API-FastAPI-green.svg)](https://fastapi.tiangolo.com/)
@@ -54,10 +55,15 @@ An interactive, multi-dataset spatial-temporal hotspot forecasting service and *
 
 ---
 
-### Method 2: Install via `pip` (Recommended for Local Use)
+### Method 2: Install via `pip` (PyPI)
 
-You can install `oculon` directly into any Python environment via `pip`:
+You can install `oculon` directly from PyPI into any Python environment:
 
+```bash
+pip install oculon
+```
+
+Or install directly from GitHub:
 ```bash
 pip install git+https://github.com/abhyudaymishr/bob-ai-hackathon-oculon.git
 ```
