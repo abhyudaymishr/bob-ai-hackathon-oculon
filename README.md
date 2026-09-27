@@ -45,6 +45,55 @@ An interactive, multi-dataset spatial-temporal hotspot forecasting service and *
 
 ---
 
+## 🚀 How to Run Guide
+
+### Method 1: Instant Cloud Access (No Setup Required)
+- **Live Interactive Web App**: [https://abhyudaymishr-oculon.hf.space](https://abhyudaymishr-oculon.hf.space)
+- **Hugging Face Space**: [https://huggingface.co/spaces/AbhyudayMishr/Oculon](https://huggingface.co/spaces/AbhyudayMishr/Oculon)
+- **Standalone Interactive Map**: [https://abhyudaymishr-oculon.hf.space/maps/four_dataset_hotspot_explorer.html](https://abhyudaymishr-oculon.hf.space/maps/four_dataset_hotspot_explorer.html)
+
+---
+
+### Method 2: Run Locally (Gradio UI + FastAPI + Remote MCP)
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/abhyudaymishr/bob-ai-hackathon-oculon.git
+   cd bob-ai-hackathon-oculon
+   ```
+
+2. **Create and Activate a Virtual Environment**:
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+
+3. **Install Dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Start the Application**:
+   ```bash
+   python app.py
+   ```
+   - **Gradio Dashboard**: `http://localhost:7860`
+   - **Interactive Maps**: `http://localhost:7860/maps/four_dataset_hotspot_explorer.html`
+   - **REST API**: `http://localhost:7860/api/hotspots`
+   - **Local MCP SSE Stream**: `http://localhost:7860/sse`
+
+---
+
+### Method 3: Standalone Stdio MCP Bridge (Auto-Opens Local Browser)
+
+To connect Claude Desktop or Cursor to a local instance that **actively launches your machine's default browser** when a map is queried:
+
+```bash
+python3 -m src.delhi_hotspots.mcp_server
+```
+
+---
+
 ## 🔌 Connecting via Model Context Protocol (MCP)
 
 ### 1. Claude Desktop (Remote SSE)
