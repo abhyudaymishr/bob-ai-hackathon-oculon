@@ -34,6 +34,17 @@ try:
 except ImportError:
     HAS_FASTAPI = False
 
+# ZeroGPU compatibility for Hugging Face Spaces (required if zero-a10g hardware is selected)
+try:
+    import spaces
+    @spaces.GPU
+    def _zero_gpu_init():
+        return True
+    _zero_gpu_init()
+except Exception:
+    pass
+
+
 
 # Directories
 BASE_DIR = Path(__file__).resolve().parent
