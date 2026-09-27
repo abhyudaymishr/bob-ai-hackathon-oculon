@@ -2,7 +2,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="oculon",
+    name="Oculon",
     version="1.0.0",
     description="Oculon: Delhi Hotspots ML Spatiotemporal Crime Forecasting & MCP Server",
     long_description=open("README.md", encoding="utf-8").read(),
