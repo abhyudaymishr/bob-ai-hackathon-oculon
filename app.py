@@ -547,6 +547,12 @@ if HAS_FASTAPI:
     if MAPS_DIR.exists():
         app.mount("/maps", StaticFiles(directory=str(MAPS_DIR), html=True), name="maps")
 
+    @app.get("/api/hotspots")
+    async def api_hotspots(dataset: Optional[str] = None, month: Optional[str] = None, query: Optional[str] = None, top_k: int = 7):
+        if not mcp_server:
+            return JSONResponse(status_code=500, content={"error": "MCP server unavailable"})
+        return mcp_server.query_hotspots(dataset=dataset, month=month, query_text=query, top_k=top_k)
+
     @app.post("/api/query_hotspots")
     async def api_query_hotspots(request: Request):
         try:
