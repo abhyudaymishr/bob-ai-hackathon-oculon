@@ -10,6 +10,23 @@ Combines:
 4. Remote MCP SSE server under /sse and /messages for Claude, Cursor, and AI agents.
 """
 
+# ZeroGPU compatibility for Hugging Face Spaces: MUST be imported before Gradio or FastAPI
+try:
+    import spaces
+except Exception:
+    class _MockSpaces:
+        def GPU(self, *args, **kwargs):
+            def decorator(fn):
+                return fn
+            if args and callable(args[0]):
+                return args[0]
+            return decorator
+    spaces = _MockSpaces()
+
+@spaces.GPU
+def _dummy_gpu_function():
+    return True
+
 import os
 import sys
 import json
@@ -34,18 +51,6 @@ try:
 except ImportError:
     HAS_FASTAPI = False
 
-# ZeroGPU compatibility for Hugging Face Spaces (active when ZeroGPU hardware is selected)
-try:
-    import spaces
-except Exception:
-    class _MockSpaces:
-        def GPU(self, *args, **kwargs):
-            def decorator(fn):
-                return fn
-            if args and callable(args[0]):
-                return args[0]
-            return decorator
-    spaces = _MockSpaces()
 
 
 # Directories
