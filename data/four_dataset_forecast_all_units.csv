@@ -1,0 +1,779 @@
+dataset,rank,forecast_month,method,location,district,longitude,latitude,relative_model_score,location_confidence
+Missing persons,1,2026-10,police_station_proxy,KAPASHERA,SOUTH WEST,77.08766,28.52926,0.019333,approximate proxy
+Missing persons,2,2026-10,police_station_proxy,JAIT PUR,SOUTH-EAST,77.31889,28.53064,0.017692,approximate proxy
+Missing persons,3,2026-10,police_station_proxy,Swarup Nagar PS,Outer North,77.15608,28.758587,0.017586,approximate proxy
+Missing persons,4,2026-10,police_station_proxy,Dayal Pur PS,NORTH EAST,77.28627,28.70208,0.017565,approximate proxy
+Missing persons,5,2026-10,police_station_proxy,DABRI,DWARKA,77.08538,28.61303,0.017373,approximate proxy
+Missing persons,6,2026-10,police_station_proxy,Narela PS,Outer North,77.08797,28.853313,0.016883,approximate proxy
+Missing persons,7,2026-10,police_station_proxy,Prem Nagar PS,ROHINI,77.0559,28.708,0.016137,approximate proxy
+Missing persons,8,2026-10,police_station_proxy,Samai Pur Badli PS,Outer North,77.1415,28.725139,0.015754,approximate proxy
+Missing persons,9,2026-10,police_station_proxy,BINDA PUR,DWARKA,77.06611,28.60906,0.015243,approximate proxy
+Missing persons,10,2026-10,police_station_proxy,RANHOLA,OUTER DISTRICT,77.03561,28.65392,0.014625,approximate proxy
+Missing persons,11,2026-10,police_station_proxy,SULTANPURI,OUTER DISTRICT,77.07894,28.70282,0.013687,approximate proxy
+Missing persons,12,2026-10,police_station_proxy,Shahbad Diary PS,Outer North,77.07902,28.747477,0.013623,approximate proxy
+Missing persons,13,2026-10,police_station_proxy,NIHAL VIHAR,OUTER DISTRICT,77.07127,28.66492,0.01324,approximate proxy
+Missing persons,14,2026-10,police_station_proxy,BURARI,NORTH,77.19698,28.73657,0.012601,approximate proxy
+Missing persons,15,2026-10,police_station_proxy,PALAM VILLAGE,SOUTH WEST,77.08295,28.5883,0.01209,approximate proxy
+Missing persons,16,2026-10,police_station_proxy,Bawana PS,Outer North,77.02323,28.806128,0.012047,approximate proxy
+Missing persons,17,2026-10,police_station_proxy,BEGUM PUR,ROHINI,77.06503,28.71845,0.011941,approximate proxy
+Missing persons,18,2026-10,police_station_proxy,Narela Industrial Area PS,Outer North,77.09472,28.83184,0.011855,approximate proxy
+Missing persons,19,2026-10,police_station_proxy,Bhalswa Diary PS,Outer North,77.1655,28.742837,0.011834,approximate proxy
+Missing persons,20,2026-10,police_station_proxy,SAGAR PUR,SOUTH WEST,77.08652,28.59149,0.011813,approximate proxy
+Missing persons,21,2026-10,police_station_proxy,KHAJURI KHAS,NORTH EAST,77.25642,28.71134,0.011578,approximate proxy
+Missing persons,22,2026-10,police_station_proxy,NANGLOI,METRO,77.06698,28.68176,0.011323,approximate proxy
+Missing persons,23,2026-10,police_station_proxy,CHHAWALA,DWARKA,76.99493,28.58688,0.010641,approximate proxy
+Missing persons,24,2026-10,police_station_proxy,KALYANPURI,EAST,77.3175,28.61326,0.010428,approximate proxy
+Missing persons,25,2026-10,police_station_proxy,NEW USMANPUR,NORTH EAST,77.2616,28.67215,0.010172,approximate proxy
+Missing persons,26,2026-10,police_station_proxy,UTTAM NAGAR,DWARKA,77.06487,28.62532,0.01013,approximate proxy
+Missing persons,27,2026-10,police_station_proxy,KHYALA,WEST,77.11356,28.65748,0.010002,approximate proxy
+Missing persons,28,2026-10,police_station_proxy,HARSH VIHAR,NORTH EAST,77.31863,28.70589,0.009469,approximate proxy
+Missing persons,29,2026-10,police_station_proxy,BADARPUR,SOUTH-EAST,77.30399,28.49369,0.009299,approximate proxy
+Missing persons,30,2026-10,police_station_proxy,NEW ASHOK NAGAR,EAST,77.32641,28.61411,0.009128,approximate proxy
+Missing persons,31,2026-10,police_station_proxy,SHALIMAR BAGH,NORTH WEST,77.15716,28.71711,0.008979,approximate proxy
+Missing persons,32,2026-10,police_station_proxy,NAJAF GARH,DWARKA,76.98286,28.60997,0.008958,approximate proxy
+Missing persons,33,2026-10,police_station_proxy,Mohan Garden PS,DWARKA,77.03704,28.63283,0.00883,approximate proxy
+Missing persons,34,2026-10,police_station_proxy,VASANT KUNJ SOUTH,SOUTH WEST,77.15174,28.53537,0.008639,approximate proxy
+Missing persons,35,2026-10,police_station_proxy,MEHRAULI,SOUTH,77.17965,28.52165,0.008596,approximate proxy
+Missing persons,36,2026-10,police_station_proxy,OKHLA INDUSTRIAL AREA,SOUTH-EAST,77.27448,28.52713,0.008553,approximate proxy
+Missing persons,37,2026-10,police_station_proxy,GOVIND PURI,SOUTH-EAST,77.26559,28.53094,0.008191,approximate proxy
+Missing persons,38,2026-10,police_station_proxy,BABA HARIDAS NAGAR,DWARKA,76.97471,28.61001,0.008063,approximate proxy
+Missing persons,39,2026-10,police_station_proxy,Kalandi Kunj PS,SOUTH-EAST,77.31966,28.50389,0.008063,approximate proxy
+Missing persons,40,2026-10,police_station_proxy,Aman Vihar PS,ROHINI,77.06036,28.710149,0.008042,approximate proxy
+Missing persons,41,2026-10,police_station_proxy,SUBHASH PLACE,METRO,77.14415,28.68929,0.007744,approximate proxy
+Missing persons,42,2026-10,police_station_proxy,JAHANGIR PURI,NORTH WEST,77.17499,28.73378,0.007722,approximate proxy
+Missing persons,43,2026-10,police_station_proxy,Wazirabad PS,NORTH,77.22436,28.70708,0.007446,approximate proxy
+Missing persons,44,2026-10,police_station_proxy,AMBEDKAR NAGAR,SOUTH,77.24094,28.52044,0.007446,approximate proxy
+Missing persons,45,2026-10,police_station_proxy,JAFRABAD,NORTH EAST,77.27287,28.67905,0.007382,approximate proxy
+Missing persons,46,2026-10,police_station_proxy,MOTI NAGAR,WEST,77.14675,28.66046,0.007318,approximate proxy
+Missing persons,47,2026-10,police_station_proxy,SANGAM VIHAR,SOUTH,77.24315,28.50962,0.007296,approximate proxy
+Missing persons,48,2026-10,police_station_proxy,WELCOME,NORTH EAST,77.27841,28.68181,0.007275,approximate proxy
+Missing persons,49,2026-10,police_station_proxy,VIJAY VIHAR,ROHINI,77.10202,28.71006,0.007275,approximate proxy
+Missing persons,50,2026-10,police_station_proxy,KARAWAL NAGAR,NORTH EAST,77.27518,28.73285,0.007211,approximate proxy
+Missing persons,51,2026-10,police_station_proxy,Ali Pur PS,Outer North,77.13869,28.798927,0.007126,approximate proxy
+Missing persons,52,2026-10,police_station_proxy,ANAND PARBAT,CENTRAL,77.17395,28.66019,0.00687,approximate proxy
+Missing persons,53,2026-10,police_station_proxy,NEB SARAI,SOUTH,77.21401,28.49895,0.006828,approximate proxy
+Missing persons,54,2026-10,police_station_proxy,Raj Park PS,OUTER DISTRICT,77.0815,28.6942,0.006806,approximate proxy
+Missing persons,55,2026-10,police_station_proxy,NAND NAGRI,NORTH EAST,77.30767,28.69736,0.006721,approximate proxy
+Missing persons,56,2026-10,police_station_proxy,MAYUR VIHAR PH-I,N/A,77.30329,28.60702,0.0067,approximate proxy
+Missing persons,57,2026-10,police_station_proxy,KESHAV PURAM,NORTH WEST,77.15969,28.68405,0.006636,approximate proxy
+Missing persons,58,2026-10,police_station_proxy,SARITA VIHAR,SOUTH-EAST,77.28169,28.54023,0.006466,approximate proxy
+Missing persons,59,2026-10,police_station_proxy,RAJOURI GARDEN,WEST,77.11994,28.6515,0.006402,approximate proxy
+Missing persons,60,2026-10,police_station_proxy,SARAI ROHILLA,NORTH,77.18357,28.66875,0.006338,approximate proxy
+Missing persons,61,2026-10,police_station_proxy,MANGOL PURI,OUTER DISTRICT,77.09136,28.69639,0.006253,approximate proxy
+Missing persons,62,2026-10,police_station_proxy,JYOTI NAGAR,NORTH EAST,77.30478,28.69216,0.006146,approximate proxy
+Missing persons,63,2026-10,police_station_proxy,BHARAT NAGAR,NORTH WEST,77.17814,28.6805,0.006146,approximate proxy
+Missing persons,64,2026-10,police_station_proxy,FATEHPUR BERI,SOUTH,77.15239,28.46656,0.006146,approximate proxy
+Missing persons,65,2026-10,police_station_proxy,BHAJAN PURA,NORTH EAST,77.26486,28.70112,0.006103,approximate proxy
+Missing persons,66,2026-10,police_station_proxy,G.T.B. ENCLAVE,N/A,77.3158,28.68516,0.006082,approximate proxy
+Missing persons,67,2026-10,police_station_proxy,Budh Vihar PS,ROHINI,77.1079,28.7028,0.006061,approximate proxy
+Missing persons,68,2026-10,police_station_proxy,GANDHI NAGAR,SHAHDARA,77.26762,28.65997,0.005805,approximate proxy
+Missing persons,69,2026-10,police_station_proxy,MALVIYA NAGAR,SOUTH,77.20459,28.53064,0.005699,approximate proxy
+Missing persons,70,2026-10,police_station_proxy,SONIA VIHAR,NORTH EAST,77.24588,28.74596,0.005613,approximate proxy
+Missing persons,71,2026-10,police_station_proxy,FARSH BAZAR,SHAHDARA,77.28668,28.66502,0.005613,approximate proxy
+Missing persons,72,2026-10,police_station_proxy,DWARKA NORTH,DWARKA,77.02835,28.59092,0.005486,approximate proxy
+Missing persons,73,2026-10,police_station_proxy,MUNDKA,OUTER DISTRICT,76.95998,28.66986,0.005464,approximate proxy
+Missing persons,74,2026-10,police_station_proxy,K.N. KATJU MARG,N/A,77.12054,28.73103,0.005443,approximate proxy
+Missing persons,75,2026-10,police_station_proxy,PUL PRAHLAD PUR,SOUTH-EAST,77.29086,28.50202,0.005443,approximate proxy
+Missing persons,76,2026-10,police_station_proxy,VASANT KUNJ NORTH,SOUTH WEST,77.15174,28.53537,0.0054,approximate proxy
+Missing persons,77,2026-10,police_station_proxy,DWARKA SOUTH,DWARKA,77.06677,28.57811,0.00523,approximate proxy
+Missing persons,78,2026-10,police_station_proxy,HARI NAGAR,WEST,77.09984,28.60948,0.005209,approximate proxy
+Missing persons,79,2026-10,police_station_proxy,DELHI CANTT,SOUTH WEST,77.11677,28.59034,0.005187,approximate proxy
+Missing persons,80,2026-10,police_station_proxy,MAHENDRA PARK,NORTH WEST,77.16395,28.72569,0.005166,approximate proxy
+Missing persons,81,2026-10,police_station_proxy,Safdarjung Enclave PS,SOUTH WEST,77.19946,28.57431,0.005102,approximate proxy
+Missing persons,82,2026-10,police_station_proxy,SEEMAPURI,SHAHDARA,77.31609,28.67792,0.004996,approximate proxy
+Missing persons,83,2026-10,police_station_proxy,Tigri PS,SOUTH,77.23855,28.49911,0.004889,approximate proxy
+Missing persons,84,2026-10,police_station_proxy,ASHOK VIHAR,NORTH WEST,77.17379,28.69254,0.004868,approximate proxy
+Missing persons,85,2026-10,police_station_proxy,JAMIA NAGAR,SOUTH-EAST,77.2922,28.56193,0.004847,approximate proxy
+Missing persons,86,2026-10,police_station_proxy,KRISHNA NAGAR,SHAHDARA,77.28022,28.66722,0.004825,approximate proxy
+Missing persons,87,2026-10,police_station_proxy,ADARSH NAGAR,NORTH WEST,77.17523,28.70999,0.004804,approximate proxy
+Missing persons,88,2026-10,police_station_proxy,Maidan Garhi PS,SOUTH,77.18004,28.52299,0.004761,approximate proxy
+Missing persons,89,2026-10,police_station_proxy,SEELAMPUR,NORTH EAST,77.2683,28.67415,0.004655,approximate proxy
+Missing persons,90,2026-10,police_station_proxy,AMAR COLONY,SOUTH-EAST,77.24032,28.55915,0.004633,approximate proxy
+Missing persons,91,2026-10,police_station_proxy,MADHU VIHAR,EAST,77.3062,28.62516,0.004591,approximate proxy
+Missing persons,92,2026-10,police_station_proxy,TILAK NAGAR,WEST,77.10193,28.63865,0.004591,approximate proxy
+Missing persons,93,2026-10,police_station_proxy,GHAZIPUR,EAST,77.33269,28.6249,0.00457,approximate proxy
+Missing persons,94,2026-10,police_station_proxy,SADAR BAZAR,NORTH,77.21087,28.6541,0.004527,approximate proxy
+Missing persons,95,2026-10,police_station_proxy,KIRTI NAGAR,WEST,77.12137,28.62678,0.00442,approximate proxy
+Missing persons,96,2026-10,police_station_proxy,PUNJABI BAGH,WEST,77.1329,28.67426,0.004293,approximate proxy
+Missing persons,97,2026-10,police_station_proxy,Kishan Garh PS,SOUTH WEST,77.16893,28.51856,0.004165,approximate proxy
+Missing persons,98,2026-10,police_station_proxy,PASCHIM VIHAR WEST,OUTER DISTRICT,77.08891,28.679668,0.00408,approximate proxy
+Missing persons,99,2026-10,police_station_proxy,MUKHERJEE NAGAR,NORTH WEST,77.20871,28.70021,0.003973,approximate proxy
+Missing persons,100,2026-10,police_station_proxy,Laxmi Nagar,EAST,77.27053,28.637361,0.003952,approximate proxy
+Missing persons,101,2026-10,police_station_proxy,TIMARPUR,NORTH,77.2244,28.70679,0.003952,approximate proxy
+Missing persons,102,2026-10,police_station_proxy,PRASAD NAGAR,CENTRAL,77.18074,28.64797,0.003888,approximate proxy
+Missing persons,103,2026-10,police_station_proxy,I.P.ESTATE,N/A,77.24749,28.62719,0.003845,approximate proxy
+Missing persons,104,2026-10,police_station_proxy,Jagat Puri PS,SHAHDARA,77.28382,28.643803,0.003675,approximate proxy
+Missing persons,105,2026-10,police_station_proxy,Kanjhawala PS,ROHINI,77.0033,28.725555,0.003547,approximate proxy
+Missing persons,106,2026-10,police_station_proxy,KASHMERI GATE,NORTH,77.2311,28.66282,0.003526,approximate proxy
+Missing persons,107,2026-10,police_station_proxy,KALKAJI,SOUTH-EAST,77.25597,28.54703,0.003504,approximate proxy
+Missing persons,108,2026-10,police_station_proxy,PATEL NAGAR,CENTRAL,77.15779,28.65227,0.003462,approximate proxy
+Missing persons,109,2026-10,police_station_proxy,Sorojini Nagar PS,SOUTH WEST,77.19967,28.57453,0.00344,approximate proxy
+Missing persons,110,2026-10,police_station_proxy,NEW FRIENDS COLONY,SOUTH-EAST,77.2674,28.56237,0.003334,approximate proxy
+Missing persons,111,2026-10,police_station_proxy,VASANT VIHAR,SOUTH WEST,77.16904,28.55803,0.003313,approximate proxy
+Missing persons,112,2026-10,police_station_proxy,Patparganj Industrial Area PS,EAST,77.31606,28.6449,0.003227,approximate proxy
+Missing persons,113,2026-10,police_station_proxy,CHANDNI MAHAL,CENTRAL,77.2362,28.64379,0.003185,approximate proxy
+Missing persons,114,2026-10,police_station_proxy,NARAINA,WEST,77.13789,28.63304,0.003142,approximate proxy
+Missing persons,115,2026-10,police_station_proxy,MAYA PURI,WEST,77.12024,28.62514,0.0031,approximate proxy
+Missing persons,116,2026-10,police_station_proxy,HAUZ KHAS,SOUTH,77.20824,28.54916,0.0031,approximate proxy
+Missing persons,117,2026-10,police_station_proxy,VIKASPURI,WEST,77.06792,28.63007,0.003078,approximate proxy
+Missing persons,118,2026-10,police_station_proxy,SUNLIGHT COLONY,SOUTH-EAST,77.25993,28.57821,0.003057,approximate proxy
+Missing persons,119,2026-10,police_station_proxy,Rani Bagh PS,OUTER DISTRICT,77.11925,28.697698,0.002993,approximate proxy
+Missing persons,120,2026-10,police_station_proxy,INDER PURI,WEST,77.14513,28.63117,0.002972,approximate proxy
+Missing persons,121,2026-10,police_station_proxy,NORTH ROHINI,ROHINI,77.1179,28.70886,0.002951,approximate proxy
+Missing persons,122,2026-10,police_station_proxy,R. K. PURAM,N/A,77.17839,28.57067,0.002887,approximate proxy
+Missing persons,123,2026-10,police_station_proxy,RANJIT NAGAR,CENTRAL,77.15861,28.64744,0.002801,approximate proxy
+Missing persons,124,2026-10,police_station_proxy,Shaheen Bagh PS,SOUTH-EAST,77.2963,28.5493,0.002759,approximate proxy
+Missing persons,125,2026-10,police_station_proxy,Shastri Park PS,NORTH EAST,77.26185,28.67215,0.002737,approximate proxy
+Missing persons,126,2026-10,police_station_proxy,NABI KARIM,CENTRAL,77.21756,28.64797,0.002737,approximate proxy
+Missing persons,127,2026-10,police_station_proxy,SUBZI MANDI,NORTH,77.20751,28.66896,0.002737,approximate proxy
+Missing persons,128,2026-10,police_station_proxy,MANSAROVAR PARK,SHAHDARA,77.29846,28.68271,0.002716,approximate proxy
+Missing persons,129,2026-10,police_station_proxy,HAUZ QAZI,CENTRAL,77.22532,28.64297,0.002652,approximate proxy
+Missing persons,130,2026-10,police_station_proxy,MODEL TOWN,NORTH WEST,77.19374,28.70236,0.002588,approximate proxy
+Missing persons,131,2026-10,police_station_proxy,KOTWALI,NORTH,77.23117,28.65857,0.002546,approximate proxy
+Missing persons,132,2026-10,police_station_proxy,JAFFARPUR KALAN,DWARKA,76.91462,28.59586,0.002524,approximate proxy
+Missing persons,133,2026-10,police_station_proxy,Shakar Pur PS,EAST,77.27053,28.637361,0.002524,approximate proxy
+Missing persons,134,2026-10,police_station_proxy,SAKET,SOUTH,77.22738,28.52916,0.002482,approximate proxy
+Missing persons,135,2026-10,police_station_proxy,PAHAR GANJ,CENTRAL,77.20891,28.6456,0.002461,approximate proxy
+Missing persons,136,2026-10,police_station_proxy,PASCHIM VIHAR EAST,OUTER DISTRICT,77.10096,28.670991,0.002439,approximate proxy
+Missing persons,137,2026-10,police_station_proxy,SHAHDARA,SHAHDARA,77.27469,28.67358,0.002439,approximate proxy
+Missing persons,138,2026-10,police_station_proxy,JANAK PURI,WEST,77.08186,28.6284,0.002439,approximate proxy
+Missing persons,139,2026-10,police_station_proxy,D.B.G. ROAD,N/A,77.19327,28.65278,0.002311,approximate proxy
+Missing persons,140,2026-10,police_station_proxy,CIVIL LINES,NORTH,77.22172,28.689,0.002269,approximate proxy
+Missing persons,141,2026-10,police_station_proxy,MAURYA ENCLAVE,NORTH WEST,77.14611,28.70027,0.002248,approximate proxy
+Missing persons,142,2026-10,police_station_proxy,LAJPAT NAGAR,SOUTH-EAST,77.2404,28.56839,0.002226,approximate proxy
+Missing persons,143,2026-10,police_station_proxy,BARA HINDU RAO,NORTH,77.20814,28.66568,0.002205,approximate proxy
+Missing persons,144,2026-10,police_station_proxy,GEETA COLONY,SHAHDARA,77.27606,28.65534,0.002205,approximate proxy
+Missing persons,145,2026-10,police_station_proxy,KAROL BAGH,CENTRAL,77.19293,28.65235,0.002162,approximate proxy
+Missing persons,146,2026-10,police_station_proxy,VIVEK VIHAR,SHAHDARA,77.30642,28.66698,0.002141,approximate proxy
+Missing persons,147,2026-10,police_station_proxy,LAHORI GATE,NORTH,77.21894,28.65556,0.00212,approximate proxy
+Missing persons,148,2026-10,police_station_proxy,K.M. PUR,N/A,77.2251,28.576,0.001971,approximate proxy
+Missing persons,149,2026-10,police_station_proxy,PANDAV NAGAR,EAST,77.30272,28.62011,0.001885,approximate proxy
+Missing persons,150,2026-10,police_station_proxy,SOUTH ROHINI,ROHINI,77.11558,28.70236,0.001864,approximate proxy
+Missing persons,151,2026-10,police_station_proxy,MANDAWLI FAZAL PUR,EAST,77.30633,28.62521,0.001843,approximate proxy
+Missing persons,152,2026-10,police_station_proxy,TUGHLAK ROAD,NEW DELHI,77.21057,28.59799,0.001821,approximate proxy
+Missing persons,153,2026-10,police_station_proxy,SOUTH CAMPUS,SOUTH WEST,77.17861,28.57062,0.001715,approximate proxy
+Missing persons,154,2026-10,police_station_proxy,PRASHANT VIHAR,ROHINI,77.12731,28.71789,0.001672,approximate proxy
+Missing persons,155,2026-10,police_station_proxy,ANAND VIHAR,SHAHDARA,77.2936,28.65389,0.001523,approximate proxy
+Missing persons,156,2026-10,police_station_proxy,SECTOR 23 DWARKA,DWARKA,77.05814,28.56464,0.001502,approximate proxy
+Missing persons,157,2026-10,police_station_proxy,GULABI BAGH,NORTH,77.19233,28.66981,0.001481,approximate proxy
+Missing persons,158,2026-10,police_station_proxy,NEW DELHI RLY. STN.,N/A,77.21891,28.64392,0.001459,approximate proxy
+Missing persons,159,2026-10,police_station_proxy,KAMLA MARKET,CENTRAL,77.22624,28.64241,0.001353,approximate proxy
+Missing persons,160,2026-10,police_station_proxy,CHANKYA PURI,NEW DELHI,77.19591,28.60305,0.001246,approximate proxy
+Missing persons,161,2026-10,police_station_proxy,LODI COLONY,SOUTH,77.22639,28.58798,0.001182,approximate proxy
+Missing persons,162,2026-10,police_station_proxy,GREATER KAILASH,SOUTH,77.23273,28.55426,0.001097,approximate proxy
+Missing persons,163,2026-10,police_station_proxy,RAJINDER NAGAR,CENTRAL,77.18275,28.63459,0.001012,approximate proxy
+Missing persons,164,2026-10,police_station_proxy,PREET VIHAR,EAST,77.29532,28.63888,0.000991,approximate proxy
+Missing persons,165,2026-10,police_station_proxy,ROOP NAGAR,NORTH,77.20254,28.68486,0.000969,approximate proxy
+Missing persons,166,2026-10,police_station_proxy,ANAND VIHAR RLY STN,SHAHDARA,77.31502,28.64839,0.000927,approximate proxy
+Missing persons,167,2026-10,police_station_proxy,NORTH AVENUE,NEW DELHI,77.19886,28.61894,0.000905,approximate proxy
+Missing persons,168,2026-10,police_station_proxy,DEFENCE COLONY,SOUTH,77.23299,28.56486,0.000905,approximate proxy
+Missing persons,169,2026-10,police_station_proxy,OLD DELHI (DELHI MAIN) RLY. STN.,N/A,77.22713,28.66077,0.000863,approximate proxy
+Missing persons,170,2026-10,police_station_proxy,CHITRANJAN PARK,SOUTH,77.24945,28.53665,0.00082,approximate proxy
+Missing persons,171,2026-10,police_station_proxy,JAMA MASJID,CENTRAL,77.234,28.65294,0.00082,approximate proxy
+Missing persons,172,2026-10,police_station_proxy,TILAK MARG,NEW DELHI,77.23544,28.61796,0.000756,approximate proxy
+Missing persons,173,2026-10,police_station_proxy,CONNAUGHT PLACE,NEW DELHI,77.21426,28.62975,0.000756,approximate proxy
+Missing persons,174,2026-10,police_station_proxy,MANDIR MARG,NEW DELHI,77.20327,28.63907,0.000628,approximate proxy
+Missing persons,175,2026-10,police_station_proxy,DARYA GANJ,CENTRAL,77.24083,28.64198,0.000607,approximate proxy
+Missing persons,176,2026-10,police_station_proxy,MAURICE NAGAR,NORTH,77.20664,28.6926,0.000565,approximate proxy
+Missing persons,177,2026-10,police_station_proxy,HAZARAT NIZAMUDDIN,SOUTH-EAST,77.24388,28.59213,0.000522,approximate proxy
+Missing persons,178,2026-10,police_station_proxy,I.G.I.AIRPORT,N/A,77.12184,28.56484,0.000501,approximate proxy
+Missing persons,179,2026-10,police_station_proxy,HAZRAT NIZAMUDDIN RLY STN,RAILWAYS,77.25346,28.58817,0.000352,approximate proxy
+Missing persons,180,2026-10,police_station_proxy,DOMESTIC AIRPORT,IGI AIRPORT,77.08729,28.55761,0.000309,approximate proxy
+Missing persons,181,2026-10,police_station_proxy,PARLIAMENT STREET,NEW DELHI,77.21279,28.62501,0.000266,approximate proxy
+Missing persons,182,2026-10,police_station_proxy,INA Metro,METRO,77.26793,28.62289,0.000181,approximate proxy
+Missing persons,183,2026-10,police_station_proxy,YAMUNA DEPOT METRO,METRO,77.26793,28.62289,0.000138,approximate proxy
+Missing persons,184,2026-10,police_station_proxy,Janak Puri Metro,WEST,77.02236,28.61495,0.000138,approximate proxy
+Missing persons,185,2026-10,police_station_proxy,BARAKHAMBA ROAD,NEW DELHI,77.22575,28.63068,0.000138,approximate proxy
+Missing persons,186,2026-10,police_station_proxy,RITHALA METRO,METRO,77.10772,28.72005,9.6e-05,approximate proxy
+Missing persons,187,2026-10,police_station_proxy,Metro Police Station Nangloi,METRO,77.06538,28.68406,9.6e-05,approximate proxy
+Missing persons,188,2026-10,police_station_proxy,CRIME BRANCH,CRIME BRANCH,77.19957,28.53128,5.3e-05,approximate proxy
+Missing persons,189,2026-10,police_station_proxy,E-Police Station Delhi,N/A,77.22612,28.64265,5.3e-05,approximate proxy
+Missing persons,190,2026-10,police_station_proxy,ECONOMIC OFFENCES WING,EOW,77.203,28.63937,5.3e-05,approximate proxy
+Missing persons,191,2026-10,police_station_proxy,Metro Police Station Okhla Vihar,METRO,77.28787,28.5287,5.3e-05,approximate proxy
+Missing persons,192,2026-10,police_station_proxy,Metro Police Station Ghitorni,METRO,77.18657,28.51315,5.3e-05,approximate proxy
+Missing persons,193,2026-10,police_station_proxy,IGI AIRPORT METRO,IGI AIRPORT,77.12183,28.64978,5.3e-05,approximate proxy
+Missing persons,194,2026-10,police_station_proxy,SHASHTRI PARK METRO,METRO,77.24897,28.66878,5.3e-05,approximate proxy
+Missing persons,195,2026-10,police_station_proxy,KASHMIRI GATE METRO,METRO,77.22643,28.66641,5.3e-05,approximate proxy
+Missing persons,196,2026-10,police_station_proxy,RAJA GARDEN METRO,METRO,77.12175,28.64994,5.3e-05,approximate proxy
+Missing persons,197,2026-10,police_station_proxy,Metro Police Station Rajiv Chowk,METRO,77.12175,28.64994,5.3e-05,approximate proxy
+Missing persons,198,2026-10,police_station_proxy,Lajpat Nagar Metro,SOUTH-EAST,77.27543,28.54302,5.3e-05,approximate proxy
+Missing persons,199,2026-10,police_station_proxy,Metro Police Station Pragati Maidan,METRO,77.26793,28.62289,5.3e-05,approximate proxy
+Missing persons,200,2026-10,police_station_proxy,Metro Police Station Azadpur,METRO,77.17973,28.70744,5.3e-05,approximate proxy
+Missing persons,201,2026-10,police_station_proxy,Metro Police Station Netaji Subhash Place,METRO,77.15263,28.69604,5.3e-05,approximate proxy
+Missing persons,202,2026-10,police_station_proxy,EXHIBITION GROUND,NEW DELHI,77.24126,28.61665,5.3e-05,approximate proxy
+Missing persons,203,2026-10,police_station_proxy,SOUTH AVENUE,NEW DELHI,77.1999,28.60728,5.3e-05,approximate proxy
+Missing persons,204,2026-10,police_station_proxy,YAMUNA VHR/GOKULPURI,N/A,77.28051,28.70238,5.3e-05,approximate proxy
+Missing persons,205,2026-10,police_station_proxy,SARAI ROHILLA STATION,NORTH,77.18569,28.66278,5.3e-05,approximate proxy
+Missing persons,206,2026-10,police_station_proxy,DELHI CANTT RLY. STATION,SOUTH WEST,77.116,28.61201,5.3e-05,approximate proxy
+Missing persons,207,2026-10,police_station_proxy,SUBZI MANDI RLY STATION,NORTH,77.20004,28.66801,5.3e-05,approximate proxy
+Missing persons,208,2026-10,police_station_proxy,SPECIAL CELL (SB),N/A,77.22727,28.58801,5.3e-05,approximate proxy
+Missing persons,209,2026-10,police_station_proxy,CRIME (WOMEN) CELL NANAK PURA,N/A,77.16835,28.58244,5.3e-05,approximate proxy
+Missing persons,210,2026-10,police_station_proxy,VIGILANCE PS,VIGILANCE,77.22584,28.63088,5.3e-05,approximate proxy
+Unidentified bodies,1,2026-10,police_station_proxy,KASHMERI GATE,NORTH,77.2311,28.66282,0.063818,approximate proxy
+Unidentified bodies,2,2026-10,police_station_proxy,KOTWALI,NORTH,77.23117,28.65857,0.051793,approximate proxy
+Unidentified bodies,3,2026-10,police_station_proxy,LAHORI GATE,NORTH,77.21894,28.65556,0.031191,approximate proxy
+Unidentified bodies,4,2026-10,police_station_proxy,Safdarjung Enclave PS,SOUTH WEST,77.19946,28.57431,0.030616,approximate proxy
+Unidentified bodies,5,2026-10,police_station_proxy,CIVIL LINES,NORTH,77.22172,28.689,0.026151,approximate proxy
+Unidentified bodies,6,2026-10,police_station_proxy,G.T.B. ENCLAVE,N/A,77.3158,28.68516,0.02509,approximate proxy
+Unidentified bodies,7,2026-10,police_station_proxy,ANAND VIHAR RLY STN,SHAHDARA,77.31502,28.64839,0.023984,approximate proxy
+Unidentified bodies,8,2026-10,police_station_proxy,SUBZI MANDI,NORTH,77.20751,28.66896,0.022216,approximate proxy
+Unidentified bodies,9,2026-10,police_station_proxy,MANGOL PURI,OUTER DISTRICT,77.09136,28.69639,0.020182,approximate proxy
+Unidentified bodies,10,2026-10,police_station_proxy,DARYA GANJ,CENTRAL,77.24083,28.64198,0.020094,approximate proxy
+Unidentified bodies,11,2026-10,police_station_proxy,I.P.ESTATE,N/A,77.24749,28.62719,0.019254,approximate proxy
+Unidentified bodies,12,2026-10,police_station_proxy,KAMLA MARKET,CENTRAL,77.22624,28.64241,0.018546,approximate proxy
+Unidentified bodies,13,2026-10,police_station_proxy,PAHAR GANJ,CENTRAL,77.20891,28.6456,0.014037,approximate proxy
+Unidentified bodies,14,2026-10,police_station_proxy,MAHENDRA PARK,NORTH WEST,77.16395,28.72569,0.013993,approximate proxy
+Unidentified bodies,15,2026-10,police_station_proxy,SUNLIGHT COLONY,SOUTH-EAST,77.25993,28.57821,0.012666,approximate proxy
+Unidentified bodies,16,2026-10,police_station_proxy,Samai Pur Badli PS,Outer North,77.1415,28.725139,0.012136,approximate proxy
+Unidentified bodies,17,2026-10,police_station_proxy,MANDIR MARG,NEW DELHI,77.20327,28.63907,0.011561,approximate proxy
+Unidentified bodies,18,2026-10,police_station_proxy,K.N. KATJU MARG,N/A,77.12054,28.73103,0.011075,approximate proxy
+Unidentified bodies,19,2026-10,police_station_proxy,Patparganj Industrial Area PS,EAST,77.31606,28.6449,0.010942,approximate proxy
+Unidentified bodies,20,2026-10,police_station_proxy,JAMA MASJID,CENTRAL,77.234,28.65294,0.010544,approximate proxy
+Unidentified bodies,21,2026-10,police_station_proxy,NEW USMANPUR,NORTH EAST,77.2616,28.67215,0.010102,approximate proxy
+Unidentified bodies,22,2026-10,police_station_proxy,HARI NAGAR,WEST,77.09984,28.60948,0.010058,approximate proxy
+Unidentified bodies,23,2026-10,police_station_proxy,KALYANPURI,EAST,77.3175,28.61326,0.009572,approximate proxy
+Unidentified bodies,24,2026-10,police_station_proxy,SARAI ROHILLA,NORTH,77.18357,28.66875,0.009572,approximate proxy
+Unidentified bodies,25,2026-10,police_station_proxy,TIMARPUR,NORTH,77.2244,28.70679,0.009527,approximate proxy
+Unidentified bodies,26,2026-10,police_station_proxy,SADAR BAZAR,NORTH,77.21087,28.6541,0.008599,approximate proxy
+Unidentified bodies,27,2026-10,police_station_proxy,PUNJABI BAGH,WEST,77.1329,28.67426,0.008245,approximate proxy
+Unidentified bodies,28,2026-10,police_station_proxy,NANGLOI,METRO,77.06698,28.68176,0.007803,approximate proxy
+Unidentified bodies,29,2026-10,police_station_proxy,BARA HINDU RAO,NORTH,77.20814,28.66568,0.007759,approximate proxy
+Unidentified bodies,30,2026-10,police_station_proxy,WELCOME,NORTH EAST,77.27841,28.68181,0.007759,approximate proxy
+Unidentified bodies,31,2026-10,police_station_proxy,CONNAUGHT PLACE,NEW DELHI,77.21426,28.62975,0.007626,approximate proxy
+Unidentified bodies,32,2026-10,police_station_proxy,AMAR COLONY,SOUTH-EAST,77.24032,28.55915,0.007582,approximate proxy
+Unidentified bodies,33,2026-10,police_station_proxy,DELHI CANTT,SOUTH WEST,77.11677,28.59034,0.007538,approximate proxy
+Unidentified bodies,34,2026-10,police_station_proxy,D.B.G. ROAD,N/A,77.19327,28.65278,0.007228,approximate proxy
+Unidentified bodies,35,2026-10,police_station_proxy,SULTANPURI,OUTER DISTRICT,77.07894,28.70282,0.007007,approximate proxy
+Unidentified bodies,36,2026-10,police_station_proxy,TILAK NAGAR,WEST,77.10193,28.63865,0.007007,approximate proxy
+Unidentified bodies,37,2026-10,police_station_proxy,MOTI NAGAR,WEST,77.14675,28.66046,0.006742,approximate proxy
+Unidentified bodies,38,2026-10,police_station_proxy,Ali Pur PS,Outer North,77.13869,28.798927,0.006698,approximate proxy
+Unidentified bodies,39,2026-10,police_station_proxy,KAPASHERA,SOUTH WEST,77.08766,28.52926,0.006521,approximate proxy
+Unidentified bodies,40,2026-10,police_station_proxy,ADARSH NAGAR,NORTH WEST,77.17523,28.70999,0.006477,approximate proxy
+Unidentified bodies,41,2026-10,police_station_proxy,MODEL TOWN,NORTH WEST,77.19374,28.70236,0.006477,approximate proxy
+Unidentified bodies,42,2026-10,police_station_proxy,JAHANGIR PURI,NORTH WEST,77.17499,28.73378,0.0063,approximate proxy
+Unidentified bodies,43,2026-10,police_station_proxy,GULABI BAGH,NORTH,77.19233,28.66981,0.006212,approximate proxy
+Unidentified bodies,44,2026-10,police_station_proxy,Bawana PS,Outer North,77.02323,28.806128,0.006167,approximate proxy
+Unidentified bodies,45,2026-10,police_station_proxy,GOVIND PURI,SOUTH-EAST,77.26559,28.53094,0.006079,approximate proxy
+Unidentified bodies,46,2026-10,police_station_proxy,NORTH ROHINI,ROHINI,77.1179,28.70886,0.006079,approximate proxy
+Unidentified bodies,47,2026-10,police_station_proxy,LAJPAT NAGAR,SOUTH-EAST,77.2404,28.56839,0.005769,approximate proxy
+Unidentified bodies,48,2026-10,police_station_proxy,PASCHIM VIHAR WEST,OUTER DISTRICT,77.08891,28.679668,0.005681,approximate proxy
+Unidentified bodies,49,2026-10,police_station_proxy,LODI COLONY,SOUTH,77.22639,28.58798,0.005504,approximate proxy
+Unidentified bodies,50,2026-10,police_station_proxy,RAJOURI GARDEN,WEST,77.11994,28.6515,0.00546,approximate proxy
+Unidentified bodies,51,2026-10,police_station_proxy,BURARI,NORTH,77.19698,28.73657,0.00546,approximate proxy
+Unidentified bodies,52,2026-10,police_station_proxy,KHAJURI KHAS,NORTH EAST,77.25642,28.71134,0.005195,approximate proxy
+Unidentified bodies,53,2026-10,police_station_proxy,NORTH AVENUE,NEW DELHI,77.19886,28.61894,0.005151,approximate proxy
+Unidentified bodies,54,2026-10,police_station_proxy,NAND NAGRI,NORTH EAST,77.30767,28.69736,0.005151,approximate proxy
+Unidentified bodies,55,2026-10,police_station_proxy,CHANKYA PURI,NEW DELHI,77.19591,28.60305,0.005106,approximate proxy
+Unidentified bodies,56,2026-10,police_station_proxy,JANAK PURI,WEST,77.08186,28.6284,0.005106,approximate proxy
+Unidentified bodies,57,2026-10,police_station_proxy,Shastri Park PS,NORTH EAST,77.26185,28.67215,0.005062,approximate proxy
+Unidentified bodies,58,2026-10,police_station_proxy,MAYA PURI,WEST,77.12024,28.62514,0.005062,approximate proxy
+Unidentified bodies,59,2026-10,police_station_proxy,NABI KARIM,CENTRAL,77.21756,28.64797,0.004974,approximate proxy
+Unidentified bodies,60,2026-10,police_station_proxy,Aman Vihar PS,ROHINI,77.06036,28.710149,0.004885,approximate proxy
+Unidentified bodies,61,2026-10,police_station_proxy,CHANDNI MAHAL,CENTRAL,77.2362,28.64379,0.004797,approximate proxy
+Unidentified bodies,62,2026-10,police_station_proxy,MUNDKA,OUTER DISTRICT,76.95998,28.66986,0.004753,approximate proxy
+Unidentified bodies,63,2026-10,police_station_proxy,Wazirabad PS,NORTH,77.22436,28.70708,0.004708,approximate proxy
+Unidentified bodies,64,2026-10,police_station_proxy,SEELAMPUR,NORTH EAST,77.2683,28.67415,0.004708,approximate proxy
+Unidentified bodies,65,2026-10,police_station_proxy,HAUZ KHAS,SOUTH,77.20824,28.54916,0.004708,approximate proxy
+Unidentified bodies,66,2026-10,police_station_proxy,BADARPUR,SOUTH-EAST,77.30399,28.49369,0.004664,approximate proxy
+Unidentified bodies,67,2026-10,police_station_proxy,KALKAJI,SOUTH-EAST,77.25597,28.54703,0.00462,approximate proxy
+Unidentified bodies,68,2026-10,police_station_proxy,Raj Park PS,OUTER DISTRICT,77.0815,28.6942,0.004576,approximate proxy
+Unidentified bodies,69,2026-10,police_station_proxy,TILAK MARG,NEW DELHI,77.23544,28.61796,0.004532,approximate proxy
+Unidentified bodies,70,2026-10,police_station_proxy,PREET VIHAR,EAST,77.29532,28.63888,0.004311,approximate proxy
+Unidentified bodies,71,2026-10,police_station_proxy,KESHAV PURAM,NORTH WEST,77.15969,28.68405,0.004311,approximate proxy
+Unidentified bodies,72,2026-10,police_station_proxy,NAJAF GARH,DWARKA,76.98286,28.60997,0.004222,approximate proxy
+Unidentified bodies,73,2026-10,police_station_proxy,SOUTH CAMPUS,SOUTH WEST,77.17861,28.57062,0.004222,approximate proxy
+Unidentified bodies,74,2026-10,police_station_proxy,OKHLA INDUSTRIAL AREA,SOUTH-EAST,77.27448,28.52713,0.004222,approximate proxy
+Unidentified bodies,75,2026-10,police_station_proxy,KHYALA,WEST,77.11356,28.65748,0.004178,approximate proxy
+Unidentified bodies,76,2026-10,police_station_proxy,DWARKA SOUTH,DWARKA,77.06677,28.57811,0.004134,approximate proxy
+Unidentified bodies,77,2026-10,police_station_proxy,PARLIAMENT STREET,NEW DELHI,77.21279,28.62501,0.004134,approximate proxy
+Unidentified bodies,78,2026-10,police_station_proxy,MUKHERJEE NAGAR,NORTH WEST,77.20871,28.70021,0.004089,approximate proxy
+Unidentified bodies,79,2026-10,police_station_proxy,MANSAROVAR PARK,SHAHDARA,77.29846,28.68271,0.004045,approximate proxy
+Unidentified bodies,80,2026-10,police_station_proxy,MAYUR VIHAR PH-I,N/A,77.30329,28.60702,0.003913,approximate proxy
+Unidentified bodies,81,2026-10,police_station_proxy,NEW ASHOK NAGAR,EAST,77.32641,28.61411,0.003913,approximate proxy
+Unidentified bodies,82,2026-10,police_station_proxy,Bhalswa Diary PS,Outer North,77.1655,28.742837,0.003913,approximate proxy
+Unidentified bodies,83,2026-10,police_station_proxy,BHARAT NAGAR,NORTH WEST,77.17814,28.6805,0.003868,approximate proxy
+Unidentified bodies,84,2026-10,police_station_proxy,VASANT KUNJ SOUTH,SOUTH WEST,77.15174,28.53537,0.003868,approximate proxy
+Unidentified bodies,85,2026-10,police_station_proxy,NIHAL VIHAR,OUTER DISTRICT,77.07127,28.66492,0.003603,approximate proxy
+Unidentified bodies,86,2026-10,police_station_proxy,SUBHASH PLACE,METRO,77.14415,28.68929,0.003559,approximate proxy
+Unidentified bodies,87,2026-10,police_station_proxy,GHAZIPUR,EAST,77.33269,28.6249,0.003515,approximate proxy
+Unidentified bodies,88,2026-10,police_station_proxy,BINDA PUR,DWARKA,77.06611,28.60906,0.003471,approximate proxy
+Unidentified bodies,89,2026-10,police_station_proxy,KIRTI NAGAR,WEST,77.12137,28.62678,0.003471,approximate proxy
+Unidentified bodies,90,2026-10,police_station_proxy,VIKASPURI,WEST,77.06792,28.63007,0.003426,approximate proxy
+Unidentified bodies,91,2026-10,police_station_proxy,INDER PURI,WEST,77.14513,28.63117,0.003294,approximate proxy
+Unidentified bodies,92,2026-10,police_station_proxy,Shahbad Diary PS,Outer North,77.07902,28.747477,0.003249,approximate proxy
+Unidentified bodies,93,2026-10,police_station_proxy,GANDHI NAGAR,SHAHDARA,77.26762,28.65997,0.003205,approximate proxy
+Unidentified bodies,94,2026-10,police_station_proxy,SARITA VIHAR,SOUTH-EAST,77.28169,28.54023,0.003205,approximate proxy
+Unidentified bodies,95,2026-10,police_station_proxy,NEW FRIENDS COLONY,SOUTH-EAST,77.2674,28.56237,0.003028,approximate proxy
+Unidentified bodies,96,2026-10,police_station_proxy,PANDAV NAGAR,EAST,77.30272,28.62011,0.00294,approximate proxy
+Unidentified bodies,97,2026-10,police_station_proxy,FARSH BAZAR,SHAHDARA,77.28668,28.66502,0.00294,approximate proxy
+Unidentified bodies,98,2026-10,police_station_proxy,Narela PS,Outer North,77.08797,28.853313,0.002896,approximate proxy
+Unidentified bodies,99,2026-10,police_station_proxy,FATEHPUR BERI,SOUTH,77.15239,28.46656,0.002763,approximate proxy
+Unidentified bodies,100,2026-10,police_station_proxy,MADHU VIHAR,EAST,77.3062,28.62516,0.002763,approximate proxy
+Unidentified bodies,101,2026-10,police_station_proxy,TUGHLAK ROAD,NEW DELHI,77.21057,28.59799,0.002675,approximate proxy
+Unidentified bodies,102,2026-10,police_station_proxy,HARSH VIHAR,NORTH EAST,77.31863,28.70589,0.002586,approximate proxy
+Unidentified bodies,103,2026-10,police_station_proxy,SHALIMAR BAGH,NORTH WEST,77.15716,28.71711,0.002586,approximate proxy
+Unidentified bodies,104,2026-10,police_station_proxy,KRISHNA NAGAR,SHAHDARA,77.28022,28.66722,0.002586,approximate proxy
+Unidentified bodies,105,2026-10,police_station_proxy,PASCHIM VIHAR EAST,OUTER DISTRICT,77.10096,28.670991,0.002498,approximate proxy
+Unidentified bodies,106,2026-10,police_station_proxy,Narela Industrial Area PS,Outer North,77.09472,28.83184,0.002498,approximate proxy
+Unidentified bodies,107,2026-10,police_station_proxy,BARAKHAMBA ROAD,NEW DELHI,77.22575,28.63068,0.002454,approximate proxy
+Unidentified bodies,108,2026-10,police_station_proxy,Kalandi Kunj PS,SOUTH-EAST,77.31966,28.50389,0.002454,approximate proxy
+Unidentified bodies,109,2026-10,police_station_proxy,RANHOLA,OUTER DISTRICT,77.03561,28.65392,0.002365,approximate proxy
+Unidentified bodies,110,2026-10,police_station_proxy,ANAND VIHAR,SHAHDARA,77.2936,28.65389,0.002365,approximate proxy
+Unidentified bodies,111,2026-10,police_station_proxy,ASHOK VIHAR,NORTH WEST,77.17379,28.69254,0.002321,approximate proxy
+Unidentified bodies,112,2026-10,police_station_proxy,VIJAY VIHAR,ROHINI,77.10202,28.71006,0.002321,approximate proxy
+Unidentified bodies,113,2026-10,police_station_proxy,SEEMAPURI,SHAHDARA,77.31609,28.67792,0.002321,approximate proxy
+Unidentified bodies,114,2026-10,police_station_proxy,PALAM VILLAGE,SOUTH WEST,77.08295,28.5883,0.002321,approximate proxy
+Unidentified bodies,115,2026-10,police_station_proxy,SHAHDARA,SHAHDARA,77.27469,28.67358,0.002277,approximate proxy
+Unidentified bodies,116,2026-10,police_station_proxy,Sorojini Nagar PS,SOUTH WEST,77.19967,28.57453,0.002277,approximate proxy
+Unidentified bodies,117,2026-10,police_station_proxy,JYOTI NAGAR,NORTH EAST,77.30478,28.69216,0.002233,approximate proxy
+Unidentified bodies,118,2026-10,police_station_proxy,VIVEK VIHAR,SHAHDARA,77.30642,28.66698,0.002233,approximate proxy
+Unidentified bodies,119,2026-10,police_station_proxy,MEHRAULI,SOUTH,77.17965,28.52165,0.002233,approximate proxy
+Unidentified bodies,120,2026-10,police_station_proxy,KAROL BAGH,CENTRAL,77.19293,28.65235,0.002144,approximate proxy
+Unidentified bodies,121,2026-10,police_station_proxy,BHAJAN PURA,NORTH EAST,77.26486,28.70112,0.002144,approximate proxy
+Unidentified bodies,122,2026-10,police_station_proxy,BEGUM PUR,ROHINI,77.06503,28.71845,0.002144,approximate proxy
+Unidentified bodies,123,2026-10,police_station_proxy,ROOP NAGAR,NORTH,77.20254,28.68486,0.002144,approximate proxy
+Unidentified bodies,124,2026-10,police_station_proxy,VASANT KUNJ NORTH,SOUTH WEST,77.15174,28.53537,0.002144,approximate proxy
+Unidentified bodies,125,2026-10,police_station_proxy,PRASAD NAGAR,CENTRAL,77.18074,28.64797,0.0021,approximate proxy
+Unidentified bodies,126,2026-10,police_station_proxy,DWARKA NORTH,DWARKA,77.02835,28.59092,0.002056,approximate proxy
+Unidentified bodies,127,2026-10,police_station_proxy,NARAINA,WEST,77.13789,28.63304,0.001967,approximate proxy
+Unidentified bodies,128,2026-10,police_station_proxy,CHHAWALA,DWARKA,76.99493,28.58688,0.001923,approximate proxy
+Unidentified bodies,129,2026-10,police_station_proxy,Prem Nagar PS,ROHINI,77.0559,28.708,0.001923,approximate proxy
+Unidentified bodies,130,2026-10,police_station_proxy,KARAWAL NAGAR,NORTH EAST,77.27518,28.73285,0.001923,approximate proxy
+Unidentified bodies,131,2026-10,police_station_proxy,RANJIT NAGAR,CENTRAL,77.15861,28.64744,0.001835,approximate proxy
+Unidentified bodies,132,2026-10,police_station_proxy,DABRI,DWARKA,77.08538,28.61303,0.001835,approximate proxy
+Unidentified bodies,133,2026-10,police_station_proxy,Laxmi Nagar,EAST,77.27053,28.637361,0.001702,approximate proxy
+Unidentified bodies,134,2026-10,police_station_proxy,KASHMIRI GATE METRO,METRO,77.22643,28.66641,0.001702,approximate proxy
+Unidentified bodies,135,2026-10,police_station_proxy,MAURICE NAGAR,NORTH,77.20664,28.6926,0.001702,approximate proxy
+Unidentified bodies,136,2026-10,police_station_proxy,HAUZ QAZI,CENTRAL,77.22532,28.64297,0.001614,approximate proxy
+Unidentified bodies,137,2026-10,police_station_proxy,Swarup Nagar PS,Outer North,77.15608,28.758587,0.001614,approximate proxy
+Unidentified bodies,138,2026-10,police_station_proxy,PRASHANT VIHAR,ROHINI,77.12731,28.71789,0.001614,approximate proxy
+Unidentified bodies,139,2026-10,police_station_proxy,PATEL NAGAR,CENTRAL,77.15779,28.65227,0.001525,approximate proxy
+Unidentified bodies,140,2026-10,police_station_proxy,UTTAM NAGAR,DWARKA,77.06487,28.62532,0.001525,approximate proxy
+Unidentified bodies,141,2026-10,police_station_proxy,NEB SARAI,SOUTH,77.21401,28.49895,0.001525,approximate proxy
+Unidentified bodies,142,2026-10,police_station_proxy,Dayal Pur PS,NORTH EAST,77.28627,28.70208,0.001437,approximate proxy
+Unidentified bodies,143,2026-10,police_station_proxy,Shaheen Bagh PS,SOUTH-EAST,77.2963,28.5493,0.001393,approximate proxy
+Unidentified bodies,144,2026-10,police_station_proxy,Mohan Garden PS,DWARKA,77.03704,28.63283,0.001348,approximate proxy
+Unidentified bodies,145,2026-10,police_station_proxy,Budh Vihar PS,ROHINI,77.1079,28.7028,0.001348,approximate proxy
+Unidentified bodies,146,2026-10,police_station_proxy,AMBEDKAR NAGAR,SOUTH,77.24094,28.52044,0.001348,approximate proxy
+Unidentified bodies,147,2026-10,police_station_proxy,R. K. PURAM,N/A,77.17839,28.57067,0.001348,approximate proxy
+Unidentified bodies,148,2026-10,police_station_proxy,JAIT PUR,SOUTH-EAST,77.31889,28.53064,0.001348,approximate proxy
+Unidentified bodies,149,2026-10,police_station_proxy,ANAND PARBAT,CENTRAL,77.17395,28.66019,0.00126,approximate proxy
+Unidentified bodies,150,2026-10,police_station_proxy,MALVIYA NAGAR,SOUTH,77.20459,28.53064,0.00126,approximate proxy
+Unidentified bodies,151,2026-10,police_station_proxy,Kishan Garh PS,SOUTH WEST,77.16893,28.51856,0.00126,approximate proxy
+Unidentified bodies,152,2026-10,police_station_proxy,PUL PRAHLAD PUR,SOUTH-EAST,77.29086,28.50202,0.00126,approximate proxy
+Unidentified bodies,153,2026-10,police_station_proxy,DEFENCE COLONY,SOUTH,77.23299,28.56486,0.001216,approximate proxy
+Unidentified bodies,154,2026-10,police_station_proxy,JAFFARPUR KALAN,DWARKA,76.91462,28.59586,0.001127,approximate proxy
+Unidentified bodies,155,2026-10,police_station_proxy,BABA HARIDAS NAGAR,DWARKA,76.97471,28.61001,0.001127,approximate proxy
+Unidentified bodies,156,2026-10,police_station_proxy,SOUTH ROHINI,ROHINI,77.11558,28.70236,0.001127,approximate proxy
+Unidentified bodies,157,2026-10,police_station_proxy,Shakar Pur PS,EAST,77.27053,28.637361,0.001083,approximate proxy
+Unidentified bodies,158,2026-10,police_station_proxy,Rani Bagh PS,OUTER DISTRICT,77.11925,28.697698,0.001083,approximate proxy
+Unidentified bodies,159,2026-10,police_station_proxy,GEETA COLONY,SHAHDARA,77.27606,28.65534,0.001083,approximate proxy
+Unidentified bodies,160,2026-10,police_station_proxy,SAKET,SOUTH,77.22738,28.52916,0.001083,approximate proxy
+Unidentified bodies,161,2026-10,police_station_proxy,Tigri PS,SOUTH,77.23855,28.49911,0.001083,approximate proxy
+Unidentified bodies,162,2026-10,police_station_proxy,I.G.I.AIRPORT,N/A,77.12184,28.56484,0.001039,approximate proxy
+Unidentified bodies,163,2026-10,police_station_proxy,RAJINDER NAGAR,CENTRAL,77.18275,28.63459,0.000995,approximate proxy
+Unidentified bodies,164,2026-10,police_station_proxy,SAGAR PUR,SOUTH WEST,77.08652,28.59149,0.000906,approximate proxy
+Unidentified bodies,165,2026-10,police_station_proxy,JAMIA NAGAR,SOUTH-EAST,77.2922,28.56193,0.000818,approximate proxy
+Unidentified bodies,166,2026-10,police_station_proxy,SONIA VIHAR,NORTH EAST,77.24588,28.74596,0.000774,approximate proxy
+Unidentified bodies,167,2026-10,police_station_proxy,JAFRABAD,NORTH EAST,77.27287,28.67905,0.000729,approximate proxy
+Unidentified bodies,168,2026-10,police_station_proxy,GREATER KAILASH,SOUTH,77.23273,28.55426,0.000685,approximate proxy
+Unidentified bodies,169,2026-10,police_station_proxy,IGI AIRPORT METRO,IGI AIRPORT,77.12183,28.64978,0.000641,approximate proxy
+Unidentified bodies,170,2026-10,police_station_proxy,Maidan Garhi PS,SOUTH,77.18004,28.52299,0.000641,approximate proxy
+Unidentified bodies,171,2026-10,police_station_proxy,SANGAM VIHAR,SOUTH,77.24315,28.50962,0.000597,approximate proxy
+Unidentified bodies,172,2026-10,police_station_proxy,VASANT VIHAR,SOUTH WEST,77.16904,28.55803,0.000553,approximate proxy
+Unidentified bodies,173,2026-10,police_station_proxy,MAURYA ENCLAVE,NORTH WEST,77.14611,28.70027,0.000464,approximate proxy
+Unidentified bodies,174,2026-10,police_station_proxy,Jagat Puri PS,SHAHDARA,77.28382,28.643803,0.000464,approximate proxy
+Unidentified bodies,175,2026-10,police_station_proxy,Janak Puri Metro,WEST,77.02236,28.61495,0.000376,approximate proxy
+Unidentified bodies,176,2026-10,police_station_proxy,CHITRANJAN PARK,SOUTH,77.24945,28.53665,0.000376,approximate proxy
+Unidentified bodies,177,2026-10,police_station_proxy,DOMESTIC AIRPORT,IGI AIRPORT,77.08729,28.55761,0.000332,approximate proxy
+Unidentified bodies,178,2026-10,police_station_proxy,CRIME BRANCH,CRIME BRANCH,77.19957,28.53128,0.000111,approximate proxy
+Unidentified bodies,179,2026-10,police_station_proxy,SECTOR 23 DWARKA,DWARKA,77.05814,28.56464,0.000111,approximate proxy
+Unidentified bodies,180,2026-10,police_station_proxy,MANDAWLI FAZAL PUR,EAST,77.30633,28.62521,0.000111,approximate proxy
+Unidentified bodies,181,2026-10,police_station_proxy,E-Police Station Delhi,N/A,77.22612,28.64265,0.000111,approximate proxy
+Unidentified bodies,182,2026-10,police_station_proxy,ECONOMIC OFFENCES WING,EOW,77.203,28.63937,0.000111,approximate proxy
+Unidentified bodies,183,2026-10,police_station_proxy,YAMUNA DEPOT METRO,METRO,77.26793,28.62289,0.000111,approximate proxy
+Unidentified bodies,184,2026-10,police_station_proxy,Metro Police Station Okhla Vihar,METRO,77.28787,28.5287,0.000111,approximate proxy
+Unidentified bodies,185,2026-10,police_station_proxy,Metro Police Station Ghitorni,METRO,77.18657,28.51315,0.000111,approximate proxy
+Unidentified bodies,186,2026-10,police_station_proxy,RITHALA METRO,METRO,77.10772,28.72005,0.000111,approximate proxy
+Unidentified bodies,187,2026-10,police_station_proxy,SHASHTRI PARK METRO,METRO,77.24897,28.66878,0.000111,approximate proxy
+Unidentified bodies,188,2026-10,police_station_proxy,RAJA GARDEN METRO,METRO,77.12175,28.64994,0.000111,approximate proxy
+Unidentified bodies,189,2026-10,police_station_proxy,Metro Police Station Nangloi,METRO,77.06538,28.68406,0.000111,approximate proxy
+Unidentified bodies,190,2026-10,police_station_proxy,INA Metro,METRO,77.26793,28.62289,0.000111,approximate proxy
+Unidentified bodies,191,2026-10,police_station_proxy,Metro Police Station Rajiv Chowk,METRO,77.12175,28.64994,0.000111,approximate proxy
+Unidentified bodies,192,2026-10,police_station_proxy,Lajpat Nagar Metro,SOUTH-EAST,77.27543,28.54302,0.000111,approximate proxy
+Unidentified bodies,193,2026-10,police_station_proxy,Metro Police Station Pragati Maidan,METRO,77.26793,28.62289,0.000111,approximate proxy
+Unidentified bodies,194,2026-10,police_station_proxy,Metro Police Station Azadpur,METRO,77.17973,28.70744,0.000111,approximate proxy
+Unidentified bodies,195,2026-10,police_station_proxy,Metro Police Station Netaji Subhash Place,METRO,77.15263,28.69604,0.000111,approximate proxy
+Unidentified bodies,196,2026-10,police_station_proxy,EXHIBITION GROUND,NEW DELHI,77.24126,28.61665,0.000111,approximate proxy
+Unidentified bodies,197,2026-10,police_station_proxy,SOUTH AVENUE,NEW DELHI,77.1999,28.60728,0.000111,approximate proxy
+Unidentified bodies,198,2026-10,police_station_proxy,YAMUNA VHR/GOKULPURI,N/A,77.28051,28.70238,0.000111,approximate proxy
+Unidentified bodies,199,2026-10,police_station_proxy,OLD DELHI (DELHI MAIN) RLY. STN.,N/A,77.22713,28.66077,0.000111,approximate proxy
+Unidentified bodies,200,2026-10,police_station_proxy,NEW DELHI RLY. STN.,N/A,77.21891,28.64392,0.000111,approximate proxy
+Unidentified bodies,201,2026-10,police_station_proxy,HAZRAT NIZAMUDDIN RLY STN,RAILWAYS,77.25346,28.58817,0.000111,approximate proxy
+Unidentified bodies,202,2026-10,police_station_proxy,SARAI ROHILLA STATION,NORTH,77.18569,28.66278,0.000111,approximate proxy
+Unidentified bodies,203,2026-10,police_station_proxy,DELHI CANTT RLY. STATION,SOUTH WEST,77.116,28.61201,0.000111,approximate proxy
+Unidentified bodies,204,2026-10,police_station_proxy,SUBZI MANDI RLY STATION,NORTH,77.20004,28.66801,0.000111,approximate proxy
+Unidentified bodies,205,2026-10,police_station_proxy,Kanjhawala PS,ROHINI,77.0033,28.725555,0.000111,approximate proxy
+Unidentified bodies,206,2026-10,police_station_proxy,K.M. PUR,N/A,77.2251,28.576,0.000111,approximate proxy
+Unidentified bodies,207,2026-10,police_station_proxy,HAZARAT NIZAMUDDIN,SOUTH-EAST,77.24388,28.59213,0.000111,approximate proxy
+Unidentified bodies,208,2026-10,police_station_proxy,SPECIAL CELL (SB),N/A,77.22727,28.58801,0.000111,approximate proxy
+Unidentified bodies,209,2026-10,police_station_proxy,CRIME (WOMEN) CELL NANAK PURA,N/A,77.16835,28.58244,0.000111,approximate proxy
+Unidentified bodies,210,2026-10,police_station_proxy,VIGILANCE PS,VIGILANCE,77.22584,28.63088,0.000111,approximate proxy
+Stolen vehicles,1,2026-10,metro,Samaypur Badli,,77.1382701,28.7446411,0.08930012,approximate proxy
+Stolen vehicles,2,2026-10,metro,Nawada,,77.0450787,28.6202758,0.08127902,approximate proxy
+Stolen vehicles,3,2026-10,metro,Paschim Vihar West,,77.1022154,28.6786018,0.04740731,approximate proxy
+Stolen vehicles,4,2026-10,metro,Govind Puri,,77.2642761,28.5445521,0.04461736,approximate proxy
+Stolen vehicles,5,2026-10,metro,Khajuri Khas,,77.2544989,28.7052606,0.03659626,approximate proxy
+Stolen vehicles,6,2026-10,metro,Dhansa Bus Stand,,76.9785264,28.6119086,0.03537566,approximate proxy
+Stolen vehicles,7,2026-10,metro,Karol Bagh,,77.1885235,28.6440122,0.03533207,approximate proxy
+Stolen vehicles,8,2026-10,metro,Rithala,,77.1071813,28.7208064,0.03467818,approximate proxy
+Stolen vehicles,9,2026-10,metro,Tughlakabad,,77.299305,28.5024441,0.02935984,approximate proxy
+Stolen vehicles,10,2026-10,metro,Nirman Vihar,,77.2868145,28.6364592,0.02905469,approximate proxy
+Stolen vehicles,11,2026-10,metro,Mundka Industrial Area,,77.0171485,28.6833701,0.02617755,approximate proxy
+Stolen vehicles,12,2026-10,metro,Kanhaiya Nagar,,77.1647754,28.6824082,0.02604678,approximate proxy
+Stolen vehicles,13,2026-10,metro,Nanaksar - Sonia Vihar,,77.2425095,28.7087185,0.0234312,approximate proxy
+Stolen vehicles,14,2026-10,metro,Moti Nagar,,77.1424288,28.657859,0.02085922,approximate proxy
+Stolen vehicles,15,2026-10,metro,Burari,,77.1995697,28.7298286,0.02072844,approximate proxy
+Stolen vehicles,16,2026-10,metro,Mayur Vihar - I (Blue Line),,77.2895398,28.604064,0.02059766,approximate proxy
+Stolen vehicles,17,2026-10,metro,Krishna Nagar,,77.2901199,28.6578127,0.02046688,approximate proxy
+Stolen vehicles,18,2026-10,metro,Shiv Vihar,,77.2894599,28.721381,0.01963861,approximate proxy
+Stolen vehicles,19,2026-10,metro,Nangloi,,77.0647319,28.6824007,0.01933346,approximate proxy
+Stolen vehicles,20,2026-10,metro,Saket,,77.2022237,28.521168,0.01898472,approximate proxy
+Stolen vehicles,21,2026-10,metro,Greater Kailash,,77.2384925,28.5419077,0.01750256,approximate proxy
+Stolen vehicles,22,2026-10,metro,Krishna Park Extension,,77.0843425,28.6477917,0.01580244,approximate proxy
+Stolen vehicles,23,2026-10,metro,Dashrath Puri,,77.0823751,28.60185,0.01567166,approximate proxy
+Stolen vehicles,24,2026-10,metro,Ashok Park Main,,77.155291,28.6716045,0.0141895,approximate proxy
+Stolen vehicles,25,2026-10,metro,Jhilmil,,77.3123949,28.6757197,0.012315,approximate proxy
+Stolen vehicles,26,2026-10,metro,Sultanpur,,77.1613745,28.4991235,0.01222782,approximate proxy
+Stolen vehicles,27,2026-10,metro,Kalindi Kunj,,77.3101107,28.542916,0.01161752,approximate proxy
+Stolen vehicles,28,2026-10,metro,Gokulpuri,,77.2861253,28.7024752,0.01148674,approximate proxy
+Stolen vehicles,29,2026-10,metro,Ashram,,77.2585979,28.5724231,0.01126877,approximate proxy
+Stolen vehicles,30,2026-10,metro,Adarsh Nagar,,77.1704223,28.7165805,0.01105081,approximate proxy
+Stolen vehicles,31,2026-10,metro,North Pitampura - Prashant Vihar,,77.1387306,28.7130743,0.01083284,approximate proxy
+Stolen vehicles,32,2026-10,metro,Okhla Vihar,,77.291877,28.5612999,0.01078925,approximate proxy
+Stolen vehicles,33,2026-10,metro,Trilokpuri Sanjay Lake,,77.3088549,28.613453,0.01013536,approximate proxy
+Stolen vehicles,34,2026-10,metro,Deepali Chowk,,77.1182795,28.6981,0.00935068,approximate proxy
+Stolen vehicles,35,2026-10,metro,Lajpat Nagar (Pink Line),,77.2385055,28.56958,0.00930709,approximate proxy
+Stolen vehicles,36,2026-10,metro,Shahdara,,77.2898858,28.6734298,0.00874038,approximate proxy
+Stolen vehicles,37,2026-10,metro,Tagore Garden,,77.11282,28.6437265,0.0086532,approximate proxy
+Stolen vehicles,38,2026-10,metro,Pratap Nagar,,77.1988974,28.6667177,0.00847882,approximate proxy
+Stolen vehicles,39,2026-10,metro,Chandni Chowk,,77.2303375,28.6584227,0.00843523,approximate proxy
+Stolen vehicles,40,2026-10,metro,Seelampur,,77.2668137,28.6698165,0.00808649,approximate proxy
+Stolen vehicles,41,2026-10,metro,Model Town,,77.1939912,28.7027136,0.00791212,approximate proxy
+Stolen vehicles,42,2026-10,metro,Malviya Nagar,,77.2048241,28.5290656,0.00656074,approximate proxy
+Stolen vehicles,43,2026-10,metro,IGI Airport,,77.0866995,28.5564626,0.00573247,approximate proxy
+Stolen vehicles,44,2026-10,metro,Yashobhoomi Dwarka Sector 25,,77.0453073,28.5508323,0.00516576,approximate proxy
+Stolen vehicles,45,2026-10,metro,Udyog Nagar,,77.0808492,28.681103,0.00451187,approximate proxy
+Stolen vehicles,46,2026-10,metro,Ghevra,,76.9961591,28.6852384,0.00420672,approximate proxy
+Stolen vehicles,47,2026-10,metro,Delhi Aerocity,,77.1207949,28.5487786,0.00364001,approximate proxy
+Stolen vehicles,48,2026-10,metro,Chhatarpur,,77.1750019,28.5067242,0.00337845,approximate proxy
+Stolen vehicles,49,2026-10,metro,Shadipur,,77.1582587,28.6515829,0.00316049,approximate proxy
+Stolen vehicles,50,2026-10,metro,Dabri Mor - Janakpuri South,,77.0851893,28.61572,0.00302971,approximate proxy
+Stolen vehicles,51,2026-10,metro,Dwarka Sector 14,,77.0259765,28.6022218,0.00298612,approximate proxy
+Stolen vehicles,52,2026-10,metro,Qutab Minar,,77.1864532,28.512951,0.00298612,approximate proxy
+Stolen vehicles,53,2026-10,metro,Jasola Apollo,,77.283267,28.538176,0.00289893,approximate proxy
+Stolen vehicles,54,2026-10,metro,Peera Garhi,,77.0926793,28.6798074,0.00268097,approximate proxy
+Stolen vehicles,55,2026-10,metro,Ramakrishna Ashram Marg,,77.2085787,28.6392436,0.00268097,approximate proxy
+Stolen vehicles,56,2026-10,metro,Mayapuri,,77.1297333,28.6371795,0.00237581,approximate proxy
+Stolen vehicles,57,2026-10,metro,Sarai Kale Khan - Nizamuddin,,77.2572494,28.5887494,0.00237581,approximate proxy
+Stolen vehicles,58,2026-10,metro,"Rohini Sector 18, 19",,77.1398526,28.7383795,0.00233222,approximate proxy
+Stolen vehicles,59,2026-10,metro,Dwarka Sector 21,,77.0585605,28.5519218,0.00220144,approximate proxy
+Stolen vehicles,60,2026-10,metro,Delhi Gate,,77.2407795,28.6392174,0.00211426,approximate proxy
+Stolen vehicles,61,2026-10,metro,Dwarka Sector 11,,77.0494433,28.586443,0.00180911,approximate proxy
+Stolen vehicles,62,2026-10,metro,Panchsheel Park,,77.2210916,28.5423747,0.00159114,approximate proxy
+Stolen vehicles,63,2026-10,metro,Shivaji Park,,77.1304722,28.6750317,0.00159114,approximate proxy
+Stolen vehicles,64,2026-10,metro,Sarojini Nagar,,77.1980786,28.575817,0.00154755,approximate proxy
+Stolen vehicles,65,2026-10,metro,Vidhan Sabha,,77.2217271,28.6863222,0.00132958,approximate proxy
+Stolen vehicles,66,2026-10,metro,Naraina Vihar,,77.1364438,28.6243852,0.00128599,approximate proxy
+Stolen vehicles,67,2026-10,metro,Arjan Garh,,77.1257622,28.4807352,0.00119881,approximate proxy
+Stolen vehicles,68,2026-10,metro,Janpath,,77.2192587,28.6240485,0.00102443,approximate proxy
+Stolen vehicles,69,2026-10,metro,IIT Delhi,,77.1945546,28.5470121,0.00093725,approximate proxy
+Stolen vehicles,70,2026-10,metro,Jawaharlal Nehru Stadium,,77.2337833,28.5882347,0.00089366,approximate proxy
+Stolen vehicles,71,2026-10,metro,Munirka,,77.1750592,28.5568967,0.00085006,approximate proxy
+Stolen vehicles,72,2026-10,metro,Patel Nagar,,77.1692817,28.6450127,0.00085006,approximate proxy
+Stolen vehicles,73,2026-10,metro,A.I.I.M.S.,,77.2078058,28.5668602,0.00076288,approximate proxy
+Stolen vehicles,74,2026-10,metro,Vasant Vihar,,77.1611168,28.557827,0.00050132,approximate proxy
+Stolen vehicles,75,2026-10,metro,Bhikaji Cama Place,,77.1878709,28.5702618,0.00045773,approximate proxy
+Stolen vehicles,76,2026-10,metro,Durgabai Deshmukh South Campus,,77.1693925,28.5893688,0.00041413,approximate proxy
+Stolen vehicles,77,2026-10,metro,Madipur,,77.1193599,28.6764752,0.00028335,approximate proxy
+Stolen vehicles,78,2026-10,metro,Delhi Cantt,,77.1404187,28.6086201,0.00023976,approximate proxy
+Stolen vehicles,79,2026-10,metro,Guru Dronacharya,,77.1022685,28.4820212,0.00019617,approximate proxy
+Stolen vehicles,80,2026-10,metro,Pandit Shree Ram Sharma,,76.9511988,28.689281,0.00015258,approximate proxy
+Stolen vehicles,81,2026-10,metro,Seva Teerth,,77.211796,28.6095136,6.539e-05,approximate proxy
+Stolen vehicles,82,2026-10,metro,Akshardham,,77.279424,28.617933,2.18e-05,approximate proxy
+Stolen vehicles,83,2026-10,metro,Anand Vihar (Blue Line),,77.3158749,28.6468336,2.18e-05,approximate proxy
+Stolen vehicles,84,2026-10,metro,Anand Vihar (Pink Line),,77.3155317,28.6466157,2.18e-05,approximate proxy
+Stolen vehicles,85,2026-10,metro,Arthala,,77.3918919,28.676999,2.18e-05,approximate proxy
+Stolen vehicles,86,2026-10,metro,Azadpur (Pink Line),,77.1819488,28.7057821,2.18e-05,approximate proxy
+Stolen vehicles,87,2026-10,metro,Azadpur (Yellow Line),,77.1803722,28.7070448,2.18e-05,approximate proxy
+Stolen vehicles,88,2026-10,metro,Badarpur,,77.3030303,28.4932579,2.18e-05,approximate proxy
+Stolen vehicles,89,2026-10,metro,Badhkal Mor,,77.3103481,28.4227134,2.18e-05,approximate proxy
+Stolen vehicles,90,2026-10,metro,Bahadurgarh City,,76.9354807,28.6907783,2.18e-05,approximate proxy
+Stolen vehicles,91,2026-10,metro,Barakhambha Road,,77.2250046,28.6297676,2.18e-05,approximate proxy
+Stolen vehicles,92,2026-10,metro,Bata Chowk,,77.3134372,28.3859508,2.18e-05,approximate proxy
+Stolen vehicles,93,2026-10,metro,Bhajanpura,,77.2626474,28.7035987,2.18e-05,approximate proxy
+Stolen vehicles,94,2026-10,metro,Bhalaswa,,77.168087,28.7369574,2.18e-05,approximate proxy
+Stolen vehicles,95,2026-10,metro,Botanical Garden,,77.3341061,28.5639566,2.18e-05,approximate proxy
+Stolen vehicles,96,2026-10,metro,Botanical Garden (Blue Line),,77.3343995,28.5639434,2.18e-05,approximate proxy
+Stolen vehicles,97,2026-10,metro,Botanical Garden (Magenta Line),,77.3338373,28.5639051,2.18e-05,approximate proxy
+Stolen vehicles,98,2026-10,metro,Brigadier Hoshiyar Singh,,76.9192027,28.6974603,2.18e-05,approximate proxy
+Stolen vehicles,99,2026-10,metro,Central Secretariat,,77.2122822,28.6158794,2.18e-05,approximate proxy
+Stolen vehicles,100,2026-10,metro,Chawri Bazaar,,77.2265153,28.6492649,2.18e-05,approximate proxy
+Stolen vehicles,101,2026-10,metro,Chirag Delhi,,77.2303164,28.5411108,2.18e-05,approximate proxy
+Stolen vehicles,102,2026-10,metro,Civil Lines,,77.2250299,28.6768508,2.18e-05,approximate proxy
+Stolen vehicles,103,2026-10,metro,Dhaula Kuan,,77.1617158,28.5918719,2.18e-05,approximate proxy
+Stolen vehicles,104,2026-10,metro,Dilli Haat - INA (Pink Line),,77.2075857,28.5736524,2.18e-05,approximate proxy
+Stolen vehicles,105,2026-10,metro,Dilli Haat - INA (Yellow Line),,77.2093017,28.5741769,2.18e-05,approximate proxy
+Stolen vehicles,106,2026-10,metro,Dilshad Garden,,77.3214466,28.6758661,2.18e-05,approximate proxy
+Stolen vehicles,107,2026-10,metro,Dwarka - Kakrola (Blue Line),,77.0227628,28.6149362,2.18e-05,approximate proxy
+Stolen vehicles,108,2026-10,metro,Dwarka - Kakrola (Grey Line),,77.0224342,28.6158874,2.18e-05,approximate proxy
+Stolen vehicles,109,2026-10,metro,Dwarka Mor,,77.0332792,28.61931,2.18e-05,approximate proxy
+Stolen vehicles,110,2026-10,metro,Dwarka Sector 10,,77.0574996,28.5810577,2.18e-05,approximate proxy
+Stolen vehicles,111,2026-10,metro,Dwarka Sector 12,,77.0407315,28.5922362,2.18e-05,approximate proxy
+Stolen vehicles,112,2026-10,metro,Dwarka Sector 13,,77.0335407,28.597009,2.18e-05,approximate proxy
+Stolen vehicles,113,2026-10,metro,Dwarka Sector 8,,77.0670366,28.5656109,2.18e-05,approximate proxy
+Stolen vehicles,114,2026-10,metro,Dwarka Sector 9,,77.0653316,28.574272,2.18e-05,approximate proxy
+Stolen vehicles,115,2026-10,metro,East Azad Nagar,,77.2848431,28.6646764,2.18e-05,approximate proxy
+Stolen vehicles,116,2026-10,metro,East Vinod Nagar - Mayur Vihar - II,,77.3054069,28.6200437,2.18e-05,approximate proxy
+Stolen vehicles,117,2026-10,metro,Escorts Mujesar,,77.3149248,28.3700968,2.18e-05,approximate proxy
+Stolen vehicles,118,2026-10,metro,ESI - Basaidarapur,,77.1272678,28.6580737,2.18e-05,approximate proxy
+Stolen vehicles,119,2026-10,metro,Ghitorni,,77.1491866,28.493751,2.18e-05,approximate proxy
+Stolen vehicles,120,2026-10,metro,Green Park,,77.2067933,28.5580071,2.18e-05,approximate proxy
+Stolen vehicles,121,2026-10,metro,GTB Nagar,,77.2063998,28.6981333,2.18e-05,approximate proxy
+Stolen vehicles,122,2026-10,metro,Haiderpur Badli Mor,,77.1491044,28.7299398,2.18e-05,approximate proxy
+Stolen vehicles,123,2026-10,metro,Haiderpur Village,,77.142467,28.7248993,2.18e-05,approximate proxy
+Stolen vehicles,124,2026-10,metro,Harkesh Nagar Okhla,,77.2750407,28.5429338,2.18e-05,approximate proxy
+Stolen vehicles,125,2026-10,metro,Hauz Khas (Magenta Line),,77.2050447,28.5433691,2.18e-05,approximate proxy
+Stolen vehicles,126,2026-10,metro,Hauz Khas (Yellow Line),,77.2067072,28.5442564,2.18e-05,approximate proxy
+Stolen vehicles,127,2026-10,metro,Hindon River,,77.4065374,28.6734288,2.18e-05,approximate proxy
+Stolen vehicles,128,2026-10,metro,IFFCO Chowk,,77.0724222,28.4723277,2.18e-05,approximate proxy
+Stolen vehicles,129,2026-10,metro,Inderlok (Green Line),,77.1691872,28.6727066,2.18e-05,approximate proxy
+Stolen vehicles,130,2026-10,metro,Inderlok (Red Line),,77.1703467,28.6735891,2.18e-05,approximate proxy
+Stolen vehicles,131,2026-10,metro,Indraprastha,,77.249551,28.6206019,2.18e-05,approximate proxy
+Stolen vehicles,132,2026-10,metro,IP Extension,,77.310718,28.6319032,2.18e-05,approximate proxy
+Stolen vehicles,133,2026-10,metro,ITO,,77.2410437,28.6281909,2.18e-05,approximate proxy
+Stolen vehicles,134,2026-10,metro,Jaffrabad,,77.2748055,28.6826822,2.18e-05,approximate proxy
+Stolen vehicles,135,2026-10,metro,Jagatpur - Wazirabad,,77.223995,28.7211162,2.18e-05,approximate proxy
+Stolen vehicles,136,2026-10,metro,Jahangirpuri,,77.162658,28.7259717,2.18e-05,approximate proxy
+Stolen vehicles,137,2026-10,metro,Jama Masjid,,77.2376761,28.6500102,2.18e-05,approximate proxy
+Stolen vehicles,138,2026-10,metro,Jamia Millia Islamia,,77.2863387,28.5630488,2.18e-05,approximate proxy
+Stolen vehicles,139,2026-10,metro,Janakpuri East,,77.086757,28.633021,2.18e-05,approximate proxy
+Stolen vehicles,140,2026-10,metro,Janakpuri West,,77.07801710000001,28.629265500000002,2.18e-05,approximate proxy
+Stolen vehicles,141,2026-10,metro,Jangpura,,77.2393151,28.5830386,2.18e-05,approximate proxy
+Stolen vehicles,142,2026-10,metro,Jasola Vihar Shaheen Bagh,,77.2966578,28.5458279,2.18e-05,approximate proxy
+Stolen vehicles,143,2026-10,metro,Jhandewalan,,77.1999165,28.6443188,2.18e-05,approximate proxy
+Stolen vehicles,144,2026-10,metro,Jharoda Majra,,77.2137118,28.7249649,2.18e-05,approximate proxy
+Stolen vehicles,145,2026-10,metro,Johri Enclave,,77.2901293,28.7128806,2.18e-05,approximate proxy
+Stolen vehicles,146,2026-10,metro,Jor Bagh,,77.2125273,28.5865094,2.18e-05,approximate proxy
+Stolen vehicles,147,2026-10,metro,Kailash Colony,,77.2419637,28.5553298,2.18e-05,approximate proxy
+Stolen vehicles,148,2026-10,metro,Kalkaji Mandir,,77.25801705,28.54991535,2.18e-05,approximate proxy
+Stolen vehicles,149,2026-10,metro,Karkarduma (Blue Line),,77.3055178,28.6483176,2.18e-05,approximate proxy
+Stolen vehicles,150,2026-10,metro,Karkarduma Court,,77.2957877,28.6536001,2.18e-05,approximate proxy
+Stolen vehicles,151,2026-10,metro,Karkarduma (Pink Line),,77.3060686,28.6493434,2.18e-05,approximate proxy
+Stolen vehicles,152,2026-10,metro,Kashmere Gate,,77.2282488,28.6674493,2.18e-05,approximate proxy
+Stolen vehicles,153,2026-10,metro,Kaushambi,,77.3243429,28.6452857,2.18e-05,approximate proxy
+Stolen vehicles,154,2026-10,metro,Keshav Puram,,77.1616833,28.6889264,2.18e-05,approximate proxy
+Stolen vehicles,155,2026-10,metro,Khan Market,,77.2291281,28.6022446,2.18e-05,approximate proxy
+Stolen vehicles,156,2026-10,metro,Kirti Nagar (Blue Line),,77.1506635,28.655746,2.18e-05,approximate proxy
+Stolen vehicles,157,2026-10,metro,Kirti Nagar (Green Line),,77.1513605,28.6545409,2.18e-05,approximate proxy
+Stolen vehicles,158,2026-10,metro,Kohat Enclave,,77.1405393,28.6980415,2.18e-05,approximate proxy
+Stolen vehicles,159,2026-10,metro,Lajpat Nagar (Violet Line),,77.2364011,28.5705968,2.18e-05,approximate proxy
+Stolen vehicles,160,2026-10,metro,Lal Quila,,77.2366607,28.657483,2.18e-05,approximate proxy
+Stolen vehicles,161,2026-10,metro,Laxmi Nagar,,77.277523,28.6305974,2.18e-05,approximate proxy
+Stolen vehicles,162,2026-10,metro,Lok Kalyan Marg,,77.2110967,28.5973513,2.18e-05,approximate proxy
+Stolen vehicles,163,2026-10,metro,Madhuban Chowk,,77.1311611,28.7034175,2.18e-05,approximate proxy
+Stolen vehicles,164,2026-10,metro,Majlis Park,,77.1818406,28.724403,2.18e-05,approximate proxy
+Stolen vehicles,165,2026-10,metro,Mandawali - West Vinod Nagar,,77.3044525,28.624979,2.18e-05,approximate proxy
+Stolen vehicles,166,2026-10,metro,Mandi House,,77.2341946,28.62556355,2.18e-05,approximate proxy
+Stolen vehicles,167,2026-10,metro,Mansarovar Park,,77.3008678,28.675385,2.18e-05,approximate proxy
+Stolen vehicles,168,2026-10,metro,Maujpur-Babarpur,,77.2796973,28.6920781,2.18e-05,approximate proxy
+Stolen vehicles,169,2026-10,metro,Mayur Vihar Extension,,77.2946235,28.5941915,2.18e-05,approximate proxy
+Stolen vehicles,170,2026-10,metro,Mayur Vihar - I (Pink Line),,77.2909319,28.6036425,2.18e-05,approximate proxy
+Stolen vehicles,171,2026-10,metro,Mewala Maharajpur,,77.3082941,28.4484805,2.18e-05,approximate proxy
+Stolen vehicles,172,2026-10,metro,M G Road,,77.0798926,28.4795543,2.18e-05,approximate proxy
+Stolen vehicles,173,2026-10,metro,Millennium City Centre Gurugram,,77.0726571,28.4593429,2.18e-05,approximate proxy
+Stolen vehicles,174,2026-10,metro,Mohan Estate,,77.2946029,28.5195804,2.18e-05,approximate proxy
+Stolen vehicles,175,2026-10,metro,Mohan Nagar,,77.3840026,28.6785372,2.18e-05,approximate proxy
+Stolen vehicles,176,2026-10,metro,Moolchand,,77.2342555,28.5644044,2.18e-05,approximate proxy
+Stolen vehicles,177,2026-10,metro,Mundka,,77.0305741,28.6824341,2.18e-05,approximate proxy
+Stolen vehicles,178,2026-10,metro,Najafgarh,,76.9865067,28.6124504,2.18e-05,approximate proxy
+Stolen vehicles,179,2026-10,metro,Nangli,,77.0104375,28.6173003,2.18e-05,approximate proxy
+Stolen vehicles,180,2026-10,metro,Nangloi Railway Station,,77.0562463,28.6822009,2.18e-05,approximate proxy
+Stolen vehicles,181,2026-10,metro,Neelam Chowk Ajronda,,77.3123589,28.3976637,2.18e-05,approximate proxy
+Stolen vehicles,182,2026-10,metro,Nehru Enclave,,77.2515057,28.5460584,2.18e-05,approximate proxy
+Stolen vehicles,183,2026-10,metro,Nehru Place,,77.2517386,28.5514171,2.18e-05,approximate proxy
+Stolen vehicles,184,2026-10,metro,Netaji Subhash Place (Pink Line),,77.1542607,28.6947146,2.18e-05,approximate proxy
+Stolen vehicles,185,2026-10,metro,Netaji Subhash Place (Red Line),,77.1524856,28.6960485,2.18e-05,approximate proxy
+Stolen vehicles,186,2026-10,metro,New Ashok Nagar,,77.3015085,28.5890885,2.18e-05,approximate proxy
+Stolen vehicles,187,2026-10,metro,New Delhi,,77.2227421,28.6434826,2.18e-05,approximate proxy
+Stolen vehicles,188,2026-10,metro,New Delhi Airport Express Terminal,,77.2231116,28.6424786,2.18e-05,approximate proxy
+Stolen vehicles,189,2026-10,metro,N.H.P.C. Chowk,,77.3074035,28.4576936,2.18e-05,approximate proxy
+Stolen vehicles,190,2026-10,metro,Noida City Centre,,77.3561638,28.5747334,2.18e-05,approximate proxy
+Stolen vehicles,191,2026-10,metro,Noida Electronic City,,77.3750033,28.6282627,2.18e-05,approximate proxy
+Stolen vehicles,192,2026-10,metro,Noida Golf Course,,77.3463247,28.5673755,2.18e-05,approximate proxy
+Stolen vehicles,193,2026-10,metro,Noida Sector 15,,77.3116118,28.5848835,2.18e-05,approximate proxy
+Stolen vehicles,194,2026-10,metro,Noida Sector 16,,77.3177778,28.578081,2.18e-05,approximate proxy
+Stolen vehicles,195,2026-10,metro,Noida Sector 18,,77.3260756,28.5707583,2.18e-05,approximate proxy
+Stolen vehicles,196,2026-10,metro,Noida Sector 34,,77.3634917,28.5802538,2.18e-05,approximate proxy
+Stolen vehicles,197,2026-10,metro,Noida Sector 52,,77.3730237,28.5868739,2.18e-05,approximate proxy
+Stolen vehicles,198,2026-10,metro,Noida Sector 59,,77.3726828,28.6065279,2.18e-05,approximate proxy
+Stolen vehicles,199,2026-10,metro,Noida Sector 61,,77.3722663,28.5975854,2.18e-05,approximate proxy
+Stolen vehicles,200,2026-10,metro,Noida Sector 62,,77.3735885,28.6169861,2.18e-05,approximate proxy
+Stolen vehicles,201,2026-10,metro,Okhla Bird Sanctuary,,77.3215792,28.552931700000002,2.18e-05,approximate proxy
+Stolen vehicles,202,2026-10,metro,Okhla NSIC,,77.2648773,28.5544917,2.18e-05,approximate proxy
+Stolen vehicles,203,2026-10,metro,Old Faridabad,,77.3114058,28.4108327,2.18e-05,approximate proxy
+Stolen vehicles,204,2026-10,metro,Palam,,77.0830764,28.5889102,2.18e-05,approximate proxy
+Stolen vehicles,205,2026-10,metro,Paschim Vihar East,,77.1122823,28.6773563,2.18e-05,approximate proxy
+Stolen vehicles,206,2026-10,metro,Patel Chowk,,77.21426105,28.6231669,2.18e-05,approximate proxy
+Stolen vehicles,207,2026-10,metro,Preet Vihar,,77.2952819,28.6414176,2.18e-05,approximate proxy
+Stolen vehicles,208,2026-10,metro,Pul Bangash,,77.2074156,28.6664068,2.18e-05,approximate proxy
+Stolen vehicles,209,2026-10,metro,Punjabi Bagh,,77.1461239,28.672995,2.18e-05,approximate proxy
+Stolen vehicles,210,2026-10,metro,Punjabi Bagh West,,77.1391976,28.6727671,2.18e-05,approximate proxy
+Stolen vehicles,211,2026-10,metro,Raj Bagh,,77.3468279,28.6770876,2.18e-05,approximate proxy
+Stolen vehicles,212,2026-10,metro,Rajdhani Park,,77.0439437,28.6823085,2.18e-05,approximate proxy
+Stolen vehicles,213,2026-10,metro,Rajendra Nagar,,77.3581426,28.6776112,2.18e-05,approximate proxy
+Stolen vehicles,214,2026-10,metro,Rajendra Place,,77.1782756,28.6424955,2.18e-05,approximate proxy
+Stolen vehicles,215,2026-10,metro,Rajiv Chowk,,77.2195054,28.6327424,2.18e-05,approximate proxy
+Stolen vehicles,216,2026-10,metro,Rajouri Garden (Blue Line),,77.1227198,28.6490563,2.18e-05,approximate proxy
+Stolen vehicles,217,2026-10,metro,Rajouri Garden (Pink Line),,77.1242597,28.6511896,2.18e-05,approximate proxy
+Stolen vehicles,218,2026-10,metro,Ramesh Nagar,,77.1316496,28.6527444,2.18e-05,approximate proxy
+Stolen vehicles,219,2026-10,metro,R. K. Puram,,77.1855231,28.5503805,2.18e-05,approximate proxy
+Stolen vehicles,220,2026-10,metro,Rohini East,,77.1259971,28.7075774,2.18e-05,approximate proxy
+Stolen vehicles,221,2026-10,metro,Rohini West,,77.115385,28.7149569,2.18e-05,approximate proxy
+Stolen vehicles,222,2026-10,metro,Sadar Bazar Cantonment,,77.1111279,28.5771145,2.18e-05,approximate proxy
+Stolen vehicles,223,2026-10,metro,Sant Surdas (Sihi),,77.3162474,28.354686,2.18e-05,approximate proxy
+Stolen vehicles,224,2026-10,metro,Sarai Metro Station,,77.3048262,28.478084,2.18e-05,approximate proxy
+Stolen vehicles,225,2026-10,metro,Sarita Vihar,,77.28835,28.5286435,2.18e-05,approximate proxy
+Stolen vehicles,226,2026-10,metro,Satguru Ramsingh Marg,,77.1577026,28.6620531,2.18e-05,approximate proxy
+Stolen vehicles,227,2026-10,metro,Sector 28,,77.3090597,28.4382126,2.18e-05,approximate proxy
+Stolen vehicles,228,2026-10,metro,Shaheed Nagar,,77.3339154,28.6766619,2.18e-05,approximate proxy
+Stolen vehicles,229,2026-10,metro,Shaheed Sthal,,77.4154736,28.6706449,2.18e-05,approximate proxy
+Stolen vehicles,230,2026-10,metro,Shakurpur,,77.1496094,28.6857668,2.18e-05,approximate proxy
+Stolen vehicles,231,2026-10,metro,Shalimar Bagh,,77.1654317,28.7019574,2.18e-05,approximate proxy
+Stolen vehicles,232,2026-10,metro,Shankar Vihar,,77.1402814,28.5608462,2.18e-05,approximate proxy
+Stolen vehicles,233,2026-10,metro,Shastri Nagar,,77.1818589,28.6700885,2.18e-05,approximate proxy
+Stolen vehicles,234,2026-10,metro,Shastri Park,,77.2505301,28.6684339,2.18e-05,approximate proxy
+Stolen vehicles,235,2026-10,metro,Shivaji Stadium,,77.2113218,28.6288963,2.18e-05,approximate proxy
+Stolen vehicles,236,2026-10,metro,Shree Ram Mandir Mayur Vihar,,77.2987023,28.6058619,2.18e-05,approximate proxy
+Stolen vehicles,237,2026-10,metro,Shyam Park,,77.3706454,28.6782281,2.18e-05,approximate proxy
+Stolen vehicles,238,2026-10,metro,Sikanderpur,,77.0930017,28.4812716,2.18e-05,approximate proxy
+Stolen vehicles,239,2026-10,metro,Sir M. Vishweshwaraiah Moti Bagh,,77.175741,28.5785326,2.18e-05,approximate proxy
+Stolen vehicles,240,2026-10,metro,Soorghat,,77.2274526,28.7102223,2.18e-05,approximate proxy
+Stolen vehicles,241,2026-10,metro,South Extension,,77.2205677,28.5685664,2.18e-05,approximate proxy
+Stolen vehicles,242,2026-10,metro,Subhash Nagar,,77.1051815,28.6404593,2.18e-05,approximate proxy
+Stolen vehicles,243,2026-10,metro,Sukhdev Vihar,,77.2749004,28.5597477,2.18e-05,approximate proxy
+Stolen vehicles,244,2026-10,metro,Supreme Court,,77.2425278,28.6234752,2.18e-05,approximate proxy
+Stolen vehicles,245,2026-10,metro,Surajmal Stadium,,77.074,28.6818775,2.18e-05,approximate proxy
+Stolen vehicles,246,2026-10,metro,Terminal 1 IGI Airport,,77.1226566,28.564835,2.18e-05,approximate proxy
+Stolen vehicles,247,2026-10,metro,Tikri Border,,76.9640828,28.6880254,2.18e-05,approximate proxy
+Stolen vehicles,248,2026-10,metro,Tikri Kalan,,76.9772082,28.6868849,2.18e-05,approximate proxy
+Stolen vehicles,249,2026-10,metro,Tilak Nagar,,77.0964961,28.6365482,2.18e-05,approximate proxy
+Stolen vehicles,250,2026-10,metro,Tis Hazari,,77.2166306,28.6671626,2.18e-05,approximate proxy
+Stolen vehicles,251,2026-10,metro,Uttam Nagar East,,77.0652861,28.6248465,2.18e-05,approximate proxy
+Stolen vehicles,252,2026-10,metro,Uttam Nagar West,,77.0557122,28.621757,2.18e-05,approximate proxy
+Stolen vehicles,253,2026-10,metro,Vaishali,,77.339575,28.6496701,2.18e-05,approximate proxy
+Stolen vehicles,254,2026-10,metro,Vinobapuri,,77.2492973,28.565871,2.18e-05,approximate proxy
+Stolen vehicles,255,2026-10,metro,Vishwa Vidyalaya,,77.2147459,28.6950772,2.18e-05,approximate proxy
+Stolen vehicles,256,2026-10,metro,Welcome (Pink Line),,77.2770239,28.6724018,2.18e-05,approximate proxy
+Stolen vehicles,257,2026-10,metro,Welcome (Red Line),,77.2778473,28.6717907,2.18e-05,approximate proxy
+Stolen vehicles,258,2026-10,metro,Yamuna Bank,,77.268013,28.6233124,2.18e-05,approximate proxy
+Stolen vehicles,259,2026-10,metro,Yamuna Vihar,,77.2773106,28.7023762,2.18e-05,approximate proxy
+Stolen vehicles (PIN),1,2026-10,pin,PIN 110059,,77.04411076590127,28.63036423353911,0.0824142,approximate proxy
+Stolen vehicles (PIN),2,2026-10,pin,PIN 110063,,77.10508480468066,28.67067152189793,0.0483148,approximate proxy
+Stolen vehicles (PIN),3,2026-10,pin,PIN 110019,,77.2582826994777,28.53550280224553,0.04576614,approximate proxy
+Stolen vehicles (PIN),4,2026-10,pin,PIN 110040,,77.09466454648262,28.845440443434484,0.03877928,approximate proxy
+Stolen vehicles (PIN),5,2026-10,pin,PIN 110053,,77.25009157386937,28.690425029939224,0.03710946,approximate proxy
+Stolen vehicles (PIN),6,2026-10,pin,PIN 110043,,76.96676435338918,28.589677526285065,0.03557147,approximate proxy
+Stolen vehicles (PIN),7,2026-10,pin,PIN 110005,,77.18848248838326,28.655944735249314,0.0342532,approximate proxy
+Stolen vehicles (PIN),8,2026-10,pin,PIN 110044,,77.29962325967462,28.505033618859443,0.03034231,approximate proxy
+Stolen vehicles (PIN),9,2026-10,pin,PIN 110092,,77.2958007071295,28.63201635629678,0.03016654,approximate proxy
+Stolen vehicles (PIN),10,2026-10,pin,PIN 110041,,77.02123832332869,28.66845024738408,0.02757393,approximate proxy
+Stolen vehicles (PIN),11,2026-10,pin,PIN 110042,,77.13135171451356,28.747477162310275,0.02682691,approximate proxy
+Stolen vehicles (PIN),12,2026-10,pin,PIN 110052,,77.17445281991773,28.68595768753046,0.02625566,approximate proxy
+Stolen vehicles (PIN),13,2026-10,pin,PIN 110094,,77.25046830270773,28.734364076688507,0.02383882,approximate proxy
+Stolen vehicles (PIN),14,2026-10,pin,PIN 110015,,77.14092801912615,28.65722640820609,0.0210265,approximate proxy
+Stolen vehicles (PIN),15,2026-10,pin,PIN 110051,,77.28473823027976,28.65296746911924,0.02085073,approximate proxy
+Stolen vehicles (PIN),16,2026-10,pin,PIN 110091,,77.28538888618472,28.600334971395732,0.02076284,approximate proxy
+Stolen vehicles (PIN),17,2026-10,pin,PIN 110084,,77.20850861495764,28.749650922286364,0.02058707,approximate proxy
+Stolen vehicles (PIN),18,2026-10,pin,PIN 110090,,77.27280801807835,28.72514477828217,0.02001582,approximate proxy
+Stolen vehicles (PIN),19,2026-10,pin,PIN 110086,,77.06320226864989,28.706438895122954,0.01970822,approximate proxy
+Stolen vehicles (PIN),20,2026-10,pin,PIN 110080,,77.23770293607974,28.49196513497924,0.0192688,approximate proxy
+Stolen vehicles (PIN),21,2026-10,pin,PIN 110039,,77.02388448484142,28.796925347917153,0.01707167,approximate proxy
+Stolen vehicles (PIN),22,2026-10,pin,PIN 110018,,77.0863039292212,28.642189795061288,0.01614888,approximate proxy
+Stolen vehicles (PIN),23,2026-10,pin,PIN 110085,,77.11234474078184,28.722619949456973,0.01601705,approximate proxy
+Stolen vehicles (PIN),24,2026-10,pin,PIN 110062,,77.23961153049136,28.514953113559155,0.01527003,approximate proxy
+Stolen vehicles (PIN),25,2026-10,pin,PIN 110035,,77.1588195198002,28.675057682236993,0.01430329,approximate proxy
+Stolen vehicles (PIN),26,2026-10,pin,PIN 110036,,77.16982703856,28.811061852801863,0.01316079,approximate proxy
+Stolen vehicles (PIN),27,2026-10,pin,PIN 110095,,77.31460924560116,28.678989393869323,0.01241376,approximate proxy
+Stolen vehicles (PIN),28,2026-10,pin,PIN 110076,,77.31005783844644,28.528180667606446,0.01171068,approximate proxy
+Stolen vehicles (PIN),29,2026-10,pin,PIN 110093,,77.3112674427101,28.699645372406042,0.01157885,approximate proxy
+Stolen vehicles (PIN),30,2026-10,pin,PIN 110033,,77.17029237430845,28.71585444297704,0.0113152,approximate proxy
+Stolen vehicles (PIN),31,2026-10,pin,PIN 110074,,77.194260357003,28.447935525179073,0.01122731,approximate proxy
+Stolen vehicles (PIN),32,2026-10,pin,PIN 110025,,77.28892506482714,28.558085573712376,0.01105154,approximate proxy
+Stolen vehicles (PIN),33,2026-10,pin,PIN 110088,,77.15193747533918,28.71231017901755,0.01091972,approximate proxy
+Stolen vehicles (PIN),34,2026-10,pin,PIN 110096,,77.32560508605523,28.61000346696544,0.01021664,approximate proxy
+Stolen vehicles (PIN),35,2026-10,pin,PIN 110045,,77.07885408965842,28.603950290213668,0.00999692,approximate proxy
+Stolen vehicles (PIN),36,2026-10,pin,PIN 110034,,77.12930988655748,28.691532662121595,0.00942567,approximate proxy
+Stolen vehicles (PIN),37,2026-10,pin,PIN 110024,,77.23827633250507,28.56901938920996,0.00938173,approximate proxy
+Stolen vehicles (PIN),38,2026-10,pin,PIN 110027,,77.11626444013199,28.647307224644074,0.00903019,approximate proxy
+Stolen vehicles (PIN),39,2026-10,pin,PIN 110032,,77.28691171866683,28.677118815718806,0.00881048,approximate proxy
+Stolen vehicles (PIN),40,2026-10,pin,PIN 110007,,77.2011860231102,28.67790370578379,0.00854682,approximate proxy
+Stolen vehicles (PIN),41,2026-10,pin,PIN 110006,,77.23138600156621,28.659052681913323,0.00850288,approximate proxy
+Stolen vehicles (PIN),42,2026-10,pin,PIN 110031,,77.2670228572212,28.6579187499067,0.00815134,approximate proxy
+Stolen vehicles (PIN),43,2026-10,pin,PIN 110009,,77.19713291234434,28.70869571083326,0.00797557,approximate proxy
+Stolen vehicles (PIN),44,2026-10,pin,PIN 110017,,77.2178637440295,28.528749762449824,0.00661335,approximate proxy
+Stolen vehicles (PIN),45,2026-10,pin,PIN 110014,,77.26496394610948,28.5809443065734,0.00652546,approximate proxy
+Stolen vehicles (PIN),46,2026-10,pin,PIN 110097,,77.0878248189018,28.52181391458324,0.00577844,approximate proxy
+Stolen vehicles (PIN),47,2026-10,pin,PIN 110046,,77.09690689035534,28.604683969538687,0.00533902,approximate proxy
+Stolen vehicles (PIN),48,2026-10,pin,PIN 110065,,77.26078967583803,28.567392258080915,0.00485565,approximate proxy
+Stolen vehicles (PIN),49,2026-10,pin,PIN 110087,,77.08424706602497,28.666241644094008,0.00476776,approximate proxy
+Stolen vehicles (PIN),50,2026-10,pin,PIN 110081,,76.99727231819548,28.734874336614862,0.00424045,approximate proxy
+Stolen vehicles (PIN),51,2026-10,pin,PIN 110037,,77.10416479712379,28.550484405195885,0.0036692,approximate proxy
+Stolen vehicles (PIN),52,2026-10,pin,PIN 110030,,77.16618183141786,28.507660184204155,0.00340555,approximate proxy
+Stolen vehicles (PIN),53,2026-10,pin,PIN 110061,,77.03002973999205,28.545760401247566,0.00322978,approximate proxy
+Stolen vehicles (PIN),54,2026-10,pin,PIN 110008,,77.16535716512877,28.650357118330614,0.00318583,approximate proxy
+Stolen vehicles (PIN),55,2026-10,pin,PIN 110058,,77.08656304376444,28.623221734366446,0.00305401,approximate proxy
+Stolen vehicles (PIN),56,2026-10,pin,PIN 110068,,77.20815168595095,28.491494246556556,0.00301006,approximate proxy
+Stolen vehicles (PIN),57,2026-10,pin,PIN 110078,,77.03281831017873,28.607664957609813,0.00301006,approximate proxy
+Stolen vehicles (PIN),58,2026-10,pin,PIN 110020,,77.28014408672576,28.53461002070657,0.00292218,approximate proxy
+Stolen vehicles (PIN),59,2026-10,pin,PIN 110055,,77.20988351685948,28.64718633029039,0.00270247,approximate proxy
+Stolen vehicles (PIN),60,2026-10,pin,PIN 110083,,77.09271383947227,28.695127081169638,0.00270247,approximate proxy
+Stolen vehicles (PIN),61,2026-10,pin,PIN 110048,,77.23887829244542,28.547050574012438,0.00261458,approximate proxy
+Stolen vehicles (PIN),62,2026-10,pin,PIN 110064,,77.11603436905132,28.625714192590156,0.00239487,approximate proxy
+Stolen vehicles (PIN),63,2026-10,pin,PIN 110013,,77.26331803936897,28.591308700207904,0.00239487,approximate proxy
+Stolen vehicles (PIN),64,2026-10,pin,PIN 110082,,77.09993251171268,28.784016063301042,0.00239487,approximate proxy
+Stolen vehicles (PIN),65,2026-10,pin,PIN 110089,,77.13954868730043,28.738249684511597,0.00235092,approximate proxy
+Stolen vehicles (PIN),66,2026-10,pin,PIN 110077,,77.05870756851124,28.534849520289747,0.0022191,approximate proxy
+Stolen vehicles (PIN),67,2026-10,pin,PIN 110002,,77.24201136827432,28.639441180068957,0.00213121,approximate proxy
+Stolen vehicles (PIN),68,2026-10,pin,PIN 110071,,76.99917537538487,28.54735763025648,0.00199938,approximate proxy
+Stolen vehicles (PIN),69,2026-10,pin,PIN 110075,,77.0481673681918,28.582664109667864,0.00182361,approximate proxy
+Stolen vehicles (PIN),70,2026-10,pin,PIN 110026,,77.12692668825778,28.66945216769243,0.0016039,approximate proxy
+Stolen vehicles (PIN),71,2026-10,pin,PIN 110049,,77.21962968287716,28.550731103015337,0.0016039,approximate proxy
+Stolen vehicles (PIN),72,2026-10,pin,PIN 110023,,77.19808027309567,28.575650254961758,0.00155996,approximate proxy
+Stolen vehicles (PIN),73,2026-10,pin,PIN 110054,,77.22410808355842,28.687138196795505,0.00134025,approximate proxy
+Stolen vehicles (PIN),74,2026-10,pin,PIN 110028,,77.13737743254977,28.62961826673142,0.0012963,approximate proxy
+Stolen vehicles (PIN),75,2026-10,pin,PIN 110060,,77.18511842532882,28.63837639283159,0.00125236,approximate proxy
+Stolen vehicles (PIN),76,2026-10,pin,PIN 110070,,77.15453324092337,28.51868589197764,0.00120842,approximate proxy
+Stolen vehicles (PIN),77,2026-10,pin,PIN 110047,,77.13889182508917,28.46736014569587,0.00120842,approximate proxy
+Stolen vehicles (PIN),78,2026-10,pin,PIN 110001,,77.21838787610234,28.623548849529207,0.00103265,approximate proxy
+Stolen vehicles (PIN),79,2026-10,pin,PIN 110016,,77.19448879673138,28.54942409851443,0.00094476,approximate proxy
+Stolen vehicles (PIN),80,2026-10,pin,PIN 110003,,77.22902417452339,28.592391862393125,0.00090082,approximate proxy
+Stolen vehicles (PIN),81,2026-10,pin,PIN 110012,,77.16091024322893,28.625895569379704,0.00085688,approximate proxy
+Stolen vehicles (PIN),82,2026-10,pin,PIN 110029,,77.20964229557164,28.564684417286205,0.00076899,approximate proxy
+Stolen vehicles (PIN),83,2026-10,pin,PIN 110057,,77.15169398773448,28.56267460138143,0.00050534,approximate proxy
+Stolen vehicles (PIN),84,2026-10,pin,PIN 110067,,77.16798622466675,28.54322202112542,0.0004614,approximate proxy
+Stolen vehicles (PIN),85,2026-10,pin,PIN 110066,,77.18396031501123,28.56666688966743,0.0004614,approximate proxy
+Stolen vehicles (PIN),86,2026-10,pin,PIN 110021,,77.18077433943549,28.597684296558267,0.00041745,approximate proxy
+Stolen vehicles (PIN),87,2026-10,pin,PIN 110022,,77.17186599174634,28.564055976224036,0.00041745,approximate proxy
+Stolen vehicles (PIN),88,2026-10,pin,PIN 110056,,77.12234743876316,28.680753661285067,0.00028563,approximate proxy
+Stolen vehicles (PIN),89,2026-10,pin,PIN 110010,,77.12997843610074,28.591872955001076,0.00024168,approximate proxy
+Stolen vehicles (PIN),90,2026-10,pin,PIN 110038,,77.11503448916392,28.512093991009934,0.00019774,approximate proxy
+Stolen vehicles (PIN),91,2026-10,pin,PIN 110072,,76.94744621013305,28.651224003661813,0.0001538,approximate proxy
+Stolen vehicles (PIN),92,2026-10,pin,PIN 110073,,76.89614249870269,28.56308001550973,0.00010986,approximate proxy
+Stolen vehicles (PIN),93,2026-10,pin,PIN 110011,,77.20916544833821,28.60359639432536,6.591e-05,approximate proxy
+Stolen vehicles (PIN),94,2026-10,pin,PIN 110069,,77.22620218737441,28.60822363138214,2.197e-05,approximate proxy
+Stolen vehicles (PIN),95,2026-10,pin,PIN 110004,,77.199027760026,28.614400369221816,2.197e-05,approximate proxy
+Stolen vehicles (PIN),96,2026-10,pin,PIN 110099,,77.07758877215787,28.711416868160445,2.197e-05,approximate proxy
+Stolen vehicles (PIN),97,2026-10,pin,PIN 110110,,77.10752802960874,28.70762116816121,2.197e-05,approximate proxy
+Stolen vehicles (PIN),98,2026-10,pin,PIN 900056,,77.21586171595057,28.6419325908301,2.197e-05,approximate proxy
+Missing mobiles (theft/stolen reports),1,2025-08,not estimable,virtual e-theft,Delhi-wide,,,N/A,unlocated

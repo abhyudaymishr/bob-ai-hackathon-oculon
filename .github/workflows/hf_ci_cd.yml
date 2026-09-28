@@ -1,0 +1,105 @@
+name: Hugging Face CI/CD & Query Validation
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      target_space_url:
+        description: "Hugging Face Space URL to test"
+        required: false
+        default: "https://abhyudaymishr-oculon.hf.space"
+
+jobs:
+  validate-queries-locally:
+    name: Local Query & Dataset Validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+          cache: "pip"
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt pytest httpx requests fastapi uvicorn gradio
+
+      - name: Bytecode & Syntax Verification
+        run: |
+          python -m py_compile src/delhi_hotspots/*.py
+          python -m py_compile src/oculon/*.py
+          python -m py_compile hf_space/app.py
+          python -m py_compile scripts/test_ci_cd_queries.py
+
+      - name: Execute Complete Dataset CI/CD Queries (Local In-Process)
+        run: |
+          python scripts/test_ci_cd_queries.py --local
+
+  deploy-and-verify-hf:
+    name: Deploy to Hugging Face Space & Verify Live Queries
+    needs: validate-queries-locally
+    if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install Query Test Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Sync & Deploy to Hugging Face Spaces
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          if [ -z "${HF_TOKEN}" ]; then
+            echo "::warning::HF_TOKEN secret not configured. Skipping git push to Hugging Face Space remote."
+            echo "To enable automatic git push, add HF_TOKEN to your GitHub repository secrets."
+          else
+            echo "Configuring Hugging Face Space git remote..."
+            git remote add hf "https://AbhyudayMishr:${HF_TOKEN}@huggingface.co/spaces/AbhyudayMishr/Oculon" 2>/dev/null || \
+            git remote set-url hf "https://AbhyudayMishr:${HF_TOKEN}@huggingface.co/spaces/AbhyudayMishr/Oculon"
+            echo "Pushing latest main branch to Hugging Face Space..."
+            git push hf main --force
+            echo "Waiting for Hugging Face Space deployment to build and activate (45 seconds)..."
+            sleep 45
+          fi
+
+      - name: Run Live CI/CD Queries on Hugging Face Space Endpoint
+        env:
+          TARGET_URL: ${{ github.event.inputs.target_space_url || 'https://abhyudaymishr-oculon.hf.space' }}
+        run: |
+          echo "Testing live Hugging Face Space endpoint: ${TARGET_URL}"
+          # Retry loop in case space is still spinning up
+          max_retries=10
+          delay=10
+          count=0
+          while [ $count -lt $max_retries ]; do
+            echo "Checking Space health ($((count+1))/$max_retries)..."
+            if python scripts/test_ci_cd_queries.py --remote "${TARGET_URL}"; then
+              echo "Hugging Face Space query verification succeeded!"
+              exit 0
+            fi
+            count=$((count+1))
+            echo "Space may still be booting up. Waiting ${delay}s..."
+            sleep $delay
+          done
+          echo "Failed to verify Hugging Face Space queries within retry window."
+          exit 1
