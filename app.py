@@ -826,15 +826,37 @@ if HAS_FASTAPI:
             "rolling_origin": rolling if eval_type in ("all", "rolling") else None
         }
 
-    # SSE endpoint for Remote Model Context Protocol (MCP) clients
-    @app.get("/sse")
+    def _get_public_base_url(req: Request) -> str:
+        base = str(req.base_url).rstrip("/")
+        proto = req.headers.get("x-forwarded-proto", "")
+        if proto == "https" or "hf.space" in base or "huggingface.co" in base:
+            base = base.replace("http://", "https://")
+        return base
+
+    # SSE endpoints for Remote Model Context Protocol (MCP) clients (both /sse and /gradio_api/mcp/sse)
+    @app.api_route("/sse", methods=["GET", "HEAD", "OPTIONS"])
+    @app.api_route("/gradio_api/mcp/sse", methods=["GET", "HEAD", "OPTIONS"])
     async def sse_endpoint(request: Request):
+        if request.method in ("HEAD", "OPTIONS"):
+            return Response(
+                status_code=200,
+                media_type="text/event-stream",
+                headers={
+                    "Cache-Control": "no-cache",
+                    "Connection": "keep-alive",
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS, POST",
+                    "Access-Control-Allow-Headers": "*",
+                }
+            )
+
         session_id = str(uuid.uuid4())
         queue = asyncio.Queue()
         sse_sessions[session_id] = queue
 
-        base_url = str(request.base_url).rstrip("/")
-        endpoint_url = f"{base_url}/messages?sessionId={session_id}"
+        base_url = _get_public_base_url(request)
+        msg_path = "/gradio_api/mcp/messages" if "gradio_api" in request.url.path else "/messages"
+        endpoint_url = f"{base_url}{msg_path}?sessionId={session_id}"
 
         async def event_generator():
             try:
@@ -856,12 +878,25 @@ if HAS_FASTAPI:
             headers={
                 "Cache-Control": "no-cache",
                 "Connection": "keep-alive",
-                "X-Accel-Buffering": "no"
+                "X-Accel-Buffering": "no",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Expose-Headers": "*",
             }
         )
 
-    @app.post("/messages")
+    @app.api_route("/messages", methods=["POST", "OPTIONS"])
+    @app.api_route("/gradio_api/mcp/messages", methods=["POST", "OPTIONS"])
     async def messages_endpoint(request: Request):
+        if request.method == "OPTIONS":
+            return Response(
+                status_code=200,
+                headers={
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Allow-Methods": "POST, OPTIONS",
+                    "Access-Control-Allow-Headers": "*",
+                }
+            )
+
         session_id = request.query_params.get("sessionId")
         if not session_id or session_id not in sse_sessions:
             return JSONResponse(status_code=404, content={"error": "Session not found or expired"})
@@ -871,12 +906,18 @@ if HAS_FASTAPI:
         except Exception:
             return JSONResponse(status_code=400, content={"error": "Invalid JSON"})
 
-        base_url = str(request.base_url).rstrip("/")
+        base_url = _get_public_base_url(request)
         resp = handle_remote_rpc(req_body, base_url)
         if resp is not None:
             await sse_sessions[session_id].put(resp)
 
-        return Response(status_code=202)
+        return Response(
+            status_code=202,
+            headers={
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Expose-Headers": "*",
+            }
+        )
 
     # Mount Gradio Blocks inside FastAPI
     if HAS_GRADIO:
