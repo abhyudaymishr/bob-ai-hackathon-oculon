@@ -1,0 +1,1264 @@
+{
+  "units": [
+    {
+      "unit_id": "ANANDPARBAT",
+      "name": "ANAND PARBAT",
+      "latitude": 28.66019,
+      "longitude": 77.17395
+    },
+    {
+      "unit_id": "CHANDNIMAHAL",
+      "name": "CHANDNI MAHAL",
+      "latitude": 28.64379,
+      "longitude": 77.2362
+    },
+    {
+      "unit_id": "DARYAGANJ",
+      "name": "DARYA GANJ",
+      "latitude": 28.64198,
+      "longitude": 77.24083
+    },
+    {
+      "unit_id": "HAUZQAZI",
+      "name": "HAUZ QAZI",
+      "latitude": 28.64297,
+      "longitude": 77.22532
+    },
+    {
+      "unit_id": "IPESTATE",
+      "name": "I.P.ESTATE",
+      "latitude": 28.62719,
+      "longitude": 77.24749
+    },
+    {
+      "unit_id": "JAMAMASJID",
+      "name": "JAMA MASJID",
+      "latitude": 28.65294,
+      "longitude": 77.234
+    },
+    {
+      "unit_id": "KAMLAMARKET",
+      "name": "KAMLA MARKET",
+      "latitude": 28.64241,
+      "longitude": 77.22624
+    },
+    {
+      "unit_id": "KAROLBAGH",
+      "name": "KAROL BAGH",
+      "latitude": 28.65235,
+      "longitude": 77.19293
+    },
+    {
+      "unit_id": "NABIKARIM",
+      "name": "NABI KARIM",
+      "latitude": 28.64797,
+      "longitude": 77.21756
+    },
+    {
+      "unit_id": "DBGROAD",
+      "name": "D.B.G. ROAD",
+      "latitude": 28.65278,
+      "longitude": 77.19327
+    },
+    {
+      "unit_id": "PRASADNAGAR",
+      "name": "PRASAD NAGAR",
+      "latitude": 28.64797,
+      "longitude": 77.18074
+    },
+    {
+      "unit_id": "PAHARGANJ",
+      "name": "PAHAR GANJ",
+      "latitude": 28.6456,
+      "longitude": 77.20891
+    },
+    {
+      "unit_id": "PATELNAGAR",
+      "name": "PATEL NAGAR",
+      "latitude": 28.65227,
+      "longitude": 77.15779
+    },
+    {
+      "unit_id": "RAJINDERNAGAR",
+      "name": "RAJINDER NAGAR",
+      "latitude": 28.63459,
+      "longitude": 77.18275
+    },
+    {
+      "unit_id": "RANJITNAGAR",
+      "name": "RANJIT NAGAR",
+      "latitude": 28.64744,
+      "longitude": 77.15861
+    },
+    {
+      "unit_id": "CRIMEBRANCH",
+      "name": "CRIME BRANCH",
+      "latitude": 28.53128,
+      "longitude": 77.19957
+    },
+    {
+      "unit_id": "BINDAPUR",
+      "name": "BINDA PUR",
+      "latitude": 28.60906,
+      "longitude": 77.06611
+    },
+    {
+      "unit_id": "DABRI",
+      "name": "DABRI",
+      "latitude": 28.61303,
+      "longitude": 77.08538
+    },
+    {
+      "unit_id": "DWARKASOUTH",
+      "name": "DWARKA SOUTH",
+      "latitude": 28.57811,
+      "longitude": 77.06677
+    },
+    {
+      "unit_id": "DWARKANORTH",
+      "name": "DWARKA NORTH",
+      "latitude": 28.59092,
+      "longitude": 77.02835
+    },
+    {
+      "unit_id": "SECTOR23DWARKA",
+      "name": "SECTOR 23 DWARKA",
+      "latitude": 28.56464,
+      "longitude": 77.05814
+    },
+    {
+      "unit_id": "JAFFARPURKALAN",
+      "name": "JAFFARPUR KALAN",
+      "latitude": 28.59586,
+      "longitude": 76.91462
+    },
+    {
+      "unit_id": "CHHAWALA",
+      "name": "CHHAWALA",
+      "latitude": 28.58688,
+      "longitude": 76.99493
+    },
+    {
+      "unit_id": "UTTAMNAGAR",
+      "name": "UTTAM NAGAR",
+      "latitude": 28.62532,
+      "longitude": 77.06487
+    },
+    {
+      "unit_id": "BABAHARIDASNAGAR",
+      "name": "BABA HARIDAS NAGAR",
+      "latitude": 28.61001,
+      "longitude": 76.97471
+    },
+    {
+      "unit_id": "NAJAFGARH",
+      "name": "NAJAF GARH",
+      "latitude": 28.60997,
+      "longitude": 76.98286
+    },
+    {
+      "unit_id": "MOHANGARDEN",
+      "name": "Mohan Garden PS",
+      "latitude": 28.63283,
+      "longitude": 77.03704
+    },
+    {
+      "unit_id": "GHAZIPUR",
+      "name": "GHAZIPUR",
+      "latitude": 28.6249,
+      "longitude": 77.33269
+    },
+    {
+      "unit_id": "KALYANPURI",
+      "name": "KALYANPURI",
+      "latitude": 28.61326,
+      "longitude": 77.3175
+    },
+    {
+      "unit_id": "MADHUVIHAR",
+      "name": "MADHU VIHAR",
+      "latitude": 28.62516,
+      "longitude": 77.3062
+    },
+    {
+      "unit_id": "MANDAWLIFAZALPUR",
+      "name": "MANDAWLI FAZAL PUR",
+      "latitude": 28.62521,
+      "longitude": 77.30633
+    },
+    {
+      "unit_id": "MAYURVIHARPHI",
+      "name": "MAYUR VIHAR PH-I",
+      "latitude": 28.60702,
+      "longitude": 77.30329
+    },
+    {
+      "unit_id": "NEWASHOKNAGAR",
+      "name": "NEW ASHOK NAGAR",
+      "latitude": 28.61411,
+      "longitude": 77.32641
+    },
+    {
+      "unit_id": "PANDAVNAGAR",
+      "name": "PANDAV NAGAR",
+      "latitude": 28.62011,
+      "longitude": 77.30272
+    },
+    {
+      "unit_id": "PREETVIHAR",
+      "name": "PREET VIHAR",
+      "latitude": 28.63888,
+      "longitude": 77.29532
+    },
+    {
+      "unit_id": "SHAKARPUR",
+      "name": "Shakar Pur PS",
+      "latitude": 28.637361,
+      "longitude": 77.27053
+    },
+    {
+      "unit_id": "PATPARGANJINDUSTRIALAREA",
+      "name": "Patparganj Industrial Area PS",
+      "latitude": 28.6449,
+      "longitude": 77.31606
+    },
+    {
+      "unit_id": "LAXMINAGAR",
+      "name": "Laxmi Nagar",
+      "latitude": 28.637361,
+      "longitude": 77.27053
+    },
+    {
+      "unit_id": "EPOLICESTATIONDELHI",
+      "name": "E-Police Station Delhi",
+      "latitude": 28.64265,
+      "longitude": 77.22612
+    },
+    {
+      "unit_id": "ECONOMICOFFENCESWING",
+      "name": "ECONOMIC OFFENCES WING",
+      "latitude": 28.63937,
+      "longitude": 77.203
+    },
+    {
+      "unit_id": "DOMESTICAIRPORT",
+      "name": "DOMESTIC AIRPORT",
+      "latitude": 28.55761,
+      "longitude": 77.08729
+    },
+    {
+      "unit_id": "IGIAIRPORT",
+      "name": "I.G.I.AIRPORT",
+      "latitude": 28.56484,
+      "longitude": 77.12184
+    },
+    {
+      "unit_id": "YAMUNADEPOTMETRO",
+      "name": "YAMUNA DEPOT METRO",
+      "latitude": 28.62289,
+      "longitude": 77.26793
+    },
+    {
+      "unit_id": "METROPOLICESTATIONOKHLAVIHAR",
+      "name": "Metro Police Station Okhla Vihar",
+      "latitude": 28.5287,
+      "longitude": 77.28787
+    },
+    {
+      "unit_id": "METROPOLICESTATIONGHITORNI",
+      "name": "Metro Police Station Ghitorni",
+      "latitude": 28.51315,
+      "longitude": 77.18657
+    },
+    {
+      "unit_id": "IGIAIRPORTMETRO",
+      "name": "IGI AIRPORT METRO",
+      "latitude": 28.64978,
+      "longitude": 77.12183
+    },
+    {
+      "unit_id": "RITHALAMETRO",
+      "name": "RITHALA METRO",
+      "latitude": 28.72005,
+      "longitude": 77.10772
+    },
+    {
+      "unit_id": "SHASHTRIPARKMETRO",
+      "name": "SHASHTRI PARK METRO",
+      "latitude": 28.66878,
+      "longitude": 77.24897
+    },
+    {
+      "unit_id": "KASHMIRIGATEMETRO",
+      "name": "KASHMIRI GATE METRO",
+      "latitude": 28.66641,
+      "longitude": 77.22643
+    },
+    {
+      "unit_id": "RAJAGARDENMETRO",
+      "name": "RAJA GARDEN METRO",
+      "latitude": 28.64994,
+      "longitude": 77.12175
+    },
+    {
+      "unit_id": "METROPOLICESTATIONNANGLOI",
+      "name": "Metro Police Station Nangloi",
+      "latitude": 28.68406,
+      "longitude": 77.06538
+    },
+    {
+      "unit_id": "JANAKPURIMETRO",
+      "name": "Janak Puri Metro",
+      "latitude": 28.61495,
+      "longitude": 77.02236
+    },
+    {
+      "unit_id": "INAMETRO",
+      "name": "INA Metro",
+      "latitude": 28.62289,
+      "longitude": 77.26793
+    },
+    {
+      "unit_id": "METROPOLICESTATIONRAJIVCHOWK",
+      "name": "Metro Police Station Rajiv Chowk",
+      "latitude": 28.64994,
+      "longitude": 77.12175
+    },
+    {
+      "unit_id": "LAJPATNAGARMETRO",
+      "name": "Lajpat Nagar Metro",
+      "latitude": 28.54302,
+      "longitude": 77.27543
+    },
+    {
+      "unit_id": "METROPOLICESTATIONPRAGATIMAIDAN",
+      "name": "Metro Police Station Pragati Maidan",
+      "latitude": 28.62289,
+      "longitude": 77.26793
+    },
+    {
+      "unit_id": "METROPOLICESTATIONAZADPUR",
+      "name": "Metro Police Station Azadpur",
+      "latitude": 28.70744,
+      "longitude": 77.17973
+    },
+    {
+      "unit_id": "METROPOLICESTATIONNETAJISUBHASHPLACE",
+      "name": "Metro Police Station Netaji Subhash Place",
+      "latitude": 28.69604,
+      "longitude": 77.15263
+    },
+    {
+      "unit_id": "BARAKHAMBAROAD",
+      "name": "BARAKHAMBA ROAD",
+      "latitude": 28.63068,
+      "longitude": 77.22575
+    },
+    {
+      "unit_id": "CHANKYAPURI",
+      "name": "CHANKYA PURI",
+      "latitude": 28.60305,
+      "longitude": 77.19591
+    },
+    {
+      "unit_id": "CONNAUGHTPLACE",
+      "name": "CONNAUGHT PLACE",
+      "latitude": 28.62975,
+      "longitude": 77.21426
+    },
+    {
+      "unit_id": "EXHIBITIONGROUND",
+      "name": "EXHIBITION GROUND",
+      "latitude": 28.61665,
+      "longitude": 77.24126
+    },
+    {
+      "unit_id": "MANDIRMARG",
+      "name": "MANDIR MARG",
+      "latitude": 28.63907,
+      "longitude": 77.20327
+    },
+    {
+      "unit_id": "PARLIAMENTSTREET",
+      "name": "PARLIAMENT STREET",
+      "latitude": 28.62501,
+      "longitude": 77.21279
+    },
+    {
+      "unit_id": "TILAKMARG",
+      "name": "TILAK MARG",
+      "latitude": 28.61796,
+      "longitude": 77.23544
+    },
+    {
+      "unit_id": "TUGHLAKROAD",
+      "name": "TUGHLAK ROAD",
+      "latitude": 28.59799,
+      "longitude": 77.21057
+    },
+    {
+      "unit_id": "SOUTHAVENUE",
+      "name": "SOUTH AVENUE",
+      "latitude": 28.60728,
+      "longitude": 77.1999
+    },
+    {
+      "unit_id": "NORTHAVENUE",
+      "name": "NORTH AVENUE",
+      "latitude": 28.61894,
+      "longitude": 77.19886
+    },
+    {
+      "unit_id": "BARAHINDURAO",
+      "name": "BARA HINDU RAO",
+      "latitude": 28.66568,
+      "longitude": 77.20814
+    },
+    {
+      "unit_id": "CIVILLINES",
+      "name": "CIVIL LINES",
+      "latitude": 28.689,
+      "longitude": 77.22172
+    },
+    {
+      "unit_id": "MAURICENAGAR",
+      "name": "MAURICE NAGAR",
+      "latitude": 28.6926,
+      "longitude": 77.20664
+    },
+    {
+      "unit_id": "KASHMERIGATE",
+      "name": "KASHMERI GATE",
+      "latitude": 28.66282,
+      "longitude": 77.2311
+    },
+    {
+      "unit_id": "KOTWALI",
+      "name": "KOTWALI",
+      "latitude": 28.65857,
+      "longitude": 77.23117
+    },
+    {
+      "unit_id": "LAHORIGATE",
+      "name": "LAHORI GATE",
+      "latitude": 28.65556,
+      "longitude": 77.21894
+    },
+    {
+      "unit_id": "GULABIBAGH",
+      "name": "GULABI BAGH",
+      "latitude": 28.66981,
+      "longitude": 77.19233
+    },
+    {
+      "unit_id": "ROOPNAGAR",
+      "name": "ROOP NAGAR",
+      "latitude": 28.68486,
+      "longitude": 77.20254
+    },
+    {
+      "unit_id": "SADARBAZAR",
+      "name": "SADAR BAZAR",
+      "latitude": 28.6541,
+      "longitude": 77.21087
+    },
+    {
+      "unit_id": "SARAIROHILLA",
+      "name": "SARAI ROHILLA",
+      "latitude": 28.66875,
+      "longitude": 77.18357
+    },
+    {
+      "unit_id": "SUBZIMANDI",
+      "name": "SUBZI MANDI",
+      "latitude": 28.66896,
+      "longitude": 77.20751
+    },
+    {
+      "unit_id": "TIMARPUR",
+      "name": "TIMARPUR",
+      "latitude": 28.70679,
+      "longitude": 77.2244
+    },
+    {
+      "unit_id": "BURARI",
+      "name": "BURARI",
+      "latitude": 28.73657,
+      "longitude": 77.19698
+    },
+    {
+      "unit_id": "WAZIRABAD",
+      "name": "Wazirabad PS",
+      "latitude": 28.70708,
+      "longitude": 77.22436
+    },
+    {
+      "unit_id": "BHAJANPURA",
+      "name": "BHAJAN PURA",
+      "latitude": 28.70112,
+      "longitude": 77.26486
+    },
+    {
+      "unit_id": "KHAJURIKHAS",
+      "name": "KHAJURI KHAS",
+      "latitude": 28.71134,
+      "longitude": 77.25642
+    },
+    {
+      "unit_id": "KARAWALNAGAR",
+      "name": "KARAWAL NAGAR",
+      "latitude": 28.73285,
+      "longitude": 77.27518
+    },
+    {
+      "unit_id": "NANDNAGRI",
+      "name": "NAND NAGRI",
+      "latitude": 28.69736,
+      "longitude": 77.30767
+    },
+    {
+      "unit_id": "NEWUSMANPUR",
+      "name": "NEW USMANPUR",
+      "latitude": 28.67215,
+      "longitude": 77.2616
+    },
+    {
+      "unit_id": "SEELAMPUR",
+      "name": "SEELAMPUR",
+      "latitude": 28.67415,
+      "longitude": 77.2683
+    },
+    {
+      "unit_id": "WELCOME",
+      "name": "WELCOME",
+      "latitude": 28.68181,
+      "longitude": 77.27841
+    },
+    {
+      "unit_id": "YAMUNAVHRGOKULPURI",
+      "name": "YAMUNA VHR/GOKULPURI",
+      "latitude": 28.70238,
+      "longitude": 77.28051
+    },
+    {
+      "unit_id": "HARSHVIHAR",
+      "name": "HARSH VIHAR",
+      "latitude": 28.70589,
+      "longitude": 77.31863
+    },
+    {
+      "unit_id": "JYOTINAGAR",
+      "name": "JYOTI NAGAR",
+      "latitude": 28.69216,
+      "longitude": 77.30478
+    },
+    {
+      "unit_id": "SONIAVIHAR",
+      "name": "SONIA VIHAR",
+      "latitude": 28.74596,
+      "longitude": 77.24588
+    },
+    {
+      "unit_id": "JAFRABAD",
+      "name": "JAFRABAD",
+      "latitude": 28.67905,
+      "longitude": 77.27287
+    },
+    {
+      "unit_id": "SHASTRIPARK",
+      "name": "Shastri Park PS",
+      "latitude": 28.67215,
+      "longitude": 77.26185
+    },
+    {
+      "unit_id": "DAYALPUR",
+      "name": "Dayal Pur PS",
+      "latitude": 28.70208,
+      "longitude": 77.28627
+    },
+    {
+      "unit_id": "ADARSHNAGAR",
+      "name": "ADARSH NAGAR",
+      "latitude": 28.70999,
+      "longitude": 77.17523
+    },
+    {
+      "unit_id": "ASHOKVIHAR",
+      "name": "ASHOK VIHAR",
+      "latitude": 28.69254,
+      "longitude": 77.17379
+    },
+    {
+      "unit_id": "BHARATNAGAR",
+      "name": "BHARAT NAGAR",
+      "latitude": 28.6805,
+      "longitude": 77.17814
+    },
+    {
+      "unit_id": "JAHANGIRPURI",
+      "name": "JAHANGIR PURI",
+      "latitude": 28.73378,
+      "longitude": 77.17499
+    },
+    {
+      "unit_id": "MODELTOWN",
+      "name": "MODEL TOWN",
+      "latitude": 28.70236,
+      "longitude": 77.19374
+    },
+    {
+      "unit_id": "KESHAVPURAM",
+      "name": "KESHAV PURAM",
+      "latitude": 28.68405,
+      "longitude": 77.15969
+    },
+    {
+      "unit_id": "MUKHERJEENAGAR",
+      "name": "MUKHERJEE NAGAR",
+      "latitude": 28.70021,
+      "longitude": 77.20871
+    },
+    {
+      "unit_id": "SHALIMARBAGH",
+      "name": "SHALIMAR BAGH",
+      "latitude": 28.71711,
+      "longitude": 77.15716
+    },
+    {
+      "unit_id": "SUBHASHPLACE",
+      "name": "SUBHASH PLACE",
+      "latitude": 28.68929,
+      "longitude": 77.14415
+    },
+    {
+      "unit_id": "MAURYAENCLAVE",
+      "name": "MAURYA ENCLAVE",
+      "latitude": 28.70027,
+      "longitude": 77.14611
+    },
+    {
+      "unit_id": "MAHENDRAPARK",
+      "name": "MAHENDRA PARK",
+      "latitude": 28.72569,
+      "longitude": 77.16395
+    },
+    {
+      "unit_id": "MANGOLPURI",
+      "name": "MANGOL PURI",
+      "latitude": 28.69639,
+      "longitude": 77.09136
+    },
+    {
+      "unit_id": "SULTANPURI",
+      "name": "SULTANPURI",
+      "latitude": 28.70282,
+      "longitude": 77.07894
+    },
+    {
+      "unit_id": "RANHOLA",
+      "name": "RANHOLA",
+      "latitude": 28.65392,
+      "longitude": 77.03561
+    },
+    {
+      "unit_id": "NANGLOI",
+      "name": "NANGLOI",
+      "latitude": 28.68176,
+      "longitude": 77.06698
+    },
+    {
+      "unit_id": "NIHALVIHAR",
+      "name": "NIHAL VIHAR",
+      "latitude": 28.66492,
+      "longitude": 77.07127
+    },
+    {
+      "unit_id": "MUNDKA",
+      "name": "MUNDKA",
+      "latitude": 28.66986,
+      "longitude": 76.95998
+    },
+    {
+      "unit_id": "PASCHIMVIHAREAST",
+      "name": "PASCHIM VIHAR EAST",
+      "latitude": 28.670991,
+      "longitude": 77.10096
+    },
+    {
+      "unit_id": "PASCHIMVIHARWEST",
+      "name": "PASCHIM VIHAR WEST",
+      "latitude": 28.679668,
+      "longitude": 77.08891
+    },
+    {
+      "unit_id": "RANIBAGH",
+      "name": "Rani Bagh PS",
+      "latitude": 28.697698,
+      "longitude": 77.11925
+    },
+    {
+      "unit_id": "RAJPARK",
+      "name": "Raj Park PS",
+      "latitude": 28.6942,
+      "longitude": 77.0815
+    },
+    {
+      "unit_id": "NARELAINDUSTRIALAREA",
+      "name": "Narela Industrial Area PS",
+      "latitude": 28.83184,
+      "longitude": 77.09472
+    },
+    {
+      "unit_id": "SWARUPNAGAR",
+      "name": "Swarup Nagar PS",
+      "latitude": 28.758587,
+      "longitude": 77.15608
+    },
+    {
+      "unit_id": "BHALSWADIARY",
+      "name": "Bhalswa Diary PS",
+      "latitude": 28.742837,
+      "longitude": 77.1655
+    },
+    {
+      "unit_id": "BAWANA",
+      "name": "Bawana PS",
+      "latitude": 28.806128,
+      "longitude": 77.02323
+    },
+    {
+      "unit_id": "SHAHBADDIARY",
+      "name": "Shahbad Diary PS",
+      "latitude": 28.747477,
+      "longitude": 77.07902
+    },
+    {
+      "unit_id": "ALIPUR",
+      "name": "Ali Pur PS",
+      "latitude": 28.798927,
+      "longitude": 77.13869
+    },
+    {
+      "unit_id": "NARELA",
+      "name": "Narela PS",
+      "latitude": 28.853313,
+      "longitude": 77.08797
+    },
+    {
+      "unit_id": "SAMAIPURBADLI",
+      "name": "Samai Pur Badli PS",
+      "latitude": 28.725139,
+      "longitude": 77.1415
+    },
+    {
+      "unit_id": "ANANDVIHARRLYSTN",
+      "name": "ANAND VIHAR RLY STN",
+      "latitude": 28.64839,
+      "longitude": 77.31502
+    },
+    {
+      "unit_id": "OLDDELHIDELHIMAINRLYSTN",
+      "name": "OLD DELHI (DELHI MAIN) RLY. STN.",
+      "latitude": 28.66077,
+      "longitude": 77.22713
+    },
+    {
+      "unit_id": "NEWDELHIRLYSTN",
+      "name": "NEW DELHI RLY. STN.",
+      "latitude": 28.64392,
+      "longitude": 77.21891
+    },
+    {
+      "unit_id": "HAZRATNIZAMUDDINRLYSTN",
+      "name": "HAZRAT NIZAMUDDIN RLY STN",
+      "latitude": 28.58817,
+      "longitude": 77.25346
+    },
+    {
+      "unit_id": "SARAIROHILLASTATION",
+      "name": "SARAI ROHILLA STATION",
+      "latitude": 28.66278,
+      "longitude": 77.18569
+    },
+    {
+      "unit_id": "DELHICANTTRLYSTATION",
+      "name": "DELHI CANTT RLY. STATION",
+      "latitude": 28.61201,
+      "longitude": 77.116
+    },
+    {
+      "unit_id": "SUBZIMANDIRLYSTATION",
+      "name": "SUBZI MANDI RLY STATION",
+      "latitude": 28.66801,
+      "longitude": 77.20004
+    },
+    {
+      "unit_id": "BEGUMPUR",
+      "name": "BEGUM PUR",
+      "latitude": 28.71845,
+      "longitude": 77.06503
+    },
+    {
+      "unit_id": "KNKATJUMARG",
+      "name": "K.N. KATJU MARG",
+      "latitude": 28.73103,
+      "longitude": 77.12054
+    },
+    {
+      "unit_id": "PRASHANTVIHAR",
+      "name": "PRASHANT VIHAR",
+      "latitude": 28.71789,
+      "longitude": 77.12731
+    },
+    {
+      "unit_id": "VIJAYVIHAR",
+      "name": "VIJAY VIHAR",
+      "latitude": 28.71006,
+      "longitude": 77.10202
+    },
+    {
+      "unit_id": "SOUTHROHINI",
+      "name": "SOUTH ROHINI",
+      "latitude": 28.70236,
+      "longitude": 77.11558
+    },
+    {
+      "unit_id": "NORTHROHINI",
+      "name": "NORTH ROHINI",
+      "latitude": 28.70886,
+      "longitude": 77.1179
+    },
+    {
+      "unit_id": "PREMNAGAR",
+      "name": "Prem Nagar PS",
+      "latitude": 28.708,
+      "longitude": 77.0559
+    },
+    {
+      "unit_id": "BUDHVIHAR",
+      "name": "Budh Vihar PS",
+      "latitude": 28.7028,
+      "longitude": 77.1079
+    },
+    {
+      "unit_id": "KANJHAWALA",
+      "name": "Kanjhawala PS",
+      "latitude": 28.725555,
+      "longitude": 77.0033
+    },
+    {
+      "unit_id": "AMANVIHAR",
+      "name": "Aman Vihar PS",
+      "latitude": 28.710149,
+      "longitude": 77.06036
+    },
+    {
+      "unit_id": "VIVEKVIHAR",
+      "name": "VIVEK VIHAR",
+      "latitude": 28.66698,
+      "longitude": 77.30642
+    },
+    {
+      "unit_id": "ANANDVIHAR",
+      "name": "ANAND VIHAR",
+      "latitude": 28.65389,
+      "longitude": 77.2936
+    },
+    {
+      "unit_id": "KRISHNANAGAR",
+      "name": "KRISHNA NAGAR",
+      "latitude": 28.66722,
+      "longitude": 77.28022
+    },
+    {
+      "unit_id": "GANDHINAGAR",
+      "name": "GANDHI NAGAR",
+      "latitude": 28.65997,
+      "longitude": 77.26762
+    },
+    {
+      "unit_id": "GEETACOLONY",
+      "name": "GEETA COLONY",
+      "latitude": 28.65534,
+      "longitude": 77.27606
+    },
+    {
+      "unit_id": "FARSHBAZAR",
+      "name": "FARSH BAZAR",
+      "latitude": 28.66502,
+      "longitude": 77.28668
+    },
+    {
+      "unit_id": "SHAHDARA",
+      "name": "SHAHDARA",
+      "latitude": 28.67358,
+      "longitude": 77.27469
+    },
+    {
+      "unit_id": "MANSAROVARPARK",
+      "name": "MANSAROVAR PARK",
+      "latitude": 28.68271,
+      "longitude": 77.29846
+    },
+    {
+      "unit_id": "GTBENCLAVE",
+      "name": "G.T.B. ENCLAVE",
+      "latitude": 28.68516,
+      "longitude": 77.3158
+    },
+    {
+      "unit_id": "SEEMAPURI",
+      "name": "SEEMAPURI",
+      "latitude": 28.67792,
+      "longitude": 77.31609
+    },
+    {
+      "unit_id": "JAGATPURI",
+      "name": "Jagat Puri PS",
+      "latitude": 28.643803,
+      "longitude": 77.28382
+    },
+    {
+      "unit_id": "DEFENCECOLONY",
+      "name": "DEFENCE COLONY",
+      "latitude": 28.56486,
+      "longitude": 77.23299
+    },
+    {
+      "unit_id": "FATEHPURBERI",
+      "name": "FATEHPUR BERI",
+      "latitude": 28.46656,
+      "longitude": 77.15239
+    },
+    {
+      "unit_id": "HAUZKHAS",
+      "name": "HAUZ KHAS",
+      "latitude": 28.54916,
+      "longitude": 77.20824
+    },
+    {
+      "unit_id": "KMPUR",
+      "name": "K.M. PUR",
+      "latitude": 28.576,
+      "longitude": 77.2251
+    },
+    {
+      "unit_id": "LODICOLONY",
+      "name": "LODI COLONY",
+      "latitude": 28.58798,
+      "longitude": 77.22639
+    },
+    {
+      "unit_id": "MEHRAULI",
+      "name": "MEHRAULI",
+      "latitude": 28.52165,
+      "longitude": 77.17965
+    },
+    {
+      "unit_id": "MALVIYANAGAR",
+      "name": "MALVIYA NAGAR",
+      "latitude": 28.53064,
+      "longitude": 77.20459
+    },
+    {
+      "unit_id": "SAKET",
+      "name": "SAKET",
+      "latitude": 28.52916,
+      "longitude": 77.22738
+    },
+    {
+      "unit_id": "NEBSARAI",
+      "name": "NEB SARAI",
+      "latitude": 28.49895,
+      "longitude": 77.21401
+    },
+    {
+      "unit_id": "GREATERKAILASH",
+      "name": "GREATER KAILASH",
+      "latitude": 28.55426,
+      "longitude": 77.23273
+    },
+    {
+      "unit_id": "CHITRANJANPARK",
+      "name": "CHITRANJAN PARK",
+      "latitude": 28.53665,
+      "longitude": 77.24945
+    },
+    {
+      "unit_id": "SANGAMVIHAR",
+      "name": "SANGAM VIHAR",
+      "latitude": 28.50962,
+      "longitude": 77.24315
+    },
+    {
+      "unit_id": "AMBEDKARNAGAR",
+      "name": "AMBEDKAR NAGAR",
+      "latitude": 28.52044,
+      "longitude": 77.24094
+    },
+    {
+      "unit_id": "MAIDANGARHI",
+      "name": "Maidan Garhi PS",
+      "latitude": 28.52299,
+      "longitude": 77.18004
+    },
+    {
+      "unit_id": "TIGRI",
+      "name": "Tigri PS",
+      "latitude": 28.49911,
+      "longitude": 77.23855
+    },
+    {
+      "unit_id": "DELHICANTT",
+      "name": "DELHI CANTT",
+      "latitude": 28.59034,
+      "longitude": 77.11677
+    },
+    {
+      "unit_id": "KAPASHERA",
+      "name": "KAPASHERA",
+      "latitude": 28.52926,
+      "longitude": 77.08766
+    },
+    {
+      "unit_id": "SAGARPUR",
+      "name": "SAGAR PUR",
+      "latitude": 28.59149,
+      "longitude": 77.08652
+    },
+    {
+      "unit_id": "PALAMVILLAGE",
+      "name": "PALAM VILLAGE",
+      "latitude": 28.5883,
+      "longitude": 77.08295
+    },
+    {
+      "unit_id": "RKPURAM",
+      "name": "R. K. PURAM",
+      "latitude": 28.57067,
+      "longitude": 77.17839
+    },
+    {
+      "unit_id": "SOUTHCAMPUS",
+      "name": "SOUTH CAMPUS",
+      "latitude": 28.57062,
+      "longitude": 77.17861
+    },
+    {
+      "unit_id": "VASANTKUNJNORTH",
+      "name": "VASANT KUNJ NORTH",
+      "latitude": 28.53537,
+      "longitude": 77.15174
+    },
+    {
+      "unit_id": "VASANTKUNJSOUTH",
+      "name": "VASANT KUNJ SOUTH",
+      "latitude": 28.53537,
+      "longitude": 77.15174
+    },
+    {
+      "unit_id": "VASANTVIHAR",
+      "name": "VASANT VIHAR",
+      "latitude": 28.55803,
+      "longitude": 77.16904
+    },
+    {
+      "unit_id": "KISHANGARH",
+      "name": "Kishan Garh PS",
+      "latitude": 28.51856,
+      "longitude": 77.16893
+    },
+    {
+      "unit_id": "SAFDARJUNGENCLAVE",
+      "name": "Safdarjung Enclave PS",
+      "latitude": 28.57431,
+      "longitude": 77.19946
+    },
+    {
+      "unit_id": "SOROJININAGAR",
+      "name": "Sorojini Nagar PS",
+      "latitude": 28.57453,
+      "longitude": 77.19967
+    },
+    {
+      "unit_id": "JAITPUR",
+      "name": "JAIT PUR",
+      "latitude": 28.53064,
+      "longitude": 77.31889
+    },
+    {
+      "unit_id": "GOVINDPURI",
+      "name": "GOVIND PURI",
+      "latitude": 28.53094,
+      "longitude": 77.26559
+    },
+    {
+      "unit_id": "NEWFRIENDSCOLONY",
+      "name": "NEW FRIENDS COLONY",
+      "latitude": 28.56237,
+      "longitude": 77.2674
+    },
+    {
+      "unit_id": "JAMIANAGAR",
+      "name": "JAMIA NAGAR",
+      "latitude": 28.56193,
+      "longitude": 77.2922
+    },
+    {
+      "unit_id": "HAZARATNIZAMUDDIN",
+      "name": "HAZARAT NIZAMUDDIN",
+      "latitude": 28.59213,
+      "longitude": 77.24388
+    },
+    {
+      "unit_id": "LAJPATNAGAR",
+      "name": "LAJPAT NAGAR",
+      "latitude": 28.56839,
+      "longitude": 77.2404
+    },
+    {
+      "unit_id": "AMARCOLONY",
+      "name": "AMAR COLONY",
+      "latitude": 28.55915,
+      "longitude": 77.24032
+    },
+    {
+      "unit_id": "KALKAJI",
+      "name": "KALKAJI",
+      "latitude": 28.54703,
+      "longitude": 77.25597
+    },
+    {
+      "unit_id": "SARITAVIHAR",
+      "name": "SARITA VIHAR",
+      "latitude": 28.54023,
+      "longitude": 77.28169
+    },
+    {
+      "unit_id": "BADARPUR",
+      "name": "BADARPUR",
+      "latitude": 28.49369,
+      "longitude": 77.30399
+    },
+    {
+      "unit_id": "OKHLAINDUSTRIALAREA",
+      "name": "OKHLA INDUSTRIAL AREA",
+      "latitude": 28.52713,
+      "longitude": 77.27448
+    },
+    {
+      "unit_id": "SUNLIGHTCOLONY",
+      "name": "SUNLIGHT COLONY",
+      "latitude": 28.57821,
+      "longitude": 77.25993
+    },
+    {
+      "unit_id": "PULPRAHLADPUR",
+      "name": "PUL PRAHLAD PUR",
+      "latitude": 28.50202,
+      "longitude": 77.29086
+    },
+    {
+      "unit_id": "KALANDIKUNJ",
+      "name": "Kalandi Kunj PS",
+      "latitude": 28.50389,
+      "longitude": 77.31966
+    },
+    {
+      "unit_id": "SHAHEENBAGH",
+      "name": "Shaheen Bagh PS",
+      "latitude": 28.5493,
+      "longitude": 77.2963
+    },
+    {
+      "unit_id": "SPECIALCELLSB",
+      "name": "SPECIAL CELL (SB)",
+      "latitude": 28.58801,
+      "longitude": 77.22727
+    },
+    {
+      "unit_id": "CRIMEWOMENCELLNANAKPURA",
+      "name": "CRIME (WOMEN) CELL NANAK PURA",
+      "latitude": 28.58244,
+      "longitude": 77.16835
+    },
+    {
+      "unit_id": "VIGILANCE",
+      "name": "VIGILANCE PS",
+      "latitude": 28.63088,
+      "longitude": 77.22584
+    },
+    {
+      "unit_id": "HARINAGAR",
+      "name": "HARI NAGAR",
+      "latitude": 28.60948,
+      "longitude": 77.09984
+    },
+    {
+      "unit_id": "JANAKPURI",
+      "name": "JANAK PURI",
+      "latitude": 28.6284,
+      "longitude": 77.08186
+    },
+    {
+      "unit_id": "KIRTINAGAR",
+      "name": "KIRTI NAGAR",
+      "latitude": 28.62678,
+      "longitude": 77.12137
+    },
+    {
+      "unit_id": "MAYAPURI",
+      "name": "MAYA PURI",
+      "latitude": 28.62514,
+      "longitude": 77.12024
+    },
+    {
+      "unit_id": "MOTINAGAR",
+      "name": "MOTI NAGAR",
+      "latitude": 28.66046,
+      "longitude": 77.14675
+    },
+    {
+      "unit_id": "RAJOURIGARDEN",
+      "name": "RAJOURI GARDEN",
+      "latitude": 28.6515,
+      "longitude": 77.11994
+    },
+    {
+      "unit_id": "PUNJABIBAGH",
+      "name": "PUNJABI BAGH",
+      "latitude": 28.67426,
+      "longitude": 77.1329
+    },
+    {
+      "unit_id": "TILAKNAGAR",
+      "name": "TILAK NAGAR",
+      "latitude": 28.63865,
+      "longitude": 77.10193
+    },
+    {
+      "unit_id": "VIKASPURI",
+      "name": "VIKASPURI",
+      "latitude": 28.63007,
+      "longitude": 77.06792
+    },
+    {
+      "unit_id": "KHYALA",
+      "name": "KHYALA",
+      "latitude": 28.65748,
+      "longitude": 77.11356
+    },
+    {
+      "unit_id": "NARAINA",
+      "name": "NARAINA",
+      "latitude": 28.63304,
+      "longitude": 77.13789
+    },
+    {
+      "unit_id": "INDERPURI",
+      "name": "INDER PURI",
+      "latitude": 28.63117,
+      "longitude": 77.14513
+    }
+  ]
+}

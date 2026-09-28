@@ -1,0 +1,592 @@
+{
+  "units": [
+    {
+      "unit_id": "PIN_110063",
+      "name": "PIN 110063",
+      "latitude": 28.67067152189793,
+      "longitude": 77.10508480468066
+    },
+    {
+      "unit_id": "PIN_110064",
+      "name": "PIN 110064",
+      "latitude": 28.625714192590156,
+      "longitude": 77.11603436905132
+    },
+    {
+      "unit_id": "PIN_110005",
+      "name": "PIN 110005",
+      "latitude": 28.655944735249314,
+      "longitude": 77.18848248838326
+    },
+    {
+      "unit_id": "PIN_110067",
+      "name": "PIN 110067",
+      "latitude": 28.54322202112542,
+      "longitude": 77.16798622466675
+    },
+    {
+      "unit_id": "PIN_110006",
+      "name": "PIN 110006",
+      "latitude": 28.659052681913323,
+      "longitude": 77.23138600156621
+    },
+    {
+      "unit_id": "PIN_110068",
+      "name": "PIN 110068",
+      "latitude": 28.491494246556556,
+      "longitude": 77.20815168595095
+    },
+    {
+      "unit_id": "PIN_110069",
+      "name": "PIN 110069",
+      "latitude": 28.60822363138214,
+      "longitude": 77.22620218737441
+    },
+    {
+      "unit_id": "PIN_110071",
+      "name": "PIN 110071",
+      "latitude": 28.54735763025648,
+      "longitude": 76.99917537538487
+    },
+    {
+      "unit_id": "PIN_110056",
+      "name": "PIN 110056",
+      "latitude": 28.680753661285067,
+      "longitude": 77.12234743876316
+    },
+    {
+      "unit_id": "PIN_110057",
+      "name": "PIN 110057",
+      "latitude": 28.56267460138143,
+      "longitude": 77.15169398773448
+    },
+    {
+      "unit_id": "PIN_110052",
+      "name": "PIN 110052",
+      "latitude": 28.68595768753046,
+      "longitude": 77.17445281991773
+    },
+    {
+      "unit_id": "PIN_110072",
+      "name": "PIN 110072",
+      "latitude": 28.651224003661813,
+      "longitude": 76.94744621013305
+    },
+    {
+      "unit_id": "PIN_110017",
+      "name": "PIN 110017",
+      "latitude": 28.528749762449824,
+      "longitude": 77.2178637440295
+    },
+    {
+      "unit_id": "PIN_110058",
+      "name": "PIN 110058",
+      "latitude": 28.623221734366446,
+      "longitude": 77.08656304376444
+    },
+    {
+      "unit_id": "PIN_110055",
+      "name": "PIN 110055",
+      "latitude": 28.64718633029039,
+      "longitude": 77.20988351685948
+    },
+    {
+      "unit_id": "PIN_110059",
+      "name": "PIN 110059",
+      "latitude": 28.63036423353911,
+      "longitude": 77.04411076590127
+    },
+    {
+      "unit_id": "PIN_110060",
+      "name": "PIN 110060",
+      "latitude": 28.63837639283159,
+      "longitude": 77.18511842532882
+    },
+    {
+      "unit_id": "PIN_110012",
+      "name": "PIN 110012",
+      "latitude": 28.625895569379704,
+      "longitude": 77.16091024322893
+    },
+    {
+      "unit_id": "PIN_110013",
+      "name": "PIN 110013",
+      "latitude": 28.591308700207904,
+      "longitude": 77.26331803936897
+    },
+    {
+      "unit_id": "PIN_110087",
+      "name": "PIN 110087",
+      "latitude": 28.666241644094008,
+      "longitude": 77.08424706602497
+    },
+    {
+      "unit_id": "PIN_110015",
+      "name": "PIN 110015",
+      "latitude": 28.65722640820609,
+      "longitude": 77.14092801912615
+    },
+    {
+      "unit_id": "PIN_110020",
+      "name": "PIN 110020",
+      "latitude": 28.53461002070657,
+      "longitude": 77.28014408672576
+    },
+    {
+      "unit_id": "PIN_110021",
+      "name": "PIN 110021",
+      "latitude": 28.597684296558267,
+      "longitude": 77.18077433943549
+    },
+    {
+      "unit_id": "PIN_110026",
+      "name": "PIN 110026",
+      "latitude": 28.66945216769243,
+      "longitude": 77.12692668825778
+    },
+    {
+      "unit_id": "PIN_110086",
+      "name": "PIN 110086",
+      "latitude": 28.706438895122954,
+      "longitude": 77.06320226864989
+    },
+    {
+      "unit_id": "PIN_110061",
+      "name": "PIN 110061",
+      "latitude": 28.545760401247566,
+      "longitude": 77.03002973999205
+    },
+    {
+      "unit_id": "PIN_110089",
+      "name": "PIN 110089",
+      "latitude": 28.738249684511597,
+      "longitude": 77.13954868730043
+    },
+    {
+      "unit_id": "PIN_110088",
+      "name": "PIN 110088",
+      "latitude": 28.71231017901755,
+      "longitude": 77.15193747533918
+    },
+    {
+      "unit_id": "PIN_110090",
+      "name": "PIN 110090",
+      "latitude": 28.72514477828217,
+      "longitude": 77.27280801807835
+    },
+    {
+      "unit_id": "PIN_110096",
+      "name": "PIN 110096",
+      "latitude": 28.61000346696544,
+      "longitude": 77.32560508605523
+    },
+    {
+      "unit_id": "PIN_110001",
+      "name": "PIN 110001",
+      "latitude": 28.623548849529207,
+      "longitude": 77.21838787610234
+    },
+    {
+      "unit_id": "PIN_110002",
+      "name": "PIN 110002",
+      "latitude": 28.639441180068957,
+      "longitude": 77.24201136827432
+    },
+    {
+      "unit_id": "PIN_110097",
+      "name": "PIN 110097",
+      "latitude": 28.52181391458324,
+      "longitude": 77.0878248189018
+    },
+    {
+      "unit_id": "PIN_110014",
+      "name": "PIN 110014",
+      "latitude": 28.5809443065734,
+      "longitude": 77.26496394610948
+    },
+    {
+      "unit_id": "PIN_110034",
+      "name": "PIN 110034",
+      "latitude": 28.691532662121595,
+      "longitude": 77.12930988655748
+    },
+    {
+      "unit_id": "PIN_110080",
+      "name": "PIN 110080",
+      "latitude": 28.49196513497924,
+      "longitude": 77.23770293607974
+    },
+    {
+      "unit_id": "PIN_110027",
+      "name": "PIN 110027",
+      "latitude": 28.647307224644074,
+      "longitude": 77.11626444013199
+    },
+    {
+      "unit_id": "PIN_110028",
+      "name": "PIN 110028",
+      "latitude": 28.62961826673142,
+      "longitude": 77.13737743254977
+    },
+    {
+      "unit_id": "PIN_110003",
+      "name": "PIN 110003",
+      "latitude": 28.592391862393125,
+      "longitude": 77.22902417452339
+    },
+    {
+      "unit_id": "PIN_110004",
+      "name": "PIN 110004",
+      "latitude": 28.614400369221816,
+      "longitude": 77.199027760026
+    },
+    {
+      "unit_id": "PIN_110062",
+      "name": "PIN 110062",
+      "latitude": 28.514953113559155,
+      "longitude": 77.23961153049136
+    },
+    {
+      "unit_id": "PIN_110035",
+      "name": "PIN 110035",
+      "latitude": 28.675057682236993,
+      "longitude": 77.1588195198002
+    },
+    {
+      "unit_id": "PIN_110065",
+      "name": "PIN 110065",
+      "latitude": 28.567392258080915,
+      "longitude": 77.26078967583803
+    },
+    {
+      "unit_id": "PIN_110066",
+      "name": "PIN 110066",
+      "latitude": 28.56666688966743,
+      "longitude": 77.18396031501123
+    },
+    {
+      "unit_id": "PIN_110036",
+      "name": "PIN 110036",
+      "latitude": 28.811061852801863,
+      "longitude": 77.16982703856
+    },
+    {
+      "unit_id": "PIN_110070",
+      "name": "PIN 110070",
+      "latitude": 28.51868589197764,
+      "longitude": 77.15453324092337
+    },
+    {
+      "unit_id": "PIN_110075",
+      "name": "PIN 110075",
+      "latitude": 28.582664109667864,
+      "longitude": 77.0481673681918
+    },
+    {
+      "unit_id": "PIN_110076",
+      "name": "PIN 110076",
+      "latitude": 28.528180667606446,
+      "longitude": 77.31005783844644
+    },
+    {
+      "unit_id": "PIN_110077",
+      "name": "PIN 110077",
+      "latitude": 28.534849520289747,
+      "longitude": 77.05870756851124
+    },
+    {
+      "unit_id": "PIN_110010",
+      "name": "PIN 110010",
+      "latitude": 28.591872955001076,
+      "longitude": 77.12997843610074
+    },
+    {
+      "unit_id": "PIN_110011",
+      "name": "PIN 110011",
+      "latitude": 28.60359639432536,
+      "longitude": 77.20916544833821
+    },
+    {
+      "unit_id": "PIN_110008",
+      "name": "PIN 110008",
+      "latitude": 28.650357118330614,
+      "longitude": 77.16535716512877
+    },
+    {
+      "unit_id": "PIN_110007",
+      "name": "PIN 110007",
+      "latitude": 28.67790370578379,
+      "longitude": 77.2011860231102
+    },
+    {
+      "unit_id": "PIN_110009",
+      "name": "PIN 110009",
+      "latitude": 28.70869571083326,
+      "longitude": 77.19713291234434
+    },
+    {
+      "unit_id": "PIN_110016",
+      "name": "PIN 110016",
+      "latitude": 28.54942409851443,
+      "longitude": 77.19448879673138
+    },
+    {
+      "unit_id": "PIN_110018",
+      "name": "PIN 110018",
+      "latitude": 28.642189795061288,
+      "longitude": 77.0863039292212
+    },
+    {
+      "unit_id": "PIN_110031",
+      "name": "PIN 110031",
+      "latitude": 28.6579187499067,
+      "longitude": 77.2670228572212
+    },
+    {
+      "unit_id": "PIN_110019",
+      "name": "PIN 110019",
+      "latitude": 28.53550280224553,
+      "longitude": 77.2582826994777
+    },
+    {
+      "unit_id": "PIN_110044",
+      "name": "PIN 110044",
+      "latitude": 28.505033618859443,
+      "longitude": 77.29962325967462
+    },
+    {
+      "unit_id": "PIN_110032",
+      "name": "PIN 110032",
+      "latitude": 28.677118815718806,
+      "longitude": 77.28691171866683
+    },
+    {
+      "unit_id": "PIN_110022",
+      "name": "PIN 110022",
+      "latitude": 28.564055976224036,
+      "longitude": 77.17186599174634
+    },
+    {
+      "unit_id": "PIN_110023",
+      "name": "PIN 110023",
+      "latitude": 28.575650254961758,
+      "longitude": 77.19808027309567
+    },
+    {
+      "unit_id": "PIN_110024",
+      "name": "PIN 110024",
+      "latitude": 28.56901938920996,
+      "longitude": 77.23827633250507
+    },
+    {
+      "unit_id": "PIN_110033",
+      "name": "PIN 110033",
+      "latitude": 28.71585444297704,
+      "longitude": 77.17029237430845
+    },
+    {
+      "unit_id": "PIN_110025",
+      "name": "PIN 110025",
+      "latitude": 28.558085573712376,
+      "longitude": 77.28892506482714
+    },
+    {
+      "unit_id": "PIN_110029",
+      "name": "PIN 110029",
+      "latitude": 28.564684417286205,
+      "longitude": 77.20964229557164
+    },
+    {
+      "unit_id": "PIN_110046",
+      "name": "PIN 110046",
+      "latitude": 28.604683969538687,
+      "longitude": 77.09690689035534
+    },
+    {
+      "unit_id": "PIN_110030",
+      "name": "PIN 110030",
+      "latitude": 28.507660184204155,
+      "longitude": 77.16618183141786
+    },
+    {
+      "unit_id": "PIN_110045",
+      "name": "PIN 110045",
+      "latitude": 28.603950290213668,
+      "longitude": 77.07885408965842
+    },
+    {
+      "unit_id": "PIN_110037",
+      "name": "PIN 110037",
+      "latitude": 28.550484405195885,
+      "longitude": 77.10416479712379
+    },
+    {
+      "unit_id": "PIN_110038",
+      "name": "PIN 110038",
+      "latitude": 28.512093991009934,
+      "longitude": 77.11503448916392
+    },
+    {
+      "unit_id": "PIN_110039",
+      "name": "PIN 110039",
+      "latitude": 28.796925347917153,
+      "longitude": 77.02388448484142
+    },
+    {
+      "unit_id": "PIN_110047",
+      "name": "PIN 110047",
+      "latitude": 28.46736014569587,
+      "longitude": 77.13889182508917
+    },
+    {
+      "unit_id": "PIN_110040",
+      "name": "PIN 110040",
+      "latitude": 28.845440443434484,
+      "longitude": 77.09466454648262
+    },
+    {
+      "unit_id": "PIN_110041",
+      "name": "PIN 110041",
+      "latitude": 28.66845024738408,
+      "longitude": 77.02123832332869
+    },
+    {
+      "unit_id": "PIN_110042",
+      "name": "PIN 110042",
+      "latitude": 28.747477162310275,
+      "longitude": 77.13135171451356
+    },
+    {
+      "unit_id": "PIN_110043",
+      "name": "PIN 110043",
+      "latitude": 28.589677526285065,
+      "longitude": 76.96676435338918
+    },
+    {
+      "unit_id": "PIN_110085",
+      "name": "PIN 110085",
+      "latitude": 28.722619949456973,
+      "longitude": 77.11234474078184
+    },
+    {
+      "unit_id": "PIN_110048",
+      "name": "PIN 110048",
+      "latitude": 28.547050574012438,
+      "longitude": 77.23887829244542
+    },
+    {
+      "unit_id": "PIN_110049",
+      "name": "PIN 110049",
+      "latitude": 28.550731103015337,
+      "longitude": 77.21962968287716
+    },
+    {
+      "unit_id": "PIN_110051",
+      "name": "PIN 110051",
+      "latitude": 28.65296746911924,
+      "longitude": 77.28473823027976
+    },
+    {
+      "unit_id": "PIN_110053",
+      "name": "PIN 110053",
+      "latitude": 28.690425029939224,
+      "longitude": 77.25009157386937
+    },
+    {
+      "unit_id": "PIN_110054",
+      "name": "PIN 110054",
+      "latitude": 28.687138196795505,
+      "longitude": 77.22410808355842
+    },
+    {
+      "unit_id": "PIN_110073",
+      "name": "PIN 110073",
+      "latitude": 28.56308001550973,
+      "longitude": 76.89614249870269
+    },
+    {
+      "unit_id": "PIN_110074",
+      "name": "PIN 110074",
+      "latitude": 28.447935525179073,
+      "longitude": 77.194260357003
+    },
+    {
+      "unit_id": "PIN_110078",
+      "name": "PIN 110078",
+      "latitude": 28.607664957609813,
+      "longitude": 77.03281831017873
+    },
+    {
+      "unit_id": "PIN_110081",
+      "name": "PIN 110081",
+      "latitude": 28.734874336614862,
+      "longitude": 76.99727231819548
+    },
+    {
+      "unit_id": "PIN_110082",
+      "name": "PIN 110082",
+      "latitude": 28.784016063301042,
+      "longitude": 77.09993251171268
+    },
+    {
+      "unit_id": "PIN_110083",
+      "name": "PIN 110083",
+      "latitude": 28.695127081169638,
+      "longitude": 77.09271383947227
+    },
+    {
+      "unit_id": "PIN_110093",
+      "name": "PIN 110093",
+      "latitude": 28.699645372406042,
+      "longitude": 77.3112674427101
+    },
+    {
+      "unit_id": "PIN_110084",
+      "name": "PIN 110084",
+      "latitude": 28.749650922286364,
+      "longitude": 77.20850861495764
+    },
+    {
+      "unit_id": "PIN_110095",
+      "name": "PIN 110095",
+      "latitude": 28.678989393869323,
+      "longitude": 77.31460924560116
+    },
+    {
+      "unit_id": "PIN_110091",
+      "name": "PIN 110091",
+      "latitude": 28.600334971395732,
+      "longitude": 77.28538888618472
+    },
+    {
+      "unit_id": "PIN_110092",
+      "name": "PIN 110092",
+      "latitude": 28.63201635629678,
+      "longitude": 77.2958007071295
+    },
+    {
+      "unit_id": "PIN_110094",
+      "name": "PIN 110094",
+      "latitude": 28.734364076688507,
+      "longitude": 77.25046830270773
+    },
+    {
+      "unit_id": "PIN_110099",
+      "name": "PIN 110099",
+      "latitude": 28.711416868160445,
+      "longitude": 77.07758877215787
+    },
+    {
+      "unit_id": "PIN_110110",
+      "name": "PIN 110110",
+      "latitude": 28.70762116816121,
+      "longitude": 77.10752802960874
+    },
+    {
+      "unit_id": "PIN_900056",
+      "name": "PIN 900056",
+      "latitude": 28.6419325908301,
+      "longitude": 77.21586171595057
+    }
+  ]
+}
