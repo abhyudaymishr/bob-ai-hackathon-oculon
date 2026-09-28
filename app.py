@@ -37,14 +37,15 @@ except ImportError:
 # ZeroGPU compatibility for Hugging Face Spaces (active when ZeroGPU hardware is selected)
 try:
     import spaces
-    gpu_decorator = spaces.GPU
 except Exception:
-    def gpu_decorator(func=None, **kwargs):
-        if func is not None:
-            return func
-        def wrapper(f):
-            return f
-        return wrapper
+    class _MockSpaces:
+        def GPU(self, *args, **kwargs):
+            def decorator(fn):
+                return fn
+            if args and callable(args[0]):
+                return args[0]
+            return decorator
+    spaces = _MockSpaces()
 
 
 # Directories
@@ -308,6 +309,7 @@ def get_map_iframe(selected_label: str) -> str:
     """
 
 
+@spaces.GPU
 def search_hotspots(
     dataset: str,
     month: str,
@@ -417,7 +419,7 @@ def search_hotspots(
     return summary_md, table_data, related_json, csv_text
 
 
-@gpu_decorator
+@spaces.GPU
 def run_live_prediction(dataset: str, target_month: str, top_k: int, evaluate_all: bool = False):
     if not mcp_server:
         return "MCP Server not initialized", []
