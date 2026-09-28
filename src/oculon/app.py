@@ -883,6 +883,13 @@ if HAS_FASTAPI:
         demo = build_gradio_demo()
         if demo:
             app = gr.mount_gradio_app(app, demo, path="/")
+            # Explicitly notify Hugging Face ZeroGPU host of decorated functions
+            try:
+                from spaces.zero import client as zero_client
+                zero_client.startup_report()
+                print("ZeroGPU startup_report successfully transmitted to HF host.")
+            except Exception as e:
+                print(f"ZeroGPU startup_report notice: {e}")
 
 
 if __name__ == "__main__":
