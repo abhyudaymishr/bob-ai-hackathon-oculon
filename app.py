@@ -881,7 +881,11 @@ if HAS_FASTAPI:
 if __name__ == "__main__":
     if HAS_FASTAPI and app:
         import uvicorn
-        port = int(os.environ.get("PORT", 7860))
+        # Hugging Face Spaces routes external traffic to port 7860.
+        # If PORT is set to 7861 by ZeroGPU / internal Node SSR proxy, uvicorn must bind to 7860.
+        raw_port = os.environ.get("PORT", "7860")
+        port = 7860 if raw_port == "7861" else (int(raw_port) if raw_port.isdigit() else 7860)
+        print(f"Starting Oculon Uvicorn server on 0.0.0.0:{port}...")
         try:
             uvicorn.run(app, host="0.0.0.0", port=port)
         except OSError as e:
