@@ -34,15 +34,18 @@ try:
 except ImportError:
     HAS_FASTAPI = False
 
-# ZeroGPU compatibility for Hugging Face Spaces (required if zero-a10g hardware is selected)
+# ZeroGPU compatibility for Hugging Face Spaces (active when ZeroGPU hardware is selected)
 try:
     import spaces
-    @spaces.GPU
-    def _zero_gpu_init():
-        return True
-    _zero_gpu_init()
+    gpu_decorator = spaces.GPU
 except Exception:
-    pass
+    def gpu_decorator(func=None, **kwargs):
+        if func is not None:
+            return func
+        def wrapper(f):
+            return f
+        return wrapper
+
 
 # Directories
 BASE_DIR = Path(__file__).resolve().parent
@@ -414,6 +417,7 @@ def search_hotspots(
     return summary_md, table_data, related_json, csv_text
 
 
+@gpu_decorator
 def run_live_prediction(dataset: str, target_month: str, top_k: int, evaluate_all: bool = False):
     if not mcp_server:
         return "MCP Server not initialized", []
@@ -878,7 +882,14 @@ if __name__ == "__main__":
     if HAS_FASTAPI and app:
         import uvicorn
         port = int(os.environ.get("PORT", 7860))
-        uvicorn.run(app, host="0.0.0.0", port=port)
+        try:
+            uvicorn.run(app, host="0.0.0.0", port=port)
+        except OSError as e:
+            if "already in use" in str(e).lower() and port != 7860:
+                print(f"Warning: Port {port} in use. Retrying on port 7860...")
+                uvicorn.run(app, host="0.0.0.0", port=7860)
+            else:
+                raise
     elif HAS_GRADIO:
         demo = build_gradio_demo()
         if demo:
