@@ -11,7 +11,7 @@ license: mit
 short_description: Delhi hotspot forecasting via MCP & Gradio
 ---
 
-# 👁️ Oculon: Delhi Hotspots ML Explorer & MCP Server
+# 🚀 OCULON: Predictive Crime Hotspot Mapping Assistant
 
 An interactive, multi-dataset spatial-temporal hotspot forecasting service and **Model Context Protocol (MCP)** server for Delhi crime and public safety data, hosted on Hugging Face Spaces at **`AbhyudayMishr/Oculon`**.
 
@@ -20,6 +20,20 @@ An interactive, multi-dataset spatial-temporal hotspot forecasting service and *
 [![MCP Ready](https://img.shields.io/badge/MCP-Server%20Ready-blue.svg)](https://modelcontextprotocol.io/)
 [![FastAPI](https://img.shields.io/badge/API-FastAPI-green.svg)](https://fastapi.tiangolo.com/)
 [![Privacy Compliant](https://img.shields.io/badge/Data-Privacy%20Preserved-yellow.svg)](#privacy-guarantees)
+
+---
+
+## 👥 Team
+
+| Field | Value |
+| :--- | :--- |
+| **Team Name** | Oculon |
+| **Track** | AI |
+| **Team Lead** | [Abhyuday Mishra](https://github.com/abhyudaymishr) — [abhymishrgkp@gmail.com](mailto:abhymishrgkp@gmail.com) |
+| **Members** | [Abhishek Kumar](https://github.com/Abhisheknfsu09), [Shivam Ahirwal](https://github.com/shivamhub99), [Aditya Soni](https://github.com/wrekner1490) |
+
+## 🎯 Problem Statement
+Municipal and law-enforcement agencies across Delhi NCR manage over 142,000 historical incident records in ZIPNET, but lack a predictive layer to forecast emerging spatial concentrations, leaving beat officers on static routes regardless of shifting crime patterns. Bengaluru's 2023 predictive policing pilot proved that data-driven dynamic micro-patrols can reduce property crime by 18% in test zones. Oculon solves this by analyzing rolling 6-month incident streams across 778 administrative micro-units to predict the top 5 at-risk zones each week with probability rationales, flags seasonal/event-linked spikes, and auto-generates actionable patrol redeployment briefs for the Station House Officer (SHO).
 
 ---
 
@@ -41,7 +55,7 @@ An interactive, multi-dataset spatial-temporal hotspot forecasting service and *
    - **Strict Forward-Time (Expanding-Window Rolling Origin)**: Reserves the latest 20% of complete calendar months, scoring each target month using only strictly prior events. Evaluates Multiclass Log Loss, Brier score sum, and Wasserstein $W_1$ distance.
 
 4. **Model Context Protocol (MCP) Server**:
-   - Connect LLM agents (Claude Desktop, Cursor, Antigravity, custom agents) over standard MCP SSE (`/sse` and `/messages`).
+   - Connect LLM agents (IBM Bob, Claude Desktop, Cursor, custom agents) over standard MCP SSE (`/sse` and `/messages`).
    - Query hotspots, fetch model metrics, and retrieve browser-openable map links directly into agent conversations.
 
 ---
@@ -76,7 +90,7 @@ pip install -e .
 ```
 
 #### CLI Commands Available Out of the Box:
-- **`oculon`** / **`oculon-mcp`**: Run the stdio Model Context Protocol (MCP) server directly (for Claude Desktop, Cursor, Antigravity, BoB, etc.):
+- **`oculon`** / **`oculon-mcp`**: Run the stdio Model Context Protocol (MCP) server directly (for IBM Bob, Claude Desktop, Cursor, etc.):
   ```bash
   oculon
   ```
