@@ -703,6 +703,19 @@ app = None
 if HAS_FASTAPI:
     app = FastAPI(title="Delhi Hotspots ML Server")
 
+    # Enable Cross-Origin Resource Sharing (CORS) for CI/CD web client requests
+    try:
+        from fastapi.middleware.cors import CORSMiddleware
+        app.add_middleware(
+            CORSMiddleware,
+            allow_origins=["*"],
+            allow_credentials=True,
+            allow_methods=["*"],
+            allow_headers=["*"],
+        )
+    except Exception as e:
+        print(f"Warning: Could not configure CORSMiddleware: {e}")
+
     # Mount static maps for direct browser navigation
     if MAPS_DIR.exists():
         app.mount("/maps", StaticFiles(directory=str(MAPS_DIR), html=True), name="maps")
