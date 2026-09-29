@@ -41,7 +41,10 @@ def run_local_tests() -> bool:
     print("🚀 RUNNING LOCAL CI/CD QUERY TEST SUITE (In-Process)")
     print("="*70 + "\n")
 
-    from delhi_hotspots import mcp_server
+    try:
+        from oculon import mcp_server
+    except ImportError:
+        from delhi_hotspots import mcp_server
     all_passed = True
 
     def test(name: str, condition: bool, details: str = ""):
