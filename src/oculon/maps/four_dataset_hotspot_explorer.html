@@ -128,11 +128,11 @@
 <aside class="query-card">
   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
     <h2 style="margin:0;font-size:15px">Top Hotspots & Search</h2>
-    <span class="live-pill" id="api-status-pill"><span class="dot-live"></span> Live API Ready</span>
+    <span class="live-pill" id="api-status-pill"><span class="dot-live"></span> Instant Spatial Index</span>
   </div>
-  <div class="small">Search any Delhi metro station, district, police jurisdiction, or place name:</div>
+  <div class="small">Instant search any Delhi metro station, district, police jurisdiction, or place name:</div>
   <div class="query-tools" style="margin-top:8px">
-    <input id="query" aria-label="Location search" placeholder="e.g. Kashmere Gate, Wazirabad, North District, Rohini..." />
+    <input id="query" aria-label="Location search" placeholder="e.g. Rajiv Chowk, Kashmere Gate, Central, Rohini..." />
     <button class="primary" id="run-query">Search</button>
   </div>
   <div class="filter-row" style="display:flex;gap:5px;margin-top:6px;flex-wrap:wrap">
@@ -154,9 +154,8 @@
       <option value="7">Top 7</option>
       <option value="15">Top 15</option>
       <option value="30">Top 30</option>
-      <option value="all">All Units</option>
+      <option value="all">All Locations</option>
     </select>
-    <button id="fetch-live-btn" style="font-size:11px;background:#0f172a;color:#fff;border-color:#334155" title="Fetch live dynamic model forecast via API">⚡ Fetch API</button>
   </div>
   <div class="unlocated" id="mobile-note" style="display:none"></div>
   <div id="results" class="results" aria-live="polite"></div>
@@ -282,86 +281,165 @@ function draw() {
   document.getElementById('next').disabled = Number(slider.value) === months.length - 1;
 }
 
-async function query() {
-  const q = document.getElementById('query').value.trim();
+function query() {
+  const qInput = document.getElementById('query');
+  const q = (qInput ? qInput.value : '').trim();
+  const qLower = q.toLowerCase();
   const distFilter = (document.getElementById('district-filter') ? document.getElementById('district-filter').value : '').trim().toLowerCase();
   const limitVal = document.getElementById('limit-filter') ? document.getElementById('limit-filter').value : '7';
   const limit = limitVal === 'all' ? 1000 : parseInt(limitVal, 10);
   const box = document.getElementById('results');
-  const pill = document.getElementById('api-status-pill');
-  
-  box.innerHTML = '<div style="padding:12px;text-align:center;color:#64748b"><span class="dot-live"></span> Searching & fetching hotspots...</div>';
-  
+  if (!box) return;
+
   const key = datasetSelect.value;
   const d = D.datasets[key];
   const target = d.forecast_month || months[months.length - 1];
-  
-  let cloudItems = null;
-  // Try Live Cloud API request first
-  try {
-    const apiUrl = `https://abhyudaymishr-oculon.hf.space/api/hotspots?dataset=${key}&month=${target}&top_k=${limitVal}&query=${encodeURIComponent(q)}`;
-    const ctrl = new AbortController();
-    const timer = setTimeout(() => ctrl.abort(), 2500);
-    const resp = await fetch(apiUrl, { signal: ctrl.signal });
-    clearTimeout(timer);
-    if (resp.ok) {
-      const data = await resp.json();
-      if (data && data.hotspots && data.hotspots.length > 0) {
-        cloudItems = data.hotspots.map(h => ({
-          name: h.name || h.station || h.location || 'Location',
-          district: h.district || '',
-          lon: h.lon || h.longitude,
-          lat: h.lat || h.latitude,
-          score: h.score !== undefined ? h.score : h.relative_model_score
-        }));
-        if (pill) pill.innerHTML = '<span class="dot-live"></span> Live API Connected (ZeroGPU)';
+  const row = d.months ? d.months[target] : null;
+  const v = methodData(row, key);
+
+  // 1. Build a master deduplicated spatial dictionary of Delhi locations
+  const locMap = new Map();
+
+  // Seed with canonical reference points for this dataset (e.g. police stations or corridors)
+  if (d.reference_points) {
+    for (const p of d.reference_points) {
+      if (!p.name) continue;
+      locMap.set(p.name.toLowerCase(), {
+        name: p.name,
+        district: p.district || '',
+        lon: p.lon,
+        lat: p.lat,
+        score: 0.05,
+        count: 0,
+        isForecast: false
+      });
+    }
+  }
+
+  // Cross-reference Delhi Metro stations from stolen_vehicles or missing_mobiles so transit searches always work
+  for (const dsKey of ['stolen_vehicles', 'missing_mobiles', 'missing_persons']) {
+    const refList = D.datasets[dsKey] ? D.datasets[dsKey].reference_points : null;
+    if (refList) {
+      for (const p of refList) {
+        if (!p.name) continue;
+        const lk = p.name.toLowerCase();
+        if (!locMap.has(lk)) {
+          locMap.set(lk, {
+            name: p.name,
+            district: p.district || '',
+            lon: p.lon,
+            lat: p.lat,
+            score: 0.04,
+            count: 0,
+            isForecast: false
+          });
+        }
       }
     }
-  } catch (err) {
-    if (pill) pill.innerHTML = '<span class="dot-live" style="background:#3b82f6;box-shadow:0 0 6px #3b82f6"></span> Local Spatial Index (High-Speed)';
   }
-  
-  // Fallback to local comprehensive store if cloud API was unavailable
-  let items = cloudItems;
-  if (!items) {
-    const row = d.months ? d.months[target] : null;
-    const v = methodData(row, key);
-    let pool = [];
-    if (v) {
-      pool = (v.forecast && v.forecast.length ? v.forecast : (v.predicted && v.predicted.length ? v.predicted : (v.actual || []))).slice();
+
+  // Aggregate observed counts across historical timeline
+  if (d.months) {
+    for (const m in d.months) {
+      const mRow = methodData(d.months[m], key);
+      if (!mRow) continue;
+      const combined = (mRow.train || []).concat(mRow.actual || []);
+      for (const item of combined) {
+        if (!item.name) continue;
+        const lk = item.name.toLowerCase();
+        let rec = locMap.get(lk);
+        if (!rec) {
+          rec = {
+            name: item.name,
+            district: item.district || '',
+            lon: item.lon,
+            lat: item.lat,
+            score: 0.05,
+            count: 0,
+            isForecast: false
+          };
+          locMap.set(lk, rec);
+        }
+        rec.count = (rec.count || 0) + (item.count || 1);
+        if (item.lon && !rec.lon) rec.lon = item.lon;
+        if (item.lat && !rec.lat) rec.lat = item.lat;
+        if (item.district && !rec.district) rec.district = item.district;
+      }
     }
-    if (!pool.length && d.reference_points) {
-      pool = d.reference_points.map(p => ({ ...p, score: 0.05 }));
+  }
+
+  // Overlay current month forecast/predicted hotspots
+  let targetHotspots = [];
+  if (v) {
+    targetHotspots = (v.forecast && v.forecast.length ? v.forecast : (v.predicted && v.predicted.length ? v.predicted : (v.actual || []))).slice();
+    for (const item of targetHotspots) {
+      if (!item.name) continue;
+      const lk = item.name.toLowerCase();
+      let rec = locMap.get(lk);
+      if (!rec) {
+        rec = {
+          name: item.name,
+          district: item.district || '',
+          lon: item.lon,
+          lat: item.lat,
+          score: item.score || 0.1,
+          count: item.count || 0,
+          isForecast: true
+        };
+        locMap.set(lk, rec);
+      } else {
+        if (item.score !== undefined) rec.score = item.score;
+        rec.isForecast = true;
+      }
     }
-    
-    // Apply text search & district filter
-    items = pool.filter(item => {
+  }
+
+  // Determine items to display
+  let items = [];
+  if (!q && !distFilter) {
+    // Default view: top forecast/predicted hotspots for target month
+    items = targetHotspots.slice();
+    if (!items.length) {
+      items = Array.from(locMap.values());
+    }
+    items.sort((a, b) => (b.score || 0) - (a.score || 0));
+  } else {
+    // User search query or district filter: comprehensive instant search across all locations
+    const all = Array.from(locMap.values());
+    items = all.filter(item => {
       const name = (item.name || '').toLowerCase();
       const dist = (item.district || '').toLowerCase();
-      const matchQ = !q || name.includes(q.toLowerCase()) || dist.includes(q.toLowerCase());
+      const matchQ = !qLower || name.includes(qLower) || dist.includes(qLower);
       const matchD = !distFilter || dist.includes(distFilter);
       return matchQ && matchD;
     });
-    
-    items.sort((a, b) => (b.score || b.count || 0) - (a.score || a.count || 0));
-    items = items.slice(0, limit);
+
+    items.sort((a, b) => {
+      if (a.isForecast !== b.isForecast) return a.isForecast ? -1 : 1;
+      return (b.score || 0) - (a.score || 0) || (b.count || 0) - (a.count || 0);
+    });
   }
-  
-  if (!items || !items.length) {
-    box.innerHTML = `<div class="unlocated">No hotspots found matching "${esc(q || distFilter)}". Try searching for another district (e.g. "North") or station name.</div>`;
+
+  items = items.slice(0, limit);
+
+  if (!items.length) {
+    box.innerHTML = `<div class="unlocated">No hotspots found matching "${esc(q || distFilter)}". Try searching for another station (e.g. "Rajiv Chowk", "Kashmere Gate", "Rohini") or select a district.</div>`;
     return;
   }
-  
-  const heading = `${d.label} · ${target} · ${items.length} hotspots`;
+
+  const heading = q 
+    ? `Matches for "${esc(q)}" · ${items.length} locations` 
+    : (distFilter ? `${distFilter.toUpperCase()} District · ${items.length} locations` : `${d.label} · ${target} · Top ${items.length} hotspots`);
+
   let html = `<div style="font-weight:600;font-size:12px;margin-bottom:8px;color:${d.color}">${heading}</div>`;
-  
+
   items.forEach((item, idx) => {
-    const scoreVal = item.score !== undefined ? Number(item.score).toFixed(4) : (item.count || 'N/A');
-    const riskClass = idx < 3 ? 'risk-crit' : (idx < 7 ? 'risk-high' : 'risk-mod');
-    const riskLabel = idx < 3 ? 'CRITICAL' : (idx < 7 ? 'ELEVATED' : 'MODERATE');
-    
+    const scoreVal = item.score !== undefined ? Number(item.score).toFixed(4) : '0.0500';
+    const riskClass = (item.isForecast || idx < 3) ? (idx < 3 ? 'risk-crit' : (idx < 7 ? 'risk-high' : 'risk-mod')) : 'risk-mod';
+    const riskLabel = (item.isForecast || idx < 3) ? (idx < 3 ? 'CRITICAL' : 'ELEVATED') : 'MONITORED';
+
     html += `
-    <div class="result-card" onclick="pinLocation(${item.lon}, ${item.lat}, '${esc(item.name)}', '${esc(item.district)}', '${scoreVal}')">
+    <div class="result-card" onclick="pinLocation(${item.lon}, ${item.lat}, '${esc(item.name)}', '${esc(item.district || '')}', '${scoreVal}')">
       <div class="card-left">
         <span style="font-weight:700;color:#64748b;font-size:12px;width:18px">#${idx + 1}</span>
         <div>
@@ -369,6 +447,7 @@ async function query() {
           <div style="margin-top:2px">
             ${item.district ? `<span class="badge-district">${esc(item.district)}</span>` : ''}
             <span class="badge-risk ${riskClass}">${riskLabel}</span>
+            ${item.count ? `<span style="font-size:10px;color:#64748b;margin-left:4px">${item.count} events</span>` : ''}
           </div>
         </div>
       </div>
@@ -378,16 +457,36 @@ async function query() {
       </div>
     </div>`;
   });
-  
+
   box.innerHTML = html;
 }
 
-datasetSelect.addEventListener('change',()=>refreshDataset());slider.addEventListener('input',draw);monthSelect.addEventListener('change',()=>{slider.value=monthSelect.value;draw()});document.getElementById('prev').onclick=()=>{slider.value=Math.max(0,+slider.value-1);draw()};document.getElementById('next').onclick=()=>{slider.value=Math.min(months.length-1,+slider.value+1);draw()};methodSelect.addEventListener('change',()=>{draw();if(document.getElementById('results').textContent)query()});document.getElementById('run-query').onclick=query;document.getElementById('query').addEventListener('keydown',e=>{if(e.key==='Enter')query()});document.getElementById('police-toggle').addEventListener('change',e=>{const g=document.getElementById('layer-police');g.style.display=e.target.checked?'':'none';if(e.target.checked){const refs=D.datasets[datasetSelect.value].reference_points||[];for(const p of refs)addPoint(g,p,datasetSelect.value,'police')}});document.querySelectorAll('[data-layer]').forEach(c=>c.addEventListener('change',()=>{const g=document.getElementById('layer-'+c.dataset.layer);g.style.display=c.checked?'':'none'}));function view(){scene.setAttribute('transform',`translate(${tx} ${ty}) translate(440 410) scale(${zoom}) translate(-440 -410)`)}document.getElementById('zin').onclick=()=>{zoom=Math.min(8,zoom*1.25);view()};document.getElementById('zout').onclick=()=>{zoom=Math.max(1,zoom/1.25);view()};svg.addEventListener('wheel',e=>{e.preventDefault();zoom=Math.max(1,Math.min(8,zoom*(e.deltaY<0?1.1:.9)));view()},{passive:false});svg.addEventListener('pointerdown',e=>{if(e.target.closest('circle,path,rect,image'))return;drag=[e.clientX,e.clientY,tx,ty];svg.setPointerCapture(e.pointerId)});svg.addEventListener('pointermove',e=>{if(!drag)return;const r=svg.getBoundingClientRect(),f=820/Math.min(r.width,r.height);tx=drag[2]+(e.clientX-drag[0])*f;ty=drag[3]+(e.clientY-drag[1])*f;view()});svg.addEventListener('pointerup',()=>drag=null);
+datasetSelect.addEventListener('change',()=>refreshDataset());
+slider.addEventListener('input',draw);
+monthSelect.addEventListener('change',()=>{slider.value=monthSelect.value;draw()});
+document.getElementById('prev').onclick=()=>{slider.value=Math.max(0,+slider.value-1);draw()};
+document.getElementById('next').onclick=()=>{slider.value=Math.min(months.length-1,+slider.value+1);draw()};
+methodSelect.addEventListener('change',()=>{draw();if(document.getElementById('results').textContent)query()});
+document.getElementById('run-query').onclick=query;
+
+// Real-time instantaneous search as user types
+const qInput = document.getElementById('query');
+qInput.addEventListener('input', query);
+qInput.addEventListener('keydown', e => { if (e.key === 'Enter') query(); });
+
+document.getElementById('police-toggle').addEventListener('change',e=>{const g=document.getElementById('layer-police');g.style.display=e.target.checked?'':'none';if(e.target.checked){const refs=D.datasets[datasetSelect.value].reference_points||[];for(const p of refs)addPoint(g,p,datasetSelect.value,'police')}});
+document.querySelectorAll('[data-layer]').forEach(c=>c.addEventListener('change',()=>{const g=document.getElementById('layer-'+c.dataset.layer);g.style.display=c.checked?'':'none'}));
+function view(){scene.setAttribute('transform',`translate(${tx} ${ty}) translate(440 410) scale(${zoom}) translate(-440 -410)`)}
+document.getElementById('zin').onclick=()=>{zoom=Math.min(8,zoom*1.25);view()};
+document.getElementById('zout').onclick=()=>{zoom=Math.max(1,zoom/1.25);view()};
+svg.addEventListener('wheel',e=>{e.preventDefault();zoom=Math.max(1,Math.min(8,zoom*(e.deltaY<0?1.1:.9)));view()},{passive:false});
+svg.addEventListener('pointerdown',e=>{if(e.target.closest('circle,path,rect,image'))return;drag=[e.clientX,e.clientY,tx,ty];svg.setPointerCapture(e.pointerId)});
+svg.addEventListener('pointermove',e=>{if(!drag)return;const r=svg.getBoundingClientRect(),f=820/Math.min(r.width,r.height);tx=drag[2]+(e.clientX-drag[0])*f;ty=drag[3]+(e.clientY-drag[1])*f;view()});
+svg.addEventListener('pointerup',()=>drag=null);
 
 document.getElementById('heatmap-toggle').addEventListener('change', draw);
 if (document.getElementById('district-filter')) document.getElementById('district-filter').addEventListener('change', query);
 if (document.getElementById('limit-filter')) document.getElementById('limit-filter').addEventListener('change', query);
-if (document.getElementById('fetch-live-btn')) document.getElementById('fetch-live-btn').addEventListener('click', query);
 
 refreshDataset();query();
 </script></body></html>
