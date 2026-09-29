@@ -1,0 +1,98 @@
+name: Deploy Static Maps to GitHub Pages (tessracting-oculon)
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: "pages-deploy-${{ github.ref }}"
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy-pages:
+    name: Build & Deploy to tesseractthou-code/tessracting-oculon
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Repository (Account A)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Build Static Web Pages & Maps Payload
+        run: |
+          python scripts/build_pages_site.py
+
+      - name: Check Deployment Token
+        id: check_token
+        run: |
+          if [ -n "${{ secrets.TESSERACT_DEPLOY_TOKEN }}" ]; then
+            echo "has_token=true" >> $GITHUB_OUTPUT
+            echo "Deployment token found in secrets.TESSERACT_DEPLOY_TOKEN."
+          elif [ -n "${{ secrets.GH_PAT }}" ]; then
+            echo "has_token=true" >> $GITHUB_OUTPUT
+            echo "Deployment token found in secrets.GH_PAT."
+          else
+            echo "has_token=false" >> $GITHUB_OUTPUT
+            echo "::warning ::No deployment token (TESSERACT_DEPLOY_TOKEN or GH_PAT) found. Please add a GitHub Personal Access Token (PAT) with repo permissions for 'tesseractthou-code' into this repository's Secrets."
+          fi
+
+      - name: Deploy to Account B (tesseractthou-code/tessracting-oculon)
+        if: steps.check_token.outputs.has_token == 'true'
+        env:
+          TARGET_REPO: "tesseractthou-code/tessracting-oculon"
+          DEPLOY_TOKEN: "${{ secrets.TESSERACT_DEPLOY_TOKEN || secrets.GH_PAT }}"
+        run: |
+          echo "--> Initializing deployment to https://github.com/${TARGET_REPO}..."
+          CLONE_DIR="$(mktemp -d)"
+          
+          # Clone or initialize target repository
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          if git clone "https://x-access-token:${DEPLOY_TOKEN}@github.com/${TARGET_REPO}.git" "$CLONE_DIR" 2>/dev/null; then
+            echo "Target repository cloned successfully."
+          else
+            echo "Target repository could not be cloned (may be empty or newly created). Initializing local branch..."
+            cd "$CLONE_DIR"
+            git init -b main
+            git remote add origin "https://x-access-token:${DEPLOY_TOKEN}@github.com/${TARGET_REPO}.git"
+            cd - >/dev/null
+          fi
+          
+          # Sync dist_pages into target repo
+          rm -rf "$CLONE_DIR"/*
+          cp -R dist_pages/* "$CLONE_DIR/"
+          cp dist_pages/.nojekyll "$CLONE_DIR/" 2>/dev/null || touch "$CLONE_DIR/.nojekyll"
+          
+          cd "$CLONE_DIR"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No changes detected. Website is already up to date!"
+          else
+            git commit -m "Deploy Oculon live web maps from ${GITHUB_REPOSITORY}@${GITHUB_SHA::7}"
+            git push -u origin main
+            echo "Successfully deployed to https://github.com/${TARGET_REPO}!"
+            echo "Live URL: https://tesseractthou-code.github.io/tessracting-oculon/"
+          fi
+
+      - name: Manual Setup Instructions (If Token Missing)
+        if: steps.check_token.outputs.has_token != 'true'
+        run: |
+          echo "=========================================================================="
+          echo "NEXT STEP TO ACTIVATE CROSS-ACCOUNT GITHUB PAGES DEPLOYMENT:"
+          echo "1. On GitHub account 'tesseractthou-code', generate a Personal Access Token (PAT)"
+          echo "   with 'repo' scope at: https://github.com/settings/tokens"
+          echo "2. In this repository ('abhyudaymishr/bob-ai-hackathon-oculon'), go to:"
+          echo "   Settings -> Secrets and variables -> Actions -> New repository secret"
+          echo "3. Name: TESSERACT_DEPLOY_TOKEN"
+          echo "   Value: [Paste your Personal Access Token]"
+          echo "4. On 'tesseractthou-code/tessracting-oculon', ensure GitHub Pages is enabled:"
+          echo "   Settings -> Pages -> Source: Deploy from branch 'main' / (root)"
+          echo "=========================================================================="

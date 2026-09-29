@@ -158,6 +158,7 @@ def execute_mcp_tool(name: str, args: Dict[str, Any], base_url: str) -> Dict[str
             data_type=args.get("data_type", "hotspots")
         )
         res["hosted_map_url"] = f"{base_url}/maps/four_dataset_hotspot_explorer.html"
+        res["github_pages_map_url"] = "https://tesseractthou-code.github.io/tessracting-oculon/maps/four_dataset_hotspot_explorer.html"
         return res
 
     elif name == "predict_hotspots":
@@ -193,11 +194,13 @@ def execute_mcp_tool(name: str, args: Dict[str, Any], base_url: str) -> Dict[str
         }
         filename = map_files.get(map_type, "four_dataset_hotspot_explorer.html")
         map_url = f"{base_url}/maps/{filename}"
+        pages_url = f"https://tesseractthou-code.github.io/tessracting-oculon/maps/{filename}"
         return {
             "status": "success",
             "map_type": map_type,
             "hosted_map_url": map_url,
-            "message": f"Interactive hotspot map available at {map_url}."
+            "github_pages_url": pages_url,
+            "message": f"Interactive hotspot map available at {map_url} (or GitHub Pages live mirror at {pages_url})."
         }
 
     elif name == "get_model_metrics":
@@ -303,12 +306,18 @@ MAP_OPTIONS = {
 def get_map_iframe(selected_label: str) -> str:
     filename = MAP_OPTIONS.get(selected_label, "four_dataset_hotspot_explorer.html")
     map_url = f"/maps/{filename}"
+    pages_url = f"https://tesseractthou-code.github.io/tessracting-oculon/maps/{filename}"
     return f"""
-    <div style="margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; background: #f8fafc; padding: 12px 16px; border-radius: 8px; border: 1px solid #e2e8f0;">
+    <div style="margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; background: #f8fafc; padding: 12px 16px; border-radius: 8px; border: 1px solid #e2e8f0; flex-wrap: wrap; gap: 8px;">
         <span style="font-weight: 600; color: #1e293b;">Active Map: <code style="color: #2563eb;">{filename}</code></span>
-        <a href="{map_url}" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; background-color: #2563eb; color: white; text-decoration: none; font-weight: 600; padding: 8px 16px; border-radius: 6px; font-size: 14px; transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='#1d4ed8'" onmouseout="this.style.backgroundColor='#2563eb'">
-            Open Map in Fullscreen Browser Tab &rarr;
-        </a>
+        <div style="display: flex; gap: 8px; align-items: center;">
+            <a href="{pages_url}" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; background-color: #0f172a; color: white; text-decoration: none; font-weight: 600; padding: 8px 14px; border-radius: 6px; font-size: 13px; border: 1px solid #334155; transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='#1e293b'" onmouseout="this.style.backgroundColor='#0f172a'">
+                🌐 GitHub Pages Mirror &rarr;
+            </a>
+            <a href="{map_url}" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; background-color: #2563eb; color: white; text-decoration: none; font-weight: 600; padding: 8px 16px; border-radius: 6px; font-size: 14px; transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='#1d4ed8'" onmouseout="this.style.backgroundColor='#2563eb'">
+                Open Fullscreen &rarr;
+            </a>
+        </div>
     </div>
     <iframe src="{map_url}" style="width: 100%; height: 780px; border: 1px solid #cbd5e1; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);" title="Delhi Hotspots Map"></iframe>
     """
