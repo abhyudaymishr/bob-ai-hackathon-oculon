@@ -261,7 +261,8 @@ INDEX_HTML_CONTENT = """<!DOCTYPE html>
       display: flex;
       flex-direction: column;
       position: relative;
-      background: #040711;
+      background: #faf9f4;
+      min-height: 0;
     }
 
     .map-frame-wrapper {
@@ -269,26 +270,30 @@ INDEX_HTML_CONTENT = """<!DOCTYPE html>
       width: 100%;
       height: calc(100vh - 146px);
       height: calc(100dvh - 146px);
-      min-height: 520px;
+      min-height: 580px;
       position: relative;
-      background: #050814;
+      background: #faf9f4;
+      overflow: hidden;
     }
 
     iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       border: none;
       display: block;
-      background: #050814;
+      background: #faf9f4;
     }
 
     .controls-overlay {
       position: absolute;
-      top: 0.85rem;
-      right: 1.25rem;
+      top: 0.65rem;
+      right: 1rem;
       z-index: 50;
       display: flex;
-      gap: 0.5rem;
+      gap: 0.45rem;
       pointer-events: auto;
     }
 
