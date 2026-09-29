@@ -65,7 +65,7 @@ Municipal and law-enforcement agencies across Delhi NCR manage over 142,000 hist
 ### Method 1: Instant Cloud Access (No Setup Required)
 - **Live Interactive Web App**: [https://abhyudaymishr-oculon.hf.space](https://abhyudaymishr-oculon.hf.space)
 - **Hugging Face Space**: [https://huggingface.co/spaces/AbhyudayMishr/Oculon](https://huggingface.co/spaces/AbhyudayMishr/Oculon)
-- **Standalone Interactive Map**: [https://abhyudaymishr-oculon.hf.space/maps/four_dataset_hotspot_explorer.html](https://abhyudaymishr-oculon.hf.space/maps/four_dataset_hotspot_explorer.html)
+- **Standalone Interactive Map**: [https://tesseractthou-code.github.io/tessracting-oculon/](https://tesseractthou-code.github.io/tessracting-oculon/)
 
 ---
 
