@@ -13,6 +13,7 @@ Packaging:
 import os
 import shutil
 from pathlib import Path
+from typing import Optional
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 MAPS_SRC_DIR = ROOT_DIR / "hf_space" / "maps" if (ROOT_DIR / "hf_space" / "maps").exists() else ROOT_DIR / "app"
@@ -376,10 +377,24 @@ Live static web map mirror for **OCULON: Predictive Crime Hotspot Mapping Assist
 *Automatically generated and deployed via GitHub Actions CI/CD from `abhyudaymishr/bob-ai-hackathon-oculon`.*
 """
 
+def find_map_file(filename: str) -> Optional[Path]:
+    candidate_dirs = [
+        ROOT_DIR / "maps",
+        ROOT_DIR / "src" / "oculon" / "maps",
+        ROOT_DIR / "hf_space" / "maps",
+        ROOT_DIR / "app",
+        ROOT_DIR / "app" / "individual_maps",
+    ]
+    for d in candidate_dirs:
+        candidate = d / filename
+        if candidate.exists() and candidate.is_file():
+            return candidate
+    return None
+
 def build():
     print(f"--> Building Oculon static web pages site...")
-    print(f"    Source maps: {MAPS_SRC_DIR}")
-    print(f"    Output dir:  {OUTPUT_DIR}")
+    print(f"    Root directory: {ROOT_DIR}")
+    print(f"    Output dir:     {OUTPUT_DIR}")
 
     if OUTPUT_DIR.exists():
         shutil.rmtree(OUTPUT_DIR)
@@ -397,18 +412,12 @@ def build():
     ]
 
     for filename in map_files:
-        src_file = MAPS_SRC_DIR / filename
-        if not src_file.exists():
-            # Check individual_maps subdirectory fallback
-            alt_src = MAPS_SRC_DIR / "individual_maps" / filename
-            if alt_src.exists():
-                src_file = alt_src
-        
-        if src_file.exists():
+        src_file = find_map_file(filename)
+        if src_file:
             shutil.copy2(src_file, dest_maps_dir / filename)
-            print(f"    [+] Copied map: {filename} ({src_file.stat().st_size / 1024:.1f} KB)")
+            print(f"    [+] Copied map: {filename} from {src_file.parent.name} ({src_file.stat().st_size / 1024:.1f} KB)")
         else:
-            print(f"    [!] Warning: map file {filename} not found!")
+            raise FileNotFoundError(f"CRITICAL: map file {filename} could not be located in any candidate directory!")
 
     # Write root index.html
     (OUTPUT_DIR / "index.html").write_text(INDEX_HTML_CONTENT, encoding="utf-8")
