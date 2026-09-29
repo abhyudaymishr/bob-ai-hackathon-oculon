@@ -212,6 +212,7 @@ def execute_mcp_tool(name: str, args: Dict[str, Any], base_url: str) -> Dict[str
     elif name == "list_datasets_and_months":
         res = mcp_server.list_datasets_and_months()
         res["hugging_face_connection"]["space_url"] = base_url
+        res["hugging_face_connection"]["remote_mcp_http_endpoint"] = f"{base_url}/mcp"
         res["hugging_face_connection"]["remote_mcp_sse_endpoint"] = f"{base_url}/sse"
         res["hugging_face_connection"]["remote_rest_api"] = f"{base_url}/api/hotspots"
         return res
@@ -664,17 +665,32 @@ def build_gradio_demo():
                 This Hugging Face Space functions as a **complete remote MCP Server** that can run independent related queries and live model inference on the complete datasets.
 
                 #### 1. Claude Desktop Configuration
-                Add this to your `claude_desktop_config.json`:
+                Supports both **Streamable HTTP** (recommended, modern MCP specification) and legacy SSE:
 
+                **Option A: Streamable HTTP via `mcp-remote` (Recommended)**
                 ```json
                 {
                   "mcpServers": {
                     "oculon_delhi_hotspots": {
-                      "url": "https://abhyudaymishr-oculon.hf.space/sse"
+                      "command": "npx",
+                      "args": [
+                        "-y",
+                        "mcp-remote",
+                        "https://abhyudaymishr-oculon.hf.space/mcp",
+                        "--transport",
+                        "http-only"
+                      ]
                     }
                   }
                 }
                 ```
+
+                **Option B: Claude Remote Connector (Streamable HTTP)**
+                Under Claude Desktop Connectors -> Advanced -> Transport: Select **Streamable HTTP**, URL:
+                `https://abhyudaymishr-oculon.hf.space/mcp`
+
+                **Option C: Legacy SSE Transport**
+                `https://abhyudaymishr-oculon.hf.space/sse`
 
                 #### 2. Available Universal MCP Tools
                 - `fetch_dataset_records(dataset, data_type, month, limit, offset, filter_district, filter_station)`: Completely user-controlled fetching (any limit or 'all') for any data type.
@@ -855,10 +871,162 @@ if HAS_FASTAPI:
             base = base.replace("http://", "https://")
         return base
 
+    # --------------------------------------------------------------------------
+    # Streamable HTTP MCP Endpoint (/mcp, /mcp/v1, /http, /rpc, /gradio_api/mcp)
+    # The modern, official MCP transport replacing legacy dual-connection SSE.
+    # Accepts JSON-RPC 2.0 POST requests and returns direct JSON or event-streams.
+    # --------------------------------------------------------------------------
+    @app.api_route("/mcp", methods=["GET", "POST", "HEAD", "OPTIONS"])
+    @app.api_route("/mcp/v1", methods=["GET", "POST", "HEAD", "OPTIONS"])
+    @app.api_route("/http", methods=["GET", "POST", "HEAD", "OPTIONS"])
+    @app.api_route("/rpc", methods=["GET", "POST", "HEAD", "OPTIONS"])
+    @app.api_route("/gradio_api/mcp", methods=["GET", "POST", "HEAD", "OPTIONS"])
+    async def streamable_http_endpoint(request: Request):
+        # 1. CORS Preflight & Health Check
+        if request.method in ("OPTIONS", "HEAD"):
+            return Response(
+                status_code=200,
+                headers={
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Allow-Methods": "GET, POST, OPTIONS, HEAD",
+                    "Access-Control-Allow-Headers": "*",
+                    "Access-Control-Expose-Headers": "*",
+                    "MCP-Protocol-Version": "2024-11-05",
+                }
+            )
+
+        base_url = _get_public_base_url(request)
+
+        # 2. GET Request: Metadata or persistent event-stream if requested
+        if request.method == "GET":
+            accept_header = request.headers.get("accept", "")
+            if "text/event-stream" in accept_header:
+                async def stream_mcp_events():
+                    yield f"event: endpoint\ndata: {base_url}/mcp\n\n"
+                    while True:
+                        if await request.is_disconnected():
+                            break
+                        await asyncio.sleep(20.0)
+                        yield ": keep-alive\n\n"
+
+                return StreamingResponse(
+                    stream_mcp_events(),
+                    media_type="text/event-stream",
+                    headers={
+                        "Cache-Control": "no-cache",
+                        "Connection": "keep-alive",
+                        "X-Accel-Buffering": "no",
+                        "Access-Control-Allow-Origin": "*",
+                        "Access-Control-Expose-Headers": "*",
+                        "MCP-Protocol-Version": "2024-11-05",
+                    }
+                )
+
+            return JSONResponse(
+                status_code=200,
+                content={
+                    "status": "online",
+                    "service": "OCULON Delhi Hotspots ML Model Context Protocol (MCP) Server",
+                    "transport": "streamable-http",
+                    "protocolVersion": "2024-11-05",
+                    "endpoints": {
+                        "streamable_http": f"{base_url}/mcp",
+                        "streamable_http_aliases": [f"{base_url}/mcp/v1", f"{base_url}/http", f"{base_url}/rpc"],
+                        "legacy_sse": f"{base_url}/sse",
+                        "legacy_messages": f"{base_url}/messages"
+                    },
+                    "tools_count": len(MCP_TOOLS),
+                    "resources_count": len(MCP_RESOURCES),
+                    "documentation": "Send JSON-RPC 2.0 requests via HTTP POST to /mcp (e.g. initialize, tools/list, tools/call)."
+                },
+                headers={
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Expose-Headers": "*",
+                    "MCP-Protocol-Version": "2024-11-05",
+                }
+            )
+
+        # 3. POST Request: Execute JSON-RPC 2.0 call directly
+        try:
+            req_body = await request.json()
+        except Exception as e:
+            return JSONResponse(
+                status_code=400,
+                content={"jsonrpc": "2.0", "id": None, "error": {"code": -32700, "message": f"Parse error: {str(e)}"}},
+                headers={"Access-Control-Allow-Origin": "*", "MCP-Protocol-Version": "2024-11-05"}
+            )
+
+        # Support both single request object and batch requests
+        if isinstance(req_body, list):
+            responses = []
+            for item in req_body:
+                r = handle_remote_rpc(item, base_url)
+                if r is not None:
+                    responses.append(r)
+            return JSONResponse(
+                status_code=200,
+                content=responses,
+                headers={
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Expose-Headers": "*",
+                    "MCP-Protocol-Version": "2024-11-05",
+                }
+            )
+
+        resp = handle_remote_rpc(req_body, base_url)
+        if resp is None:
+            # Notifications (e.g. notifications/initialized) return HTTP 204 No Content
+            return Response(
+                status_code=204,
+                headers={
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Expose-Headers": "*",
+                    "MCP-Protocol-Version": "2024-11-05",
+                }
+            )
+
+        accept_header = request.headers.get("accept", "")
+        # If client explicitly requests text/event-stream only, stream response
+        if "text/event-stream" in accept_header and "application/json" not in accept_header:
+            async def single_event_stream():
+                yield f"event: message\ndata: {json.dumps(resp)}\n\n"
+
+            return StreamingResponse(
+                single_event_stream(),
+                media_type="text/event-stream",
+                headers={
+                    "Cache-Control": "no-cache",
+                    "Connection": "keep-alive",
+                    "X-Accel-Buffering": "no",
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Expose-Headers": "*",
+                    "MCP-Protocol-Version": "2024-11-05",
+                }
+            )
+
+        return JSONResponse(
+            status_code=200,
+            content=resp,
+            headers={
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Expose-Headers": "*",
+                "MCP-Protocol-Version": "2024-11-05",
+            }
+        )
+
     # SSE endpoints for Remote Model Context Protocol (MCP) clients (both /sse and /gradio_api/mcp/sse)
-    @app.api_route("/sse", methods=["GET", "HEAD", "OPTIONS"])
-    @app.api_route("/gradio_api/mcp/sse", methods=["GET", "HEAD", "OPTIONS"])
+    @app.api_route("/sse", methods=["GET", "POST", "HEAD", "OPTIONS"])
+    @app.api_route("/gradio_api/mcp/sse", methods=["GET", "POST", "HEAD", "OPTIONS"])
     async def sse_endpoint(request: Request):
+        if request.method == "POST":
+            # If client posts to /sse directly without query sessionId, handle via Streamable HTTP
+            session_id = request.query_params.get("sessionId")
+            if not session_id:
+                return await streamable_http_endpoint(request)
+            return await messages_endpoint(request)
+
         if request.method in ("HEAD", "OPTIONS"):
             return Response(
                 status_code=200,
@@ -869,6 +1037,8 @@ if HAS_FASTAPI:
                     "Access-Control-Allow-Origin": "*",
                     "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS, POST",
                     "Access-Control-Allow-Headers": "*",
+                    "Access-Control-Expose-Headers": "*",
+                    "MCP-Protocol-Version": "2024-11-05",
                 }
             )
 
@@ -903,6 +1073,7 @@ if HAS_FASTAPI:
                 "X-Accel-Buffering": "no",
                 "Access-Control-Allow-Origin": "*",
                 "Access-Control-Expose-Headers": "*",
+                "MCP-Protocol-Version": "2024-11-05",
             }
         )
 
@@ -916,12 +1087,15 @@ if HAS_FASTAPI:
                     "Access-Control-Allow-Origin": "*",
                     "Access-Control-Allow-Methods": "POST, OPTIONS",
                     "Access-Control-Allow-Headers": "*",
+                    "Access-Control-Expose-Headers": "*",
+                    "MCP-Protocol-Version": "2024-11-05",
                 }
             )
 
         session_id = request.query_params.get("sessionId")
         if not session_id or session_id not in sse_sessions:
-            return JSONResponse(status_code=404, content={"error": "Session not found or expired"})
+            # Fallback seamlessly to direct Streamable HTTP handling
+            return await streamable_http_endpoint(request)
 
         try:
             req_body = await request.json()
@@ -938,6 +1112,7 @@ if HAS_FASTAPI:
             headers={
                 "Access-Control-Allow-Origin": "*",
                 "Access-Control-Expose-Headers": "*",
+                "MCP-Protocol-Version": "2024-11-05",
             }
         )
 

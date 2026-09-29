@@ -35,10 +35,10 @@ jobs:
 
       - name: Bytecode & Syntax Verification
         run: |
-          python -m py_compile src/delhi_hotspots/*.py
           python -m py_compile src/oculon/*.py
-          python -m py_compile hf_space/app.py
-          python -m py_compile scripts/test_ci_cd_queries.py
+          python -m py_compile app.py scripts/test_ci_cd_queries.py
+          if [ -d "src/delhi_hotspots" ]; then python -m py_compile src/delhi_hotspots/*.py; fi
+          if [ -f "hf_space/app.py" ]; then python -m py_compile hf_space/app.py; fi
 
       - name: Execute Complete Dataset CI/CD Queries (Local In-Process)
         run: |

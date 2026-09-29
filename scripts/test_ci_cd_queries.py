@@ -260,6 +260,41 @@ def run_remote_tests(base_url: str) -> bool:
         metrics = http_get("/api/metrics")
         test("GET /api/metrics returns rolling-origin and baseline", "rolling_origin_forward_time" in metrics or "rolling_origin" in metrics, "(metrics loaded)")
 
+        # Test 7: POST /mcp Streamable HTTP JSON-RPC initialize
+        print("--> Testing POST /mcp (Streamable HTTP initialize)...")
+        mcp_init = http_post("/mcp", {
+            "jsonrpc": "2.0",
+            "id": 100,
+            "method": "initialize",
+            "params": {
+                "protocolVersion": "2024-11-05",
+                "capabilities": {}
+            }
+        })
+        test("POST /mcp initialize returns protocolVersion 2024-11-05", mcp_init.get("result", {}).get("protocolVersion") == "2024-11-05", f"(got {mcp_init.get('result', {}).get('protocolVersion')})")
+
+        # Test 8: POST /mcp Streamable HTTP tools/call
+        print("--> Testing POST /mcp (Streamable HTTP tools/call)...")
+        mcp_call = http_post("/mcp", {
+            "jsonrpc": "2.0",
+            "id": 101,
+            "method": "tools/call",
+            "params": {
+                "name": "query_hotspots",
+                "arguments": {
+                    "dataset": "missing_persons",
+                    "top_k": 5
+                }
+            }
+        })
+        mcp_call_text = json.loads(mcp_call.get("result", {}).get("content", [{}])[0].get("text", "{}"))
+        test("POST /mcp tools/call returns top_k=5 hotspots", len(mcp_call_text.get("hotspots", [])) == 5, f"(got {len(mcp_call_text.get('hotspots', []))})")
+
+        # Test 9: GET /mcp Streamable HTTP metadata
+        print("--> Testing GET /mcp (Streamable HTTP metadata)...")
+        mcp_info = http_get("/mcp")
+        test("GET /mcp returns transport='streamable-http'", mcp_info.get("transport") == "streamable-http", f"(status: {mcp_info.get('status')})")
+
     except Exception as e:
         print(f"{FAIL_ICON} ERROR during remote HTTP query tests: {e}")
         all_passed = False
