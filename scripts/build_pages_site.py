@@ -508,14 +508,14 @@ INDEX_HTML_CONTENT = """<!DOCTYPE html>
     <nav class="nav-links" aria-label="Quick links">
       <div class="badge badge-engine" id="browser-engine-badge"><span class="dot-live"></span> Universal Browser Engine</div>
       <a href="https://abhyudaymishr-oculon.hf.space" target="_blank" rel="noopener noreferrer" class="badge">🤗 HF Space</a>
-      <a href="https://abhyudaymishr-oculon.hf.space/gradio_api/mcp/sse" target="_blank" rel="noopener noreferrer" class="badge">🔌 MCP SSE Server</a>
+      <a href="https://abhyudaymishr-oculon.hf.space/mcp" target="_blank" rel="noopener noreferrer" class="badge">🔌 MCP Streamable HTTP</a>
       <a href="https://github.com/abhyudaymishr/bob-ai-hackathon-oculon" target="_blank" rel="noopener noreferrer" class="badge badge-primary">GitHub Source</a>
     </nav>
   </header>
 
   <nav class="tabs-bar" role="tablist" aria-label="Available crime hotspot map views">
     <button role="tab" aria-selected="true" class="tab-btn active" onclick="switchMap('maps/four_dataset_hotspot_explorer.html', this)">
-      🌐 Four-Dataset Hotspot Explorer (All-in-One)
+      🗺️ Delhi Street Map & Hotspot Explorer (All-in-One)
     </button>
     <button role="tab" aria-selected="false" class="tab-btn" onclick="switchMap('maps/missing_persons_map.html', this)">
       🔵 Missing Persons Spatiotemporal Map
