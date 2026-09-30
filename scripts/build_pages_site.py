@@ -509,7 +509,7 @@ INDEX_HTML_CONTENT = """<!DOCTYPE html>
       <div class="badge badge-engine" id="browser-engine-badge"><span class="dot-live"></span> Universal Browser Engine</div>
       <a href="https://abhyudaymishr-oculon.hf.space" target="_blank" rel="noopener noreferrer" class="badge">🤗 HF Space</a>
       <a href="https://abhyudaymishr-oculon.hf.space/mcp" target="_blank" rel="noopener noreferrer" class="badge">🔌 MCP Streamable HTTP</a>
-      <a href="https://github.com/abhyudaymishr/bob-ai-hackathon-oculon" target="_blank" rel="noopener noreferrer" class="badge badge-primary">GitHub Source</a>
+      <a href="https://github.com/abhyudaymishr/oculon" target="_blank" rel="noopener noreferrer" class="badge badge-primary">GitHub Source</a>
     </nav>
   </header>
 
@@ -694,7 +694,7 @@ Live static web map mirror for **OCULON: Predictive Crime Hotspot Mapping Assist
 Optimized for **Google Chrome**, **Microsoft Edge**, **Brave Browser**, **Apple Safari**, and **Mozilla Firefox**.
 
 - **Live Website**: [https://tesseractthou-code.github.io/tessracting-oculon/](https://tesseractthou-code.github.io/tessracting-oculon/)
-- **Upstream Source Code**: [https://github.com/abhyudaymishr/bob-ai-hackathon-oculon](https://github.com/abhyudaymishr/bob-ai-hackathon-oculon)
+- **Upstream Source Code**: [https://github.com/abhyudaymishr/oculon](https://github.com/abhyudaymishr/oculon)
 - **Live Hugging Face Space & MCP Server**: [https://abhyudaymishr-oculon.hf.space](https://abhyudaymishr-oculon.hf.space)
 
 ---
@@ -710,7 +710,7 @@ Optimized for **Google Chrome**, **Microsoft Edge**, **Brave Browser**, **Apple 
 
 ---
 
-*Automatically generated and deployed via GitHub Actions CI/CD from `abhyudaymishr/bob-ai-hackathon-oculon`.*
+*Automatically generated and deployed via GitHub Actions CI/CD from `abhyudaymishr/oculon`.*
 """
 
 def find_map_file(filename: str) -> Optional[Path]:

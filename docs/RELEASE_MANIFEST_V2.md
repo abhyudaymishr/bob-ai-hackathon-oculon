@@ -62,7 +62,7 @@
 | Component | Target Platform / Host | Version Tag | Exposure Level | Permitted Shipped Content | Prohibited / Quarantined Content |
 | :--- | :--- | :---: | :---: | :--- | :--- |
 | **Frontend** | GitHub Account B (`tesseractthou-code/tessracting-oculon`) via GitHub Pages | `v2.0.0` | **PUBLIC** | • Static HTML maps (`dist_pages/maps/*.html`)<br>• Root portal (`index.html`)<br>• Client JS API consumers | • Proprietary algorithm source<br>• Model training routines<br>• Raw CSVs / PII<br>• Internal tokens / keys |
-| **Public Backend** | GitHub Account A (`abhyudaymishr/Oculon`) & PyPI (`oculon`) | `v2.0.0`<br>(API `v2`) | **PUBLIC** | • Public API client (`client_v2.py`)<br>• MCP tool schemas<br>• CI/CD workflows<br>• Version manifest (`release_manifest.json`) | • Internal Poisson GP derivations<br>• Private weights / calibration tables<br>• Cloud deployment credentials |
+| **Public Backend** | GitHub Account A (`abhyudaymishr/oculon`) & PyPI (`oculon`) | `v2.0.0`<br>(API `v2`) | **PUBLIC** | • Public API client (`client_v2.py`)<br>• MCP tool schemas<br>• CI/CD workflows<br>• Version manifest (`release_manifest.json`) | • Internal Poisson GP derivations<br>• Private weights / calibration tables<br>• Cloud deployment credentials |
 | **Private Runtime** | Hugging Face Spaces (`AbhyudayMishr/Oculon`) | `v2.1.0` | **PRIVATE BACKEND** | • Secure API handlers (`/api/v2/*`)<br>• Gradio 5 server<br>• Proprietary v2 Lebesgue engine | N/A (Server-side execution environment behind HTTPS) |
 | **Proprietary Algorithm** | Private Engine (`src/delhi_hotspots/v2_lebesgue_engine.py`) | `internal-rev-2.0.4` | **PROPRIETARY** | • Continuous Lebesgue density engine<br>• Exact polygon boundary clipper<br>• Population exposure offsets | Never committed to public frontend or public git branches |
 | **Hugging Face Model** | Model Layer (`oculon-spatiotemporal-hotspot-model`) | `v2.0` | **BACKEND MODEL** | • Trained model matrices<br>• Voronoi catchment lookup table | Shipped only in private inference container |
@@ -159,7 +159,7 @@ Returns both discrete baseline benchmarks and continuous Lebesgue area-entropy-c
    * Static web pages on GitHub Account B (`tesseractthou-code/tessracting-oculon`) receive only the aggregated JSON payloads and pre-rendered vector maps.
    * No Python dependencies, mathematical solvers, or training scripts exist in `dist_pages/`.
 2. **Public Repository Hygiene:**
-   * Account A (`abhyudaymishr/Oculon`) maintains only integration clients, CI/CD runners, and public contracts.
+   * Account A (`abhyudaymishr/oculon`) maintains only integration clients, CI/CD runners, and public contracts.
    * Proprietary source code (`v2_lebesgue_engine.py`) is quarantined on the private Hugging Face inference backend.
 3. **Traceability:**
    * Every release is tracked via `config/release_manifest.json`, allowing independent version upgrades of the frontend (`v2.0.0`), public API (`v2`), and internal proprietary engine (`internal-rev-2.0.4`) without breaking changes.

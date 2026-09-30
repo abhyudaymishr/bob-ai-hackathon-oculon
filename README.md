@@ -76,13 +76,13 @@ pip install oculon
 
 Or install directly from GitHub:
 ```bash
-pip install git+https://github.com/abhyudaymishr/Oculon.git
+pip install git+https://github.com/abhyudaymishr/oculon.git
 ```
 
 Or for editable development:
 ```bash
-git clone https://github.com/abhyudaymishr/Oculon.git
-cd Oculon
+git clone https://github.com/abhyudaymishr/oculon.git
+cd oculon
 pip install -e .
 ```
 
@@ -120,8 +120,8 @@ print(metrics)
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/abhyudaymishr/Oculon.git
-   cd Oculon
+   git clone https://github.com/abhyudaymishr/oculon.git
+   cd oculon
    ```
 
 2. **Create and Activate a Virtual Environment**:

@@ -34,7 +34,7 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/abhyudaymishr/Oculon"
+Homepage = "https://github.com/abhyudaymishr/oculon"
 "Hugging Face Space" = "https://huggingface.co/spaces/AbhyudayMishr/Oculon"
 
 [project.scripts]
