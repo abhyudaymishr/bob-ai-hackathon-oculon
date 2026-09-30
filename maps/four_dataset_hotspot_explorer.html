@@ -196,7 +196,8 @@ svg#map {
   top: 0;
   left: 0;
   z-index: 2;
-  background: #f1f5f9;
+  display: none;
+  background: transparent;
 }
 .map-wrap {
   position: relative;
@@ -306,7 +307,7 @@ svg#map {
 </select> <div class="layers"><label style="font-weight:600;color:#c026d3"><input type="checkbox" id="heatmap-toggle" checked> 🔥 Density Heatmap</label> <label><input type="checkbox" data-layer="train" checked> Train counts</label> <label><input type="checkbox" data-layer="actual" checked> Test actual hotspots</label> <label><input type="checkbox" data-layer="predicted" checked> Test predicted hotspots</label> <label><input type="checkbox" data-layer="forecast" checked> Forecast</label> <label><input type="checkbox" id="police-toggle"> Police references</label></div></div>
 <div class="map-wrap">
 <div id="street-map"></div>
-<svg id="map" viewBox="0 0 880 820" role="img" aria-label="Delhi street map with spatiotemporal hotspot overlays">
+<svg id="map" style="width:100%;height:100%;display:block;" viewBox="0 0 880 820" role="img" aria-label="Delhi street map with spatiotemporal hotspot overlays">
 <defs>
   <filter id="heat-glow" x="-60%" y="-60%" width="220%" height="220%">
     <feGaussianBlur stdDeviation="15" result="blur"/>
@@ -546,6 +547,12 @@ const tileServers = {
 function initStreetMap() {
   if (streetMap || !window.L || !document.getElementById('street-map')) return;
   try {
+    const mapEl = document.getElementById('street-map');
+    const svgEl = document.getElementById('map');
+    const zoomBtns = document.querySelector('.zoom');
+    const styleSelect = document.getElementById('map-style-select');
+    const chosenStyle = styleSelect ? styleSelect.value : 'osm';
+
     streetMap = L.map('street-map', {
       center: [28.625, 77.215],
       zoom: 11,
@@ -555,17 +562,27 @@ function initStreetMap() {
     });
 
     L.control.zoom({ position: 'topright' }).addTo(streetMap);
-
-    streetTileLayer = L.tileLayer(tileServers.osm.url, tileServers.osm.options).addTo(streetMap);
+    streetTileLayer = L.tileLayer(tileServers[chosenStyle === 'vector' ? 'osm' : chosenStyle].url, tileServers[chosenStyle === 'vector' ? 'osm' : chosenStyle].options).addTo(streetMap);
     streetMarkersGroup = L.layerGroup().addTo(streetMap);
 
-    const styleSelect = document.getElementById('map-style-select');
-    if (styleSelect) {
+    if (chosenStyle !== 'vector') {
+      mapEl.style.display = 'block';
+      if (svgEl) svgEl.style.display = 'none';
+      if (zoomBtns) zoomBtns.style.display = 'none';
+      setTimeout(() => { streetMap.invalidateSize(); }, 50);
+    }
+
+    if (styleSelect && !styleSelect.dataset.bound) {
+      styleSelect.dataset.bound = 'true';
       styleSelect.addEventListener('change', (e) => setMapStyle(e.target.value));
     }
   } catch (err) {
     console.warn('Leaflet initialization warning, falling back to Vector Street Map:', err);
     streetMap = null;
+    const mapEl = document.getElementById('street-map');
+    const svgEl = document.getElementById('map');
+    if (mapEl) mapEl.style.display = 'none';
+    if (svgEl) svgEl.style.display = 'block';
   }
 }
 
@@ -589,7 +606,7 @@ function setMapStyle(styleKey) {
       streetTileLayer = L.tileLayer(tileServers[styleKey].url, tileServers[styleKey].options).addTo(streetMap);
       currentTileKey = styleKey;
     }
-    streetMap.invalidateSize();
+    setTimeout(() => { streetMap.invalidateSize(); }, 50);
   }
   draw();
 }
@@ -1078,4 +1095,6 @@ if (document.getElementById('district-filter')) document.getElementById('distric
 if (document.getElementById('limit-filter')) document.getElementById('limit-filter').addEventListener('change', query);
 
 refreshDataset();query();
+initStreetMap();
+window.addEventListener('load', () => { initStreetMap(); });
 </script></body></html>
