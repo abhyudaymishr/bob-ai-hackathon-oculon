@@ -542,7 +542,7 @@ INDEX_HTML_CONTENT = """<!DOCTYPE html>
     </div>
 
     <div class="map-frame-wrapper">
-      <iframe id="map-frame" src="maps/four_dataset_hotspot_explorer.html" title="Oculon Map Explorer" loading="eager" allow="geolocation" sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-downloads allow-modals"></iframe>
+      <iframe id="map-frame" src="maps/four_dataset_hotspot_explorer.html" title="Oculon Map Explorer" loading="eager" allow="geolocation" style="width:100%;height:100%;border:none;display:block;"></iframe>
     </div>
   </main>
 

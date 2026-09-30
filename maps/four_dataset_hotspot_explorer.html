@@ -1,15 +1,9 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Delhi Street Map & Spatiotemporal Predictive Hotspot Explorer</title>
 <!-- Leaflet & Street Map Assets -->
-<!-- Multi-CDN Resilient Leaflet & Street Map Engine -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script>
-if (typeof window.L === 'undefined') {
-  document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"><\/script>');
-}
-</script>
 <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
 
 <style>
@@ -195,6 +189,7 @@ svg#map {
 }
 
 
+
 /* Delhi Street Map Styles */
 #street-map {
   width: 100%;
@@ -203,9 +198,59 @@ svg#map {
   top: 0;
   left: 0;
   z-index: 2;
-  display: none;
-  background: transparent;
+  display: block;
+  background: #f8fafc;
 }
+svg#map {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: none;
+  background: #f8fafc;
+}
+.street-territory {
+  fill: #f1f5f9 !important;
+  fill-opacity: 0.85 !important;
+  stroke: #64748b !important;
+  stroke-width: 1.2 !important;
+  vector-effect: non-scaling-stroke;
+}
+.road-expressway {
+  fill: none;
+  stroke: #f59e0b;
+  stroke-width: 3.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+.road-highway {
+  fill: none;
+  stroke: #64748b;
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+.road-arterial {
+  fill: none;
+  stroke: #94a3b8;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+.yamuna-river {
+  fill: none;
+  stroke: #38bdf8;
+  stroke-width: 13;
+  opacity: 0.78;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
 .map-wrap {
   position: relative;
   width: 100%;
@@ -577,23 +622,26 @@ let streetReticleMarker = null;
 
 const tileServers = {
   osm: {
-    url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+    url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     options: {
       maxZoom: 19,
+      subdomains: ['a', 'b', 'c'],
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors · Delhi Street Network'
     }
   },
   voyager: {
-    url: 'https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
+    url: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
     options: {
       maxZoom: 19,
+      subdomains: 'abcd',
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions" target="_blank">CARTO</a>'
     }
   },
   dark: {
-    url: 'https://basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+    url: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
     options: {
       maxZoom: 19,
+      subdomains: 'abcd',
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions" target="_blank">CARTO</a>'
     }
   }
@@ -683,31 +731,23 @@ function setMapStyle(styleKey) {
 }
 
 function startMapEngine() {
-  view();
   if (typeof window.L !== 'undefined') {
     initStreetMap();
   } else {
-    try {
-      const fallbackScript = document.createElement('script');
-      fallbackScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js';
-      fallbackScript.onload = () => { initStreetMap(); };
-      document.head.appendChild(fallbackScript);
-    } catch (_) {}
     let tries = 0;
     const interval = setInterval(() => {
       tries++;
       if (typeof window.L !== 'undefined') {
         clearInterval(interval);
         initStreetMap();
-      } else if (tries > 40) {
+      } else if (tries > 35) {
         clearInterval(interval);
-        console.log('Using Vector Street Map engine.');
+        console.warn('Leaflet timed out, falling back to vector.');
         setMapStyle('vector');
       }
-    }, 50);
+    }, 100);
   }
 }
-
 function updateLeafletHotspots(key, row) {
   if (!streetMap || !streetMarkersGroup) return;
 
@@ -1212,5 +1252,8 @@ document.getElementById('heatmap-toggle').addEventListener('change', draw);
 if (document.getElementById('district-filter')) document.getElementById('district-filter').addEventListener('change', query);
 if (document.getElementById('limit-filter')) document.getElementById('limit-filter').addEventListener('change', query);
 
-refreshDataset();query();
+refreshDataset();
+query();
+startMapEngine();
+window.addEventListener("load", () => { if (!streetMap) startMapEngine(); setTimeout(() => { if (streetMap) streetMap.invalidateSize(); }, 300); });
 </script></body></html>

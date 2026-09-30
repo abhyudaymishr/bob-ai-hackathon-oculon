@@ -14,7 +14,7 @@ from __future__ import annotations
 import json
 import urllib.request
 import urllib.parse
-from typing import Dict, Any, List, Optional
+from typing import Dict, Any, List, Optional, Union
 
 
 class OculonClientV2:
