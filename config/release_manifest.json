@@ -1,0 +1,69 @@
+{
+  "release_version": "2.0.0",
+  "project_name": "Oculon / DelhiHotspots_ML",
+  "release_date": "2026-10-01",
+  "architecture_model": "Decoupled Multi-Account Public Interface with Private Backend Engine",
+  "components": {
+    "frontend": {
+      "account": "Account B (tesseractthou-code)",
+      "repository": "tesseractthou-code/tessracting-oculon",
+      "platform": "GitHub Pages",
+      "version": "v2.0.0",
+      "exposure": "PUBLIC",
+      "shipped_artifacts": [
+        "dist_pages/index.html",
+        "dist_pages/maps/*.html",
+        "dist_pages/.nojekyll"
+      ],
+      "prohibited_artifacts": [
+        "Proprietary algorithm source code",
+        "Raw incident CSVs containing PII",
+        "Model training scripts",
+        "Private API keys or credentials"
+      ],
+      "api_endpoint": "https://abhyudaymishr-oculon.hf.space/api/v2/hotspots"
+    },
+    "public_backend": {
+      "account": "Account A (abhyudaymishr)",
+      "repository": "abhyudaymishr/Oculon",
+      "platform": "GitHub Public Repository & PyPI (oculon)",
+      "version": "v2.0.0",
+      "public_api_version": "v2",
+      "exposure": "PUBLIC",
+      "shipped_artifacts": [
+        "src/oculon/client_v2.py",
+        "src/oculon/mcp_server.py",
+        ".github/workflows/deploy_pages.yml",
+        ".github/workflows/hf_ci_cd.yml",
+        "config/release_manifest.json"
+      ]
+    },
+    "private_runtime": {
+      "environment": "Hugging Face Space Runtime & Private Inference Container",
+      "host": "AbhyudayMishr/Oculon (https://abhyudaymishr-oculon.hf.space)",
+      "version": "v2.1.0",
+      "exposure": "PRIVATE_BACKEND",
+      "proprietary_algorithm": {
+        "engine_name": "internal-v2-lebesgue",
+        "revision": "internal-rev-2.0.4",
+        "capabilities": [
+          "Exact boundary clipping (Leb(V_u ∩ Delhi) == 1487.12 km^2)",
+          "Population and built-environment exposure offsets (∫_{V_u} ρ(s) ds)",
+          "Continuous Lebesgue density conversion (f(s) = p(u) / a_u)",
+          "Area-entropy corrected log loss (L_cont = L_discrete + E_q[log a_u])"
+        ]
+      },
+      "hugging_face_model": {
+        "model_name": "oculon-spatiotemporal-hotspot-model",
+        "version": "v2.0",
+        "framework": "Log-Gaussian Cox Process (LGCP) + Multigram Markov Ensemble"
+      }
+    }
+  },
+  "compliance": {
+    "zero_trust_privacy": true,
+    "pii_excluded": true,
+    "public_repo_sanitized": true,
+    "browser_zero_source_leak": true
+  }
+}

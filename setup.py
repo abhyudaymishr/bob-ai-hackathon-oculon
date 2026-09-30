@@ -8,7 +8,7 @@ setup(
     long_description=open("README.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
     author="Abhyuday Mishra",
-    url="https://github.com/abhyudaymishr/bob-ai-hackathon-oculon",
+    url="https://github.com/abhyudaymishr/Oculon",
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     include_package_data=True,

@@ -75,6 +75,17 @@ except ImportError:
     except ImportError:
         mcp_server = None
 
+try:
+    import v2_lebesgue_engine as v2_engine_module
+    v2_engine = v2_engine_module.engine_v2
+except Exception:
+    try:
+        from src.oculon import v2_lebesgue_engine as v2_engine_module
+        v2_engine = v2_engine_module.engine_v2
+    except Exception:
+        v2_engine = None
+
+
 
 # ==============================================================================
 # Data Loading Utilities
@@ -158,6 +169,7 @@ def execute_mcp_tool(name: str, args: Dict[str, Any], base_url: str) -> Dict[str
             data_type=args.get("data_type", "hotspots")
         )
         res["hosted_map_url"] = f"{base_url}/maps/four_dataset_hotspot_explorer.html"
+        res["github_pages_map_url"] = "https://tesseractthou-code.github.io/tessracting-oculon/maps/four_dataset_hotspot_explorer.html"
         return res
 
     elif name == "predict_hotspots":
@@ -193,11 +205,13 @@ def execute_mcp_tool(name: str, args: Dict[str, Any], base_url: str) -> Dict[str
         }
         filename = map_files.get(map_type, "four_dataset_hotspot_explorer.html")
         map_url = f"{base_url}/maps/{filename}"
+        pages_url = f"https://tesseractthou-code.github.io/tessracting-oculon/maps/{filename}"
         return {
             "status": "success",
             "map_type": map_type,
             "hosted_map_url": map_url,
-            "message": f"Interactive hotspot map available at {map_url}."
+            "github_pages_url": pages_url,
+            "message": f"Interactive hotspot map available at {map_url} (or GitHub Pages live mirror at {pages_url})."
         }
 
     elif name == "get_model_metrics":
@@ -209,6 +223,7 @@ def execute_mcp_tool(name: str, args: Dict[str, Any], base_url: str) -> Dict[str
     elif name == "list_datasets_and_months":
         res = mcp_server.list_datasets_and_months()
         res["hugging_face_connection"]["space_url"] = base_url
+        res["hugging_face_connection"]["remote_mcp_http_endpoint"] = f"{base_url}/mcp"
         res["hugging_face_connection"]["remote_mcp_sse_endpoint"] = f"{base_url}/sse"
         res["hugging_face_connection"]["remote_rest_api"] = f"{base_url}/api/hotspots"
         return res
@@ -303,12 +318,18 @@ MAP_OPTIONS = {
 def get_map_iframe(selected_label: str) -> str:
     filename = MAP_OPTIONS.get(selected_label, "four_dataset_hotspot_explorer.html")
     map_url = f"/maps/{filename}"
+    pages_url = f"https://tesseractthou-code.github.io/tessracting-oculon/maps/{filename}"
     return f"""
-    <div style="margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; background: #f8fafc; padding: 12px 16px; border-radius: 8px; border: 1px solid #e2e8f0;">
+    <div style="margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; background: #f8fafc; padding: 12px 16px; border-radius: 8px; border: 1px solid #e2e8f0; flex-wrap: wrap; gap: 8px;">
         <span style="font-weight: 600; color: #1e293b;">Active Map: <code style="color: #2563eb;">{filename}</code></span>
-        <a href="{map_url}" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; background-color: #2563eb; color: white; text-decoration: none; font-weight: 600; padding: 8px 16px; border-radius: 6px; font-size: 14px; transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='#1d4ed8'" onmouseout="this.style.backgroundColor='#2563eb'">
-            Open Map in Fullscreen Browser Tab &rarr;
-        </a>
+        <div style="display: flex; gap: 8px; align-items: center;">
+            <a href="{pages_url}" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; background-color: #0f172a; color: white; text-decoration: none; font-weight: 600; padding: 8px 14px; border-radius: 6px; font-size: 13px; border: 1px solid #334155; transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='#1e293b'" onmouseout="this.style.backgroundColor='#0f172a'">
+                🌐 GitHub Pages Mirror &rarr;
+            </a>
+            <a href="{map_url}" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; background-color: #2563eb; color: white; text-decoration: none; font-weight: 600; padding: 8px 16px; border-radius: 6px; font-size: 14px; transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='#1d4ed8'" onmouseout="this.style.backgroundColor='#2563eb'">
+                Open Fullscreen &rarr;
+            </a>
+        </div>
     </div>
     <iframe src="{map_url}" style="width: 100%; height: 780px; border: 1px solid #cbd5e1; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);" title="Delhi Hotspots Map"></iframe>
     """
@@ -655,17 +676,32 @@ def build_gradio_demo():
                 This Hugging Face Space functions as a **complete remote MCP Server** that can run independent related queries and live model inference on the complete datasets.
 
                 #### 1. Claude Desktop Configuration
-                Add this to your `claude_desktop_config.json`:
+                Supports both **Streamable HTTP** (recommended, modern MCP specification) and legacy SSE:
 
+                **Option A: Streamable HTTP via `mcp-remote` (Recommended)**
                 ```json
                 {
                   "mcpServers": {
                     "oculon_delhi_hotspots": {
-                      "url": "https://abhyudaymishr-oculon.hf.space/sse"
+                      "command": "npx",
+                      "args": [
+                        "-y",
+                        "mcp-remote",
+                        "https://abhyudaymishr-oculon.hf.space/mcp",
+                        "--transport",
+                        "http-only"
+                      ]
                     }
                   }
                 }
                 ```
+
+                **Option B: Claude Remote Connector (Streamable HTTP)**
+                Under Claude Desktop Connectors -> Advanced -> Transport: Select **Streamable HTTP**, URL:
+                `https://abhyudaymishr-oculon.hf.space/mcp`
+
+                **Option C: Legacy SSE Transport**
+                `https://abhyudaymishr-oculon.hf.space/sse`
 
                 #### 2. Available Universal MCP Tools
                 - `fetch_dataset_records(dataset, data_type, month, limit, offset, filter_district, filter_station)`: Completely user-controlled fetching (any limit or 'all') for any data type.
@@ -693,6 +729,19 @@ def build_gradio_demo():
 app = None
 if HAS_FASTAPI:
     app = FastAPI(title="Delhi Hotspots ML Server")
+
+    # Enable Cross-Origin Resource Sharing (CORS) for CI/CD web client requests
+    try:
+        from fastapi.middleware.cors import CORSMiddleware
+        app.add_middleware(
+            CORSMiddleware,
+            allow_origins=["*"],
+            allow_credentials=True,
+            allow_methods=["*"],
+            allow_headers=["*"],
+        )
+    except Exception as e:
+        print(f"Warning: Could not configure CORSMiddleware: {e}")
 
     # Mount static maps for direct browser navigation
     if MAPS_DIR.exists():
@@ -826,6 +875,144 @@ if HAS_FASTAPI:
             "rolling_origin": rolling if eval_type in ("all", "rolling") else None
         }
 
+    # ==========================================================================
+    # VERSION 2 PUBLIC REST API ENDPOINTS (Continuous Lebesgue Density & Exposure)
+    # ==========================================================================
+
+    @app.get("/api/v2/manifest")
+    async def api_v2_manifest():
+        manifest_path = BASE_DIR / "config" / "release_manifest.json"
+        if not manifest_path.exists():
+            manifest_path = Path(__file__).resolve().parent.parent / "config" / "release_manifest.json"
+        if manifest_path.exists():
+            return JSONResponse(content=json.loads(manifest_path.read_text(encoding="utf-8")))
+        return JSONResponse(content={"release_version": "2.0.0", "status": "active", "api": "v2"})
+
+    @app.get("/api/v2/hotspots")
+    async def api_v2_hotspots(
+        dataset: Optional[str] = "missing_persons",
+        month: Optional[str] = None,
+        query: Optional[str] = None,
+        top_k: Optional[str] = "all",
+        district: Optional[str] = None,
+        data_type: str = "hotspots",
+        spatial_method: str = "metro",
+        include_density: bool = True
+    ):
+        if not mcp_server:
+            return JSONResponse(status_code=500, content={"error": "MCP server unavailable"})
+
+        base_res = mcp_server.query_hotspots(
+            dataset=dataset,
+            month=month,
+            query_text=query,
+            top_k=top_k,
+            spatial_method=spatial_method,
+            data_type=data_type
+        )
+        if base_res.get("status") != "success":
+            return base_res
+
+        # Augment with v2 proprietary continuous Lebesgue density & population exposure offsets
+        if v2_engine and include_density:
+            try:
+                hotspots = base_res.get("hotspots", [])
+                catchments = v2_engine.compute_exact_catchments(hotspots)
+                probs = {h.get("station_id", h.get("name")): float(h.get("relative_multigram_score", 0.05)) for h in hotspots}
+                density_field = v2_engine.convert_to_continuous_density(probs, catchments)
+
+                for h in hotspots:
+                    uid = h.get("station_id", h.get("name"))
+                    if uid in density_field:
+                        h["lebesgue_density_per_km2"] = density_field[uid]["lebesgue_density_per_km2"]
+                        h["per_capita_risk_per_100k"] = density_field[uid]["per_capita_risk_per_100k"]
+                        h["catchment_area_km2"] = density_field[uid]["area_km2"]
+                        h["population_exposure"] = density_field[uid]["population"]
+                        h["log_area_correction"] = density_field[uid]["log_area_correction"]
+
+                base_res["v2_enhancements"] = {
+                    "version": "2.0.0",
+                    "proprietary_engine": "internal-v2-lebesgue",
+                    "exact_boundary_clipping": "Leb(V_u ∩ Delhi) == 1487.12 km^2",
+                    "exposure_offset": "Population & Built-environment Measure ∫_{V_u} ρ(s) ds"
+                }
+            except Exception as e:
+                base_res["v2_warning"] = str(e)
+
+        return base_res
+
+    @app.get("/api/v2/risk-density")
+    async def api_v2_risk_density(
+        dataset: str = "missing_persons",
+        month: Optional[str] = None
+    ):
+        if not v2_engine or not mcp_server:
+            return JSONResponse(status_code=500, content={"error": "Engine v2 unavailable"})
+
+        base_res = mcp_server.query_hotspots(dataset=dataset, month=month, top_k="all")
+        hotspots = base_res.get("hotspots", [])
+        catchments = v2_engine.compute_exact_catchments(hotspots)
+        probs = {h.get("station_id", h.get("name")): float(h.get("relative_multigram_score", 0.05)) for h in hotspots}
+        density_field = v2_engine.convert_to_continuous_density(probs, catchments)
+
+        return {
+            "status": "success",
+            "release_version": "2.0.0",
+            "dataset": dataset,
+            "month": month or base_res.get("month"),
+            "total_units": len(density_field),
+            "density_field": density_field,
+            "total_clipped_area_km2": sum(c["area_km2"] for c in catchments.values()),
+            "total_population_exposure": sum(c["population_exposure"] for c in catchments.values())
+        }
+
+    @app.get("/api/v2/metrics")
+    async def api_v2_metrics():
+        rolling = load_rolling_origin()
+        v2_comparisons = [
+            {
+                "representation": "Missing persons (Police Stations)",
+                "cardinality_N": 193,
+                "discrete_uniform_log_loss": 5.2627,
+                "discrete_log_loss": 4.9907,
+                "apparent_discrete_gain_nats": 0.2720,
+                "mean_area_entropy_correction_nats": 1.8410,
+                "continuous_lebesgue_log_loss": 6.8317,
+                "continuous_perplexity": 926.77,
+                "geometric_notes": "Police stations form a balanced administrative partition over residential and outer Delhi."
+            },
+            {
+                "representation": "Stolen vehicles (Nearest Metro)",
+                "cardinality_N": 233,
+                "discrete_uniform_log_loss": 5.4510,
+                "discrete_log_loss": 3.9023,
+                "apparent_discrete_gain_nats": 1.5487,
+                "mean_area_entropy_correction_nats": -0.8920,
+                "continuous_lebesgue_log_loss": 3.0103,
+                "continuous_perplexity": 20.29,
+                "geometric_notes": "Dense central metro Voronoi cells have tiny areas (a_u << 1 km^2). Counting measure overstates gain by 2.44 nats relative to uniform area."
+            },
+            {
+                "representation": "Stolen vehicles (PIN Centroids)",
+                "cardinality_N": 95,
+                "discrete_uniform_log_loss": 4.5539,
+                "discrete_log_loss": 4.0215,
+                "apparent_discrete_gain_nats": 0.5324,
+                "mean_area_entropy_correction_nats": 2.4510,
+                "continuous_lebesgue_log_loss": 6.4725,
+                "continuous_perplexity": 647.10,
+                "geometric_notes": "PIN delivery zones have larger spatial footprints; raw discrete loss obscures spatial concentration."
+            }
+        ]
+        return {
+            "status": "success",
+            "release_version": "2.0.0",
+            "paradox_resolution": "Continuous Lebesgue Density f(s) = p(u) / a_u with area entropy correction E_q[log a_u]",
+            "rolling_origin_summary": rolling,
+            "continuous_lebesgue_comparisons": v2_comparisons
+        }
+
+
     def _get_public_base_url(req: Request) -> str:
         base = str(req.base_url).rstrip("/")
         proto = req.headers.get("x-forwarded-proto", "")
@@ -833,10 +1020,162 @@ if HAS_FASTAPI:
             base = base.replace("http://", "https://")
         return base
 
+    # --------------------------------------------------------------------------
+    # Streamable HTTP MCP Endpoint (/mcp, /mcp/v1, /http, /rpc, /gradio_api/mcp)
+    # The modern, official MCP transport replacing legacy dual-connection SSE.
+    # Accepts JSON-RPC 2.0 POST requests and returns direct JSON or event-streams.
+    # --------------------------------------------------------------------------
+    @app.api_route("/mcp", methods=["GET", "POST", "HEAD", "OPTIONS"])
+    @app.api_route("/mcp/v1", methods=["GET", "POST", "HEAD", "OPTIONS"])
+    @app.api_route("/http", methods=["GET", "POST", "HEAD", "OPTIONS"])
+    @app.api_route("/rpc", methods=["GET", "POST", "HEAD", "OPTIONS"])
+    @app.api_route("/gradio_api/mcp", methods=["GET", "POST", "HEAD", "OPTIONS"])
+    async def streamable_http_endpoint(request: Request):
+        # 1. CORS Preflight & Health Check
+        if request.method in ("OPTIONS", "HEAD"):
+            return Response(
+                status_code=200,
+                headers={
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Allow-Methods": "GET, POST, OPTIONS, HEAD",
+                    "Access-Control-Allow-Headers": "*",
+                    "Access-Control-Expose-Headers": "*",
+                    "MCP-Protocol-Version": "2024-11-05",
+                }
+            )
+
+        base_url = _get_public_base_url(request)
+
+        # 2. GET Request: Metadata or persistent event-stream if requested
+        if request.method == "GET":
+            accept_header = request.headers.get("accept", "")
+            if "text/event-stream" in accept_header:
+                async def stream_mcp_events():
+                    yield f"event: endpoint\ndata: {base_url}/mcp\n\n"
+                    while True:
+                        if await request.is_disconnected():
+                            break
+                        await asyncio.sleep(20.0)
+                        yield ": keep-alive\n\n"
+
+                return StreamingResponse(
+                    stream_mcp_events(),
+                    media_type="text/event-stream",
+                    headers={
+                        "Cache-Control": "no-cache",
+                        "Connection": "keep-alive",
+                        "X-Accel-Buffering": "no",
+                        "Access-Control-Allow-Origin": "*",
+                        "Access-Control-Expose-Headers": "*",
+                        "MCP-Protocol-Version": "2024-11-05",
+                    }
+                )
+
+            return JSONResponse(
+                status_code=200,
+                content={
+                    "status": "online",
+                    "service": "OCULON Delhi Hotspots ML Model Context Protocol (MCP) Server",
+                    "transport": "streamable-http",
+                    "protocolVersion": "2024-11-05",
+                    "endpoints": {
+                        "streamable_http": f"{base_url}/mcp",
+                        "streamable_http_aliases": [f"{base_url}/mcp/v1", f"{base_url}/http", f"{base_url}/rpc"],
+                        "legacy_sse": f"{base_url}/sse",
+                        "legacy_messages": f"{base_url}/messages"
+                    },
+                    "tools_count": len(MCP_TOOLS),
+                    "resources_count": len(MCP_RESOURCES),
+                    "documentation": "Send JSON-RPC 2.0 requests via HTTP POST to /mcp (e.g. initialize, tools/list, tools/call)."
+                },
+                headers={
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Expose-Headers": "*",
+                    "MCP-Protocol-Version": "2024-11-05",
+                }
+            )
+
+        # 3. POST Request: Execute JSON-RPC 2.0 call directly
+        try:
+            req_body = await request.json()
+        except Exception as e:
+            return JSONResponse(
+                status_code=400,
+                content={"jsonrpc": "2.0", "id": None, "error": {"code": -32700, "message": f"Parse error: {str(e)}"}},
+                headers={"Access-Control-Allow-Origin": "*", "MCP-Protocol-Version": "2024-11-05"}
+            )
+
+        # Support both single request object and batch requests
+        if isinstance(req_body, list):
+            responses = []
+            for item in req_body:
+                r = handle_remote_rpc(item, base_url)
+                if r is not None:
+                    responses.append(r)
+            return JSONResponse(
+                status_code=200,
+                content=responses,
+                headers={
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Expose-Headers": "*",
+                    "MCP-Protocol-Version": "2024-11-05",
+                }
+            )
+
+        resp = handle_remote_rpc(req_body, base_url)
+        if resp is None:
+            # Notifications (e.g. notifications/initialized) return HTTP 204 No Content
+            return Response(
+                status_code=204,
+                headers={
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Expose-Headers": "*",
+                    "MCP-Protocol-Version": "2024-11-05",
+                }
+            )
+
+        accept_header = request.headers.get("accept", "")
+        # If client explicitly requests text/event-stream only, stream response
+        if "text/event-stream" in accept_header and "application/json" not in accept_header:
+            async def single_event_stream():
+                yield f"event: message\ndata: {json.dumps(resp)}\n\n"
+
+            return StreamingResponse(
+                single_event_stream(),
+                media_type="text/event-stream",
+                headers={
+                    "Cache-Control": "no-cache",
+                    "Connection": "keep-alive",
+                    "X-Accel-Buffering": "no",
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Expose-Headers": "*",
+                    "MCP-Protocol-Version": "2024-11-05",
+                }
+            )
+
+        return JSONResponse(
+            status_code=200,
+            content=resp,
+            headers={
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Expose-Headers": "*",
+                "MCP-Protocol-Version": "2024-11-05",
+            }
+        )
+
     # SSE endpoints for Remote Model Context Protocol (MCP) clients (both /sse and /gradio_api/mcp/sse)
-    @app.api_route("/sse", methods=["GET", "HEAD", "OPTIONS"])
-    @app.api_route("/gradio_api/mcp/sse", methods=["GET", "HEAD", "OPTIONS"])
+    @app.api_route("/sse", methods=["GET", "POST", "HEAD", "OPTIONS"])
+    @app.api_route("/gradio_api/mcp/sse", methods=["GET", "POST", "HEAD", "OPTIONS"])
     async def sse_endpoint(request: Request):
+        if request.method == "POST":
+            # If client posts to /sse directly without query sessionId, handle via Streamable HTTP
+            session_id = request.query_params.get("sessionId")
+            if not session_id:
+                return await streamable_http_endpoint(request)
+            return await messages_endpoint(request)
+
         if request.method in ("HEAD", "OPTIONS"):
             return Response(
                 status_code=200,
@@ -847,6 +1186,8 @@ if HAS_FASTAPI:
                     "Access-Control-Allow-Origin": "*",
                     "Access-Control-Allow-Methods": "GET, HEAD, OPTIONS, POST",
                     "Access-Control-Allow-Headers": "*",
+                    "Access-Control-Expose-Headers": "*",
+                    "MCP-Protocol-Version": "2024-11-05",
                 }
             )
 
@@ -881,6 +1222,7 @@ if HAS_FASTAPI:
                 "X-Accel-Buffering": "no",
                 "Access-Control-Allow-Origin": "*",
                 "Access-Control-Expose-Headers": "*",
+                "MCP-Protocol-Version": "2024-11-05",
             }
         )
 
@@ -894,12 +1236,15 @@ if HAS_FASTAPI:
                     "Access-Control-Allow-Origin": "*",
                     "Access-Control-Allow-Methods": "POST, OPTIONS",
                     "Access-Control-Allow-Headers": "*",
+                    "Access-Control-Expose-Headers": "*",
+                    "MCP-Protocol-Version": "2024-11-05",
                 }
             )
 
         session_id = request.query_params.get("sessionId")
         if not session_id or session_id not in sse_sessions:
-            return JSONResponse(status_code=404, content={"error": "Session not found or expired"})
+            # Fallback seamlessly to direct Streamable HTTP handling
+            return await streamable_http_endpoint(request)
 
         try:
             req_body = await request.json()
@@ -916,6 +1261,7 @@ if HAS_FASTAPI:
             headers={
                 "Access-Control-Allow-Origin": "*",
                 "Access-Control-Expose-Headers": "*",
+                "MCP-Protocol-Version": "2024-11-05",
             }
         )
 

@@ -75,6 +75,17 @@ except ImportError:
     except ImportError:
         mcp_server = None
 
+try:
+    import v2_lebesgue_engine as v2_engine_module
+    v2_engine = v2_engine_module.engine_v2
+except Exception:
+    try:
+        from src.oculon import v2_lebesgue_engine as v2_engine_module
+        v2_engine = v2_engine_module.engine_v2
+    except Exception:
+        v2_engine = None
+
+
 
 # ==============================================================================
 # Data Loading Utilities
@@ -863,6 +874,144 @@ if HAS_FASTAPI:
             "baseline_80_20": baseline if eval_type in ("all", "baseline") else None,
             "rolling_origin": rolling if eval_type in ("all", "rolling") else None
         }
+
+    # ==========================================================================
+    # VERSION 2 PUBLIC REST API ENDPOINTS (Continuous Lebesgue Density & Exposure)
+    # ==========================================================================
+
+    @app.get("/api/v2/manifest")
+    async def api_v2_manifest():
+        manifest_path = BASE_DIR / "config" / "release_manifest.json"
+        if not manifest_path.exists():
+            manifest_path = Path(__file__).resolve().parent.parent / "config" / "release_manifest.json"
+        if manifest_path.exists():
+            return JSONResponse(content=json.loads(manifest_path.read_text(encoding="utf-8")))
+        return JSONResponse(content={"release_version": "2.0.0", "status": "active", "api": "v2"})
+
+    @app.get("/api/v2/hotspots")
+    async def api_v2_hotspots(
+        dataset: Optional[str] = "missing_persons",
+        month: Optional[str] = None,
+        query: Optional[str] = None,
+        top_k: Optional[str] = "all",
+        district: Optional[str] = None,
+        data_type: str = "hotspots",
+        spatial_method: str = "metro",
+        include_density: bool = True
+    ):
+        if not mcp_server:
+            return JSONResponse(status_code=500, content={"error": "MCP server unavailable"})
+
+        base_res = mcp_server.query_hotspots(
+            dataset=dataset,
+            month=month,
+            query_text=query,
+            top_k=top_k,
+            spatial_method=spatial_method,
+            data_type=data_type
+        )
+        if base_res.get("status") != "success":
+            return base_res
+
+        # Augment with v2 proprietary continuous Lebesgue density & population exposure offsets
+        if v2_engine and include_density:
+            try:
+                hotspots = base_res.get("hotspots", [])
+                catchments = v2_engine.compute_exact_catchments(hotspots)
+                probs = {h.get("station_id", h.get("name")): float(h.get("relative_multigram_score", 0.05)) for h in hotspots}
+                density_field = v2_engine.convert_to_continuous_density(probs, catchments)
+
+                for h in hotspots:
+                    uid = h.get("station_id", h.get("name"))
+                    if uid in density_field:
+                        h["lebesgue_density_per_km2"] = density_field[uid]["lebesgue_density_per_km2"]
+                        h["per_capita_risk_per_100k"] = density_field[uid]["per_capita_risk_per_100k"]
+                        h["catchment_area_km2"] = density_field[uid]["area_km2"]
+                        h["population_exposure"] = density_field[uid]["population"]
+                        h["log_area_correction"] = density_field[uid]["log_area_correction"]
+
+                base_res["v2_enhancements"] = {
+                    "version": "2.0.0",
+                    "proprietary_engine": "internal-v2-lebesgue",
+                    "exact_boundary_clipping": "Leb(V_u ∩ Delhi) == 1487.12 km^2",
+                    "exposure_offset": "Population & Built-environment Measure ∫_{V_u} ρ(s) ds"
+                }
+            except Exception as e:
+                base_res["v2_warning"] = str(e)
+
+        return base_res
+
+    @app.get("/api/v2/risk-density")
+    async def api_v2_risk_density(
+        dataset: str = "missing_persons",
+        month: Optional[str] = None
+    ):
+        if not v2_engine or not mcp_server:
+            return JSONResponse(status_code=500, content={"error": "Engine v2 unavailable"})
+
+        base_res = mcp_server.query_hotspots(dataset=dataset, month=month, top_k="all")
+        hotspots = base_res.get("hotspots", [])
+        catchments = v2_engine.compute_exact_catchments(hotspots)
+        probs = {h.get("station_id", h.get("name")): float(h.get("relative_multigram_score", 0.05)) for h in hotspots}
+        density_field = v2_engine.convert_to_continuous_density(probs, catchments)
+
+        return {
+            "status": "success",
+            "release_version": "2.0.0",
+            "dataset": dataset,
+            "month": month or base_res.get("month"),
+            "total_units": len(density_field),
+            "density_field": density_field,
+            "total_clipped_area_km2": sum(c["area_km2"] for c in catchments.values()),
+            "total_population_exposure": sum(c["population_exposure"] for c in catchments.values())
+        }
+
+    @app.get("/api/v2/metrics")
+    async def api_v2_metrics():
+        rolling = load_rolling_origin()
+        v2_comparisons = [
+            {
+                "representation": "Missing persons (Police Stations)",
+                "cardinality_N": 193,
+                "discrete_uniform_log_loss": 5.2627,
+                "discrete_log_loss": 4.9907,
+                "apparent_discrete_gain_nats": 0.2720,
+                "mean_area_entropy_correction_nats": 1.8410,
+                "continuous_lebesgue_log_loss": 6.8317,
+                "continuous_perplexity": 926.77,
+                "geometric_notes": "Police stations form a balanced administrative partition over residential and outer Delhi."
+            },
+            {
+                "representation": "Stolen vehicles (Nearest Metro)",
+                "cardinality_N": 233,
+                "discrete_uniform_log_loss": 5.4510,
+                "discrete_log_loss": 3.9023,
+                "apparent_discrete_gain_nats": 1.5487,
+                "mean_area_entropy_correction_nats": -0.8920,
+                "continuous_lebesgue_log_loss": 3.0103,
+                "continuous_perplexity": 20.29,
+                "geometric_notes": "Dense central metro Voronoi cells have tiny areas (a_u << 1 km^2). Counting measure overstates gain by 2.44 nats relative to uniform area."
+            },
+            {
+                "representation": "Stolen vehicles (PIN Centroids)",
+                "cardinality_N": 95,
+                "discrete_uniform_log_loss": 4.5539,
+                "discrete_log_loss": 4.0215,
+                "apparent_discrete_gain_nats": 0.5324,
+                "mean_area_entropy_correction_nats": 2.4510,
+                "continuous_lebesgue_log_loss": 6.4725,
+                "continuous_perplexity": 647.10,
+                "geometric_notes": "PIN delivery zones have larger spatial footprints; raw discrete loss obscures spatial concentration."
+            }
+        ]
+        return {
+            "status": "success",
+            "release_version": "2.0.0",
+            "paradox_resolution": "Continuous Lebesgue Density f(s) = p(u) / a_u with area entropy correction E_q[log a_u]",
+            "rolling_origin_summary": rolling,
+            "continuous_lebesgue_comparisons": v2_comparisons
+        }
+
 
     def _get_public_base_url(req: Request) -> str:
         base = str(req.base_url).rstrip("/")

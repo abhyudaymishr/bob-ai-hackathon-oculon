@@ -89,7 +89,7 @@ jobs:
           echo "NEXT STEP TO ACTIVATE CROSS-ACCOUNT GITHUB PAGES DEPLOYMENT:"
           echo "1. On GitHub account 'tesseractthou-code', generate a Personal Access Token (PAT)"
           echo "   with 'repo' scope at: https://github.com/settings/tokens"
-          echo "2. In this repository ('abhyudaymishr/bob-ai-hackathon-oculon'), go to:"
+          echo "2. In this repository ('abhyudaymishr/Oculon'), go to:"
           echo "   Settings -> Secrets and variables -> Actions -> New repository secret"
           echo "3. Name: TESSERACT_DEPLOY_TOKEN"
           echo "   Value: [Paste your Personal Access Token]"

@@ -1376,7 +1376,6 @@ def list_datasets_and_months() -> Dict[str, Any]:
         "hugging_face_connection": {
             "space_url": DEFAULT_HF_SPACE_URL,
             "status": "connected",
-            "remote_mcp_http_endpoint": f"{DEFAULT_HF_SPACE_URL.rstrip('/')}/mcp",
             "remote_mcp_sse_endpoint": f"{DEFAULT_HF_SPACE_URL.rstrip('/')}/sse",
             "remote_rest_api": f"{DEFAULT_HF_SPACE_URL.rstrip('/')}/api/hotspots"
         }

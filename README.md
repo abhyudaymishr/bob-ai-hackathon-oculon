@@ -32,9 +32,6 @@ An interactive, multi-dataset spatial-temporal hotspot forecasting service and *
 | **Team Lead** | [Abhyuday Mishra](https://github.com/abhyudaymishr) — [abhymishrgkp@gmail.com](mailto:abhymishrgkp@gmail.com) |
 | **Members** | [Abhishek Kumar](https://github.com/Abhisheknfsu09), [Shivam Ahirwal](https://github.com/shivamhub99), [Aditya Soni](https://github.com/wrekner1490) |
 
-## 🎯 Problem Statement
-Municipal and law-enforcement agencies across Delhi NCR manage over 142,000 historical incident records in ZIPNET, but lack a predictive layer to forecast emerging spatial concentrations, leaving beat officers on static routes regardless of shifting crime patterns. Bengaluru's 2023 predictive policing pilot proved that data-driven dynamic micro-patrols can reduce property crime by 18% in test zones. Oculon solves this by analyzing rolling 6-month incident streams across 778 administrative micro-units to predict the top 5 at-risk zones each week with probability rationales, flags seasonal/event-linked spikes, and auto-generates actionable patrol redeployment briefs for the Station House Officer (SHO).
-
 ---
 
 ## 🌟 Features
@@ -55,7 +52,7 @@ Municipal and law-enforcement agencies across Delhi NCR manage over 142,000 hist
    - **Strict Forward-Time (Expanding-Window Rolling Origin)**: Reserves the latest 20% of complete calendar months, scoring each target month using only strictly prior events. Evaluates Multiclass Log Loss, Brier score sum, and Wasserstein $W_1$ distance.
 
 4. **Model Context Protocol (MCP) Server**:
-   - Connect LLM agents (IBM Bob, Claude Desktop, Cursor, custom agents) over standard MCP SSE (`/sse` and `/messages`).
+   - Connect LLM agents (IBM Bob, Claude Desktop, Cursor, custom agents) over standard Streamable HTTP and SSE (`/mcp`, `/sse`, and `/messages`).
    - Query hotspots, fetch model metrics, and retrieve browser-openable map links directly into agent conversations.
 
 ---
@@ -79,13 +76,13 @@ pip install oculon
 
 Or install directly from GitHub:
 ```bash
-pip install git+https://github.com/abhyudaymishr/bob-ai-hackathon-oculon.git
+pip install git+https://github.com/abhyudaymishr/Oculon.git
 ```
 
 Or for editable development:
 ```bash
-git clone https://github.com/abhyudaymishr/bob-ai-hackathon-oculon.git
-cd bob-ai-hackathon-oculon
+git clone https://github.com/abhyudaymishr/Oculon.git
+cd Oculon
 pip install -e .
 ```
 
@@ -123,8 +120,8 @@ print(metrics)
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/abhyudaymishr/bob-ai-hackathon-oculon.git
-   cd bob-ai-hackathon-oculon
+   git clone https://github.com/abhyudaymishr/Oculon.git
+   cd Oculon
    ```
 
 2. **Create and Activate a Virtual Environment**:
@@ -144,8 +141,9 @@ print(metrics)
    ```
    - **Gradio Dashboard**: `http://localhost:7860`
    - **Interactive Maps**: `http://localhost:7860/maps/four_dataset_hotspot_explorer.html`
-   - **REST API**: `http://localhost:7860/api/hotspots`
+   - **REST API**: `http://localhost:7860/api/hotspots` (and `http://localhost:7860/api/v2/hotspots`)
    - **Local MCP SSE Stream**: `http://localhost:7860/sse`
+   - **Local Streamable HTTP MCP**: `http://localhost:7860/mcp`
 
 ---
 
@@ -161,8 +159,30 @@ python3 -m oculon.mcp_server
 
 ## 🔌 Connecting via Model Context Protocol (MCP)
 
-### 1. Claude Desktop (Remote SSE)
+Oculon provides an enterprise-grade MCP server supporting both modern **Streamable HTTP** (recommended by Anthropic) and legacy **Server-Sent Events (SSE)**, as well as a local **stdio bridge**.
+
+### 1. Claude Desktop
+
+#### Option A: Streamable HTTP via `mcp-remote` (Recommended)
 Add to your `claude_desktop_config.json`:
+```json
+{
+  "mcpServers": {
+    "oculon_delhi_hotspots": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://abhyudaymishr-oculon.hf.space/mcp",
+        "--transport",
+        "http-only"
+      ]
+    }
+  }
+}
+```
+
+#### Option B: Direct Remote SSE
 ```json
 {
   "mcpServers": {
@@ -173,11 +193,33 @@ Add to your `claude_desktop_config.json`:
 }
 ```
 
-### 2. Cursor
+#### Option C: Local Stdio Bridge (Auto-Opens Map in Default Browser)
+```json
+{
+  "mcpServers": {
+    "oculon_local": {
+      "command": "python3",
+      "args": ["-m", "oculon.mcp_server"]
+    }
+  }
+}
+```
+
+### 2. Cursor IDE
+
 In Cursor **Settings** &rarr; **Features** &rarr; **MCP Servers** &rarr; **Add New Server**:
 - **Name**: `oculon_delhi_hotspots`
 - **Type**: `SSE`
 - **URL**: `https://abhyudaymishr-oculon.hf.space/sse`
+
+*(Or choose `command` type with `python3 -m oculon.mcp_server` for local browser launching)*
+
+### 3. IBM Bob / Custom Agents
+Connect via standard JSON-RPC 2.0 over Streamable HTTP:
+- **Endpoint**: `https://abhyudaymishr-oculon.hf.space/mcp`
+- **SSE Stream**: `https://abhyudaymishr-oculon.hf.space/sse`
+- **Protocol Version**: `2024-11-05`
+
 
 
 ---

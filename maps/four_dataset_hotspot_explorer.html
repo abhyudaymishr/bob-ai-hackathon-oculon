@@ -417,7 +417,7 @@ svg#map {
 <aside class="query-card">
   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
     <h2 style="margin:0;font-size:15px">Dynamic Hotspots & Search</h2>
-    <span class="live-pill" id="api-status-pill"><span class="dot-live"></span> CI/CD Live Connected</span>
+    <span class="live-pill" id="api-status-pill"><span class="dot-live"></span> CI/CD v2 Connected</span>
   </div>
   <div class="small">Dynamic location search across all Delhi metro stations, districts & police jurisdictions:</div>
   <div class="query-tools" style="margin-top:8px">
@@ -911,6 +911,41 @@ async function dispatchCiCdRequest(dataset, queryText, topK) {
 }
 
 // --- DYNAMIC SEARCH & MAP RENDERING ENGINE ---
+// --- ESSENTIAL STRING ESCAPING & UTILITIES ---
+function esc(s) {
+  return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+// Ensure layer-dynamic exists inside scene
+if (!document.getElementById('layer-dynamic')) {
+  const dynGroup = document.createElementNS(NS, 'g');
+  dynGroup.setAttribute('id', 'layer-dynamic');
+  scene.appendChild(dynGroup);
+}
+
+// --- CI/CD ASYNC PIPELINE DISPATCH (v2 with v1 fallback) ---
+async function dispatchCiCdRequest(dataset, queryText, topK) {
+  const pill = document.getElementById('api-status-pill');
+  if (!pill) return;
+  pill.innerHTML = '<span class="dot-live" style="background:#f59e0b"></span> CI/CD v2 Syncing...';
+  
+  try {
+    const url_v2 = `https://abhyudaymishr-oculon.hf.space/api/v2/hotspots?dataset=${dataset}&query=${encodeURIComponent(queryText)}&top_k=${topK}`;
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 3500);
+    const resp = await fetch(url_v2, { signal: ctrl.signal });
+    clearTimeout(timer);
+    if (resp.ok) {
+      pill.innerHTML = '<span class="dot-live" style="background:#10b981"></span> CI/CD v2 Connected';
+    } else {
+      pill.innerHTML = '<span class="dot-live" style="background:#3b82f6"></span> CI/CD Fast Local Engine';
+    }
+  } catch (e) {
+    pill.innerHTML = '<span class="dot-live" style="background:#3b82f6"></span> CI/CD Fast Local Engine';
+  }
+}
+
+// --- DYNAMIC SEARCH & MAP RENDERING ENGINE ---
 function query() {
   const qInput = document.getElementById('query');
   const q = (qInput ? qInput.value : '').trim();
@@ -1139,13 +1174,6 @@ function resetMap() {
   view();
   clear('layer-reticle');
   clear('layer-dynamic');
-  if (streetMap) {
-    streetMap.setView([28.625, 77.215], 11);
-    if (streetReticleMarker) {
-      streetMap.removeLayer(streetReticleMarker);
-      streetReticleMarker = null;
-    }
-  }
   const qInput = document.getElementById('query');
   if (qInput) qInput.value = '';
   const dFilter = document.getElementById('district-filter');
@@ -1154,7 +1182,7 @@ function resetMap() {
   query();
 }
 
-datasetSelect.addEventListener('change',()=>{refreshDataset();query();});
+datasetSelect.addEventListener('change',()=>refreshDataset());
 slider.addEventListener('input',draw);
 monthSelect.addEventListener('change',()=>{slider.value=monthSelect.value;draw()});
 document.getElementById('prev').onclick=()=>{slider.value=Math.max(0,+slider.value-1);draw()};
@@ -1171,47 +1199,18 @@ const resetBtn = document.getElementById('reset-map-btn');
 if (resetBtn) resetBtn.onclick = resetMap;
 
 document.getElementById('police-toggle').addEventListener('change',e=>{const g=document.getElementById('layer-police');g.style.display=e.target.checked?'':'none';if(e.target.checked){const refs=D.datasets[datasetSelect.value].reference_points||[];for(const p of refs)addPoint(g,p,datasetSelect.value,'police')}});
-document.querySelectorAll('[data-layer]').forEach(c=>c.addEventListener('change',()=>{
-  const g=document.getElementById('layer-'+c.dataset.layer);
-  if(g) g.style.display=c.checked?'':'none';
-  if(currentData) updateLeafletHotspots(currentData.key, currentData.row);
-}));
-document.getElementById('heatmap-toggle').addEventListener('change', () => {
-  draw();
-  if(currentData) updateLeafletHotspots(currentData.key, currentData.row);
-});
-if (document.getElementById('police-toggle')) {
-  document.getElementById('police-toggle').addEventListener('change', () => {
-    draw();
-    if(currentData) updateLeafletHotspots(currentData.key, currentData.row);
-  });
-}
+document.querySelectorAll('[data-layer]').forEach(c=>c.addEventListener('change',()=>{const g=document.getElementById('layer-'+c.dataset.layer);g.style.display=c.checked?'':'none'}));
 function view(){scene.setAttribute('transform',`translate(${tx} ${ty}) translate(440 410) scale(${zoom}) translate(-440 -410)`)}
 document.getElementById('zin').onclick=()=>{zoom=Math.min(8,zoom*1.25);view()};
 document.getElementById('zout').onclick=()=>{zoom=Math.max(1,zoom/1.25);view()};
 svg.addEventListener('wheel',e=>{e.preventDefault();zoom=Math.max(1,Math.min(8,zoom*(e.deltaY<0?1.1:.9)));view()},{passive:false});
-svg.addEventListener('pointerdown',e=>{
-  if(e.target.closest('circle,path,rect,image,button'))return;
-  drag=[e.clientX,e.clientY,tx,ty];
-  try{svg.setPointerCapture(e.pointerId)}catch(_){}
-});
-svg.addEventListener('pointermove',e=>{
-  if(!drag)return;
-  const r=svg.getBoundingClientRect(),f=820/Math.min(r.width,r.height);
-  tx=drag[2]+(e.clientX-drag[0])*f;
-  ty=drag[3]+(e.clientY-drag[1])*f;
-  view();
-});
-const stopDrag=e=>{
-  drag=null;
-  try{svg.releasePointerCapture(e.pointerId)}catch(_){}
-};
-svg.addEventListener('pointerup',stopDrag);
-svg.addEventListener('pointercancel',stopDrag);
+svg.addEventListener('pointerdown',e=>{if(e.target.closest('circle,path,rect,image'))return;drag=[e.clientX,e.clientY,tx,ty];svg.setPointerCapture(e.pointerId)});
+svg.addEventListener('pointermove',e=>{if(!drag)return;const r=svg.getBoundingClientRect(),f=820/Math.min(r.width,r.height);tx=drag[2]+(e.clientX-drag[0])*f;ty=drag[3]+(e.clientY-drag[1])*f;view()});
+svg.addEventListener('pointerup',()=>drag=null);
 
+document.getElementById('heatmap-toggle').addEventListener('change', draw);
 if (document.getElementById('district-filter')) document.getElementById('district-filter').addEventListener('change', query);
 if (document.getElementById('limit-filter')) document.getElementById('limit-filter').addEventListener('change', query);
 
 refreshDataset();query();
-startMapEngine();
 </script></body></html>
