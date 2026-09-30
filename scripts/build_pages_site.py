@@ -507,6 +507,7 @@ INDEX_HTML_CONTENT = """<!DOCTYPE html>
     </a>
     <nav class="nav-links" aria-label="Quick links">
       <div class="badge badge-engine" id="browser-engine-badge"><span class="dot-live"></span> Universal Browser Engine</div>
+      <div class="badge" style="background:rgba(2,132,199,0.22);border-color:#38bdf8;color:#38bdf8;font-weight:700;"><span class="dot-live" style="background:#ef4444"></span> 🛰️ Live Aerial Recon HUD</div>
       <a href="https://abhyudaymishr-oculon.hf.space" target="_blank" rel="noopener noreferrer" class="badge">🤗 HF Space</a>
       <a href="https://abhyudaymishr-oculon.hf.space/mcp" target="_blank" rel="noopener noreferrer" class="badge">🔌 MCP Streamable HTTP</a>
       <a href="https://github.com/abhyudaymishr/oculon" target="_blank" rel="noopener noreferrer" class="badge badge-primary">GitHub Source</a>
@@ -530,6 +531,9 @@ INDEX_HTML_CONTENT = """<!DOCTYPE html>
 
   <main class="main-container">
     <div class="controls-overlay">
+      <button onclick="triggerFrameAerial()" class="btn-action" title="Trigger Live Aerial Reconnaissance" style="border-color:#38bdf8;color:#38bdf8;font-weight:700">
+        🛰️ Live Aerial Recon
+      </button>
       <button onclick="toggleFullscreen()" class="btn-action" title="Toggle Fullscreen" id="fs-toggle-btn">
         ⛶ Fullscreen
       </button>
@@ -659,6 +663,21 @@ INDEX_HTML_CONTENT = """<!DOCTYPE html>
           doc.mozCancelFullScreen();
         } else if (doc.msExitFullscreen) {
           doc.msExitFullscreen();
+        }
+      }
+    }
+
+    function triggerFrameAerial() {
+      const frame = document.getElementById('map-frame');
+      if (frame && frame.contentWindow) {
+        try {
+          if (typeof frame.contentWindow.openLiveAerialView === 'function') {
+            frame.contentWindow.openLiveAerialView(28.6675, 77.2285, 'Kashmere Gate Metro Station (Aerial Recon)', 'North Delhi', 0.1428, 48, 'hotspot');
+          } else if (typeof frame.contentWindow.setMapStyle === 'function') {
+            frame.contentWindow.setMapStyle('satellite');
+          }
+        } catch (e) {
+          console.warn('Aerial trigger cross-origin safety:', e);
         }
       }
     }
